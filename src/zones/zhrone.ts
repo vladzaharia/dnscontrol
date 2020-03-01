@@ -1,8 +1,8 @@
-import { CreateCoreRecords, Home, Alpha, Charlie, AzVPN, AzCloudVM, Beta, Delta } from "../utils/core";
 import { CloudflareDns } from "../providers/cloudflare";
-import { CreateCNAMERecords } from "../utils/records";
 import { NoRegistrar } from "../providers/noregistrar";
+import { CreateCoreRecords, Home, Alpha, Charlie, AzVPN, AzCloudVM, Beta, Delta } from "../services/core";
 import { CreateMailcowRecords } from "../services/mailcow";
+import { CreateCNAMERecords } from "../utils/records";
 
 const HomeServices = [
     /* Infrastructure */
