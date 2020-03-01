@@ -6,7 +6,6 @@ import { Alpha, Beta } from "./core";
  */
 export const DCExtServices: CNAMERecord[] = [
     { name: 'asset', proxy: true }, // SnipeIt
-    { name: 'dc', target: Alpha }, // Proxmox (Legacy)
     { name: 'irc', proxy: true }, // TheLounge
     { name: 'network', proxy: true }, // JIT
     { name: 'phonesvc', target: Beta } // 3CX (Legacy)

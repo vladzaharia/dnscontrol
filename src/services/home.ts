@@ -19,6 +19,7 @@ export const HomeExtServices: CNAMERecord[] = [
  */
 export const HomeIntServices: CNAMERecord[] = [
     /* Infrastructure */
+    { name: 'proxmox-home' },
     { name: 'traefik-home', proxy: true },
     { name: 'portainer-home', proxy: true },
 

@@ -8,9 +8,6 @@ import { CreateMailcowRecords } from "../services/mailcow";
 import { CreateCNAMERecords } from "../utils/cname";
 
 D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
-    /* Infrastructure */
-    A('proxmox-home', '10.0.11.200'),
-
     /* Home records */
     ... CreateCNAMERecords(HomeIntServices, Home),
 
