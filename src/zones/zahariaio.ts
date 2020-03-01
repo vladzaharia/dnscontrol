@@ -1,31 +1,32 @@
 import { CloudflareDns, CfProxyOn } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { Home, Alpha, Charlie, AzVPN, AzCloudVM, Beta, Parents } from "../services/core";
-import { CreateCNAMERecords } from "../utils/records";
+import { CreateCNAMERecords, CNAMERecord } from "../utils/cname";
 import { CreateOffice365Records } from "../services/office365";
 
-const HomeServices = [
-    'books', // Calibre
-    'deluge', // Deluge
-    'home',
-    'media', // Ombi
-    'radarr', // Radarr
-    'sonarr', // Sonarr
-    'stats', // Tautulli
+const HomeServices: CNAMERecord[] = [
+    { name: 'books', proxy: true }, // Calibre
+    { name: 'deluge', proxy: true }, // Deluge
+    { name: 'home', proxy: true }, 
+    { name: 'media' }, // Ombi
+    { name: 'radarr', proxy: true }, // Radarr
+    { name: 'sabnzbd', proxy: true }, // SabNZBd
+    { name: 'sonarr', proxy: true }, // Sonarr
+    { name: 'stats', proxy: true }, // Tautulli
 ];
 
-const DCServices = [
-    'asset', // SnipeIt
-    'irc', // TheLounge
-    'network',
+const DCServices: CNAMERecord[] = [
+    { name: 'asset', proxy: true }, // SnipeIt
+    { name: 'irc', proxy: true }, // TheLounge
+    { name: 'network', proxy: true }, // JIT
 ];
 
-const CloudVMServices = [
-    'cloudvm',
-    'cloudvm-int',
-    'cloudvm-test',
-    'cloudvm-test1',
-    'cloudvm-test2'
+const CloudVMServices: CNAMERecord[] = [
+    { name: 'cloudvm', proxy: true },
+    { name: 'cloudvm-int' },
+    { name: 'cloudvm-test', proxy: true },
+    { name: 'cloudvm-test1', proxy: true },
+    { name: 'cloudvm-test2', proxy: true },
 ];
 
 D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
@@ -38,10 +39,10 @@ D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     CNAME('phonesvc', Beta), // 3CX
 
     /* Home records */
-    ... CreateCNAMERecords(HomeServices, Home, CfProxyOn),
+    ... CreateCNAMERecords(HomeServices, Home),
 
     /* DC records */
-    ... CreateCNAMERecords(DCServices, Charlie, CfProxyOn),
+    ... CreateCNAMERecords(DCServices, Charlie),
 
     /* CloudVM records */
     ... CreateCNAMERecords(CloudVMServices, AzCloudVM),

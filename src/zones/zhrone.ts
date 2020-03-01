@@ -2,35 +2,35 @@ import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { CreateCoreRecords, Home, Alpha, Charlie, AzVPN, AzCloudVM, Beta, Delta } from "../services/core";
 import { CreateMailcowRecords } from "../services/mailcow";
-import { CreateCNAMERecords } from "../utils/records";
+import { CreateCNAMERecords, CNAMERecord } from "../utils/cname";
 
-const HomeServices = [
+const HomeServices: CNAMERecord[] = [
     /* Infrastructure */
-    'traefik-home', // Traefik
-    'portainer-home', // Portainer
+    { name: 'traefik-home', proxy: true },
+    { name: 'portainer-home', proxy: true },
 
     /* Internal Services */
-    'f', // OpenFaaS
-    'home', // Home VPN
-    'ping', // Statping
-    'rd', // Guacamole
+    { name: 'f' }, // OpenFaaS
+    { name: 'home' }, // Pritunl VPN
+    { name: 'ping' }, // Statping
+    { name: 'rd' }, // Guacamole
 
     /* Experimental Services */
-    'crowd', // Atlassian Crowd (2/29)
-    'jira', // Atlassian JIRA (2/29)
+    { name: 'crowd' }, // Atlassian Crowd (2/29)
+    { name: 'jira' }, // Atlassian JIRA (2/29)
 ];
 
-const DCServices = [
+const DCServices: CNAMERecord[] = [
     /* Infrastructure */
-    'traefik-dc', // Traefik
-    'portainer-dc', // Portainer
+    { name: 'traefik-dc', proxy: true },
+    { name: 'portainer-dc', proxy: true },
 
     /* Internal Services */
-    'dash', // Heimdall
+    { name: 'dash', proxy: true }, // Heimdall
 
     /* Warmitup Services */
-    'chat', // Mattermost
-    'mrmr', // Mumble
+    { name: 'chat' }, // Mattermost
+    { name: 'mrmr' }, // Mumble
 ];
 
 D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
