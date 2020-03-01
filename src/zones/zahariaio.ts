@@ -1,33 +1,11 @@
-import { CloudflareDns, CfProxyOn } from "../providers/cloudflare";
+import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
+import { CloudVMServices } from "../services/cloudvm";
 import { Home, Alpha, Charlie, AzVPN, AzCloudVM, Beta, Parents } from "../services/core";
-import { CreateCNAMERecords, CNAMERecord } from "../utils/cname";
+import { DockerExtServices } from "../services/docker";
+import { HomeExtServices } from "../services/home";
 import { CreateOffice365Records } from "../services/office365";
-
-const HomeServices: CNAMERecord[] = [
-    { name: 'books', proxy: true }, // Calibre
-    { name: 'deluge', proxy: true }, // Deluge
-    { name: 'home', proxy: true }, 
-    { name: 'media' }, // Ombi
-    { name: 'radarr', proxy: true }, // Radarr
-    { name: 'sabnzbd', proxy: true }, // SabNZBd
-    { name: 'sonarr', proxy: true }, // Sonarr
-    { name: 'stats', proxy: true }, // Tautulli
-];
-
-const DCServices: CNAMERecord[] = [
-    { name: 'asset', proxy: true }, // SnipeIt
-    { name: 'irc', proxy: true }, // TheLounge
-    { name: 'network', proxy: true }, // JIT
-];
-
-const CloudVMServices: CNAMERecord[] = [
-    { name: 'cloudvm', proxy: true },
-    { name: 'cloudvm-int' },
-    { name: 'cloudvm-test', proxy: true },
-    { name: 'cloudvm-test1', proxy: true },
-    { name: 'cloudvm-test2', proxy: true },
-];
+import { CreateCNAMERecords, CNAMERecord } from "../utils/cname";
 
 D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     /* Infrastructure */
@@ -39,10 +17,10 @@ D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     CNAME('phonesvc', Beta), // 3CX
 
     /* Home records */
-    ... CreateCNAMERecords(HomeServices, Home),
+    ... CreateCNAMERecords(HomeExtServices, Home),
 
     /* DC records */
-    ... CreateCNAMERecords(DCServices, Charlie),
+    ... CreateCNAMERecords(DockerExtServices, Charlie),
 
     /* CloudVM records */
     ... CreateCNAMERecords(CloudVMServices, AzCloudVM),

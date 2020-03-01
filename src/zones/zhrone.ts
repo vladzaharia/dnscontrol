@@ -1,37 +1,11 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { CreateCoreRecords, Home, Alpha, Charlie, AzVPN, AzCloudVM, Beta, Delta } from "../services/core";
+import { DockerIntServices } from "../services/docker";
+import { HomeIntServices } from "../services/home";
 import { CreateMailcowRecords } from "../services/mailcow";
-import { CreateCNAMERecords, CNAMERecord } from "../utils/cname";
+import { CreateCNAMERecords } from "../utils/cname";
 
-const HomeServices: CNAMERecord[] = [
-    /* Infrastructure */
-    { name: 'traefik-home', proxy: true },
-    { name: 'portainer-home', proxy: true },
-
-    /* Internal Services */
-    { name: 'f' }, // OpenFaaS
-    { name: 'home' }, // Pritunl VPN
-    { name: 'ping' }, // Statping
-    { name: 'rd' }, // Guacamole
-
-    /* Experimental Services */
-    { name: 'crowd' }, // Atlassian Crowd (2/29)
-    { name: 'jira' }, // Atlassian JIRA (2/29)
-];
-
-const DCServices: CNAMERecord[] = [
-    /* Infrastructure */
-    { name: 'traefik-dc', proxy: true },
-    { name: 'portainer-dc', proxy: true },
-
-    /* Internal Services */
-    { name: 'dash', proxy: true }, // Heimdall
-
-    /* Warmitup Services */
-    { name: 'chat' }, // Mattermost
-    { name: 'mrmr' }, // Mumble
-];
 
 D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
     /* Infrastructure */
@@ -44,10 +18,10 @@ D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
     CNAME('phone', Beta), // 3CX   
 
     /* Home records */
-    ... CreateCNAMERecords(HomeServices, Home),
+    ... CreateCNAMERecords(HomeIntServices, Home),
 
     /* DC records */
-    ... CreateCNAMERecords(DCServices, Charlie),
+    ... CreateCNAMERecords(DockerIntServices, Charlie),
 
     /* Core records */
     ... CreateCoreRecords(),
