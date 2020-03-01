@@ -9,7 +9,7 @@ export function CreateMailcowRecords(target: string, certificate: string, dkimKe
         CNAME('mail', target),
         CNAME('autoconfig', target),
         CNAME('autodiscover', target),
-        SRV('_autodiscover._tcp.mail', 0, 0, 443, target),
+        SRV('_autodiscover._tcp', 0, 0, 443, target),
         TLSA('_25._tcp.mail', 3, 1, 1, certificate),
         TLSA('_110._tcp.mail', 3, 1, 1, certificate),
         TLSA('_143._tcp.mail', 3, 1, 1, certificate),
