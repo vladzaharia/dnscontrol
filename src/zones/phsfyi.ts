@@ -1,8 +1,8 @@
-import { CfProxyOn, CloudflareDns } from "../utils/cloudflare";
-import { Registrar } from "../utils/providers";
-import { CreateOffice365Records } from "../utils/records";
+import { CfProxyOn, CloudflareDns } from "../providers/cloudflare";
+import { NoRegistrar } from "../providers/noregistrar";
+import { CreateOffice365Records } from "../services/office365";
 
-D('phs.fyi', Registrar, DnsProvider(CloudflareDns),
+D('phs.fyi', NoRegistrar, DnsProvider(CloudflareDns),
     /* Basic records */
     A('@', '104.37.168.30', CfProxyOn),
     A('www', '104.37.168.30', CfProxyOn),

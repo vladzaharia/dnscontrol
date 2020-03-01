@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "preview": "npm run build && cd out && dnscontrol preview",
-    "push": "npm run preview && cli-confirm \"Are you sure you want to push?\" && dnscontrol push"
+    "push": "npm run preview && cli-confirm \"Are you sure you want to push?\" && cd out && dnscontrol push",
+    "push-nc": "npm run build && cd out && dnscontrol push"
   },
   "author": "Vlad Zaharia",
   "license": "All Rights Reserved",
