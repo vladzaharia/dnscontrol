@@ -20,7 +20,6 @@ D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
     /* Azure records */
     ... CreateCNAMERecords(AzureIntServices, AzCloudVM),
 
-
     /* Core records */
     ... CreateCoreRecords(),
 
