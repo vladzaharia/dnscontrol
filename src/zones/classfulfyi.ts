@@ -1,17 +1,21 @@
-import { Registrar, CloudflareDns } from "../utils/providers";
-import { CFProxyOn } from "../utils/cloudflare";
-import { GetOffice365Records } from "../utils/office365";
+import { CfProxyOn, CloudflareDns } from "../utils/cloudflare";
+import { Registrar } from "../utils/providers";
+import { CreateOffice365Records, CreateCNAMERecords } from "../utils/records";
+import { Charlie } from "../utils/core";
+
+const ClassfulInstances = [
+    'www',
+    'bh',
+    'dev'
+];
 
 D('classful.fyi', Registrar, DnsProvider(CloudflareDns),
     /* Basic records */
-    A('@', '104.37.168.30', CFProxyOn),
-    A('www', '104.37.168.30', CFProxyOn),
-    A('*', '104.37.168.30'),
+    A('@', '104.37.168.30', CfProxyOn),
 
-    /* Classful instance records */
-    A('bh', '104.37.168.30', CFProxyOn),
-    A('dev', '104.37.168.30', CFProxyOn),
+    /* Classful instances */
+    ... CreateCNAMERecords(ClassfulInstances, Charlie, CfProxyOn),
 
     /* Office 365 records */
-    ... GetOffice365Records('classful-fyi', 'ms37503503')
+    ... CreateOffice365Records('classful-fyi', 'ms37503503')
 );

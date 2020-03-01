@@ -46,3 +46,19 @@ export const AzCloudVM = 'cloudvm.azure.core.zhr.one.';
  * Azure VPN
  */
 export const AzVPN = 'vpn.azure.core.zhr.one.';
+
+/**
+ * Get all core records
+ */
+export function CreateCoreRecords() {
+    return [
+        A('alpha.dc.core', '104.37.168.28'), // DC Host
+        A('beta.dc.core', '104.37.168.29'), // Phone
+        A('charlie.dc.core', '104.37.168.30'), // Docker
+        A('delta.dc.core', '104.37.168.31'), // Mail
+        A('home.core', '174.127.231.221'), // Home
+        A('parents.core', '64.46.8.37'), // Parents
+        A('cloudvm.azure.core', '52.183.82.105'), // Azure CloudVM
+        A('vpn.azure.core', '52.247.206.58'), // Azure VPN
+    ];
+}

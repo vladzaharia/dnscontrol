@@ -26,5 +26,8 @@ module.exports = {
                 to: "./creds.json"
             }
         ])
-    ]
+    ],
+    optimization: {
+        minimize: false
+    },
 }
