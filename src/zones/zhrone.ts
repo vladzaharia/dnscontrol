@@ -1,27 +1,25 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { CreateCoreRecords, Home, Alpha, Charlie, AzVPN, AzCloudVM, Beta, Delta } from "../services/core";
+import { AzureIntServices } from "../services/azure";
 import { DCIntServices } from "../services/dc";
 import { HomeIntServices } from "../services/home";
 import { CreateMailcowRecords } from "../services/mailcow";
 import { CreateCNAMERecords } from "../utils/cname";
 
-
 D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
     /* Infrastructure */
     A('proxmox-home', '10.0.11.200'),
-    CNAME('proxmox-dc', Alpha),
-
-    /* Internal services */
-    CNAME('azure', AzVPN), // Azure VPN
-    CNAME('cloudvm', AzCloudVM), // VS Code
-    CNAME('phone', Beta), // 3CX   
 
     /* Home records */
     ... CreateCNAMERecords(HomeIntServices, Home),
 
     /* DC records */
     ... CreateCNAMERecords(DCIntServices, Charlie),
+
+    /* Azure records */
+    ... CreateCNAMERecords(AzureIntServices, AzCloudVM),
+
 
     /* Core records */
     ... CreateCoreRecords(),

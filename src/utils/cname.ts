@@ -8,15 +8,17 @@ import { CfProxyOn, CfSSLOn } from "../providers/cloudflare";
  */
 export function CreateCNAMERecords(records: CNAMERecord[], target: string) {
     return records.map((record: CNAMERecord) => {
+        const finalTarget = record.target || target;
+
         if (record.proxy) {
             if (record.ssl) {
-                return CNAME(record.name, target, CfProxyOn, CfSSLOn);
+                return CNAME(record.name, finalTarget, CfProxyOn, CfSSLOn);
             }
             
-            return CNAME(record.name, target, CfProxyOn);
+            return CNAME(record.name, finalTarget, CfProxyOn);
         }
 
-        return CNAME(record.name, target);
+        return CNAME(record.name, finalTarget);
     });
 }
 
@@ -25,6 +27,11 @@ export interface CNAMERecord {
      * Subdomain of record.
      */
     name: string;
+
+    /**
+     * Override target for this record.
+     */
+    target?: string;
 
     /**
      * Enable Cloudflare proxy.

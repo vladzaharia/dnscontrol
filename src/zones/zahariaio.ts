@@ -1,6 +1,6 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
-import { CloudVMServices } from "../services/cloudvm";
+import { AzureExtServices } from "../services/azure";
 import { Home, Alpha, Charlie, AzVPN, AzCloudVM, Beta, Parents } from "../services/core";
 import { DCExtServices } from "../services/dc";
 import { HomeExtServices } from "../services/home";
@@ -12,9 +12,7 @@ D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     A('@', '104.37.168.30'),
 
     /* Internal services */
-    CNAME('dc', Alpha), // Azure VPN
     CNAME('parents', Parents),
-    CNAME('phonesvc', Beta), // 3CX
 
     /* Home records */
     ... CreateCNAMERecords(HomeExtServices, Home),
@@ -22,8 +20,8 @@ D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     /* DC records */
     ... CreateCNAMERecords(DCExtServices, Charlie),
 
-    /* CloudVM records */
-    ... CreateCNAMERecords(CloudVMServices, AzCloudVM),
+    /* Azure records */
+    ... CreateCNAMERecords(AzureExtServices, AzCloudVM),
 
     /* Office 365 records */
     ... CreateOffice365Records('zaharia-io', 'ms62227587'),
