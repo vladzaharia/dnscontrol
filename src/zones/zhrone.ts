@@ -1,7 +1,7 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { CreateCoreRecords, Home, Alpha, Charlie, AzVPN, AzCloudVM, Beta, Delta } from "../services/core";
-import { DockerIntServices } from "../services/docker";
+import { DCIntServices } from "../services/dc";
 import { HomeIntServices } from "../services/home";
 import { CreateMailcowRecords } from "../services/mailcow";
 import { CreateCNAMERecords } from "../utils/cname";
@@ -21,7 +21,7 @@ D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
     ... CreateCNAMERecords(HomeIntServices, Home),
 
     /* DC records */
-    ... CreateCNAMERecords(DockerIntServices, Charlie),
+    ... CreateCNAMERecords(DCIntServices, Charlie),
 
     /* Core records */
     ... CreateCoreRecords(),

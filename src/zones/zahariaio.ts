@@ -2,7 +2,7 @@ import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { CloudVMServices } from "../services/cloudvm";
 import { Home, Alpha, Charlie, AzVPN, AzCloudVM, Beta, Parents } from "../services/core";
-import { DockerExtServices } from "../services/docker";
+import { DCExtServices } from "../services/dc";
 import { HomeExtServices } from "../services/home";
 import { CreateOffice365Records } from "../services/office365";
 import { CreateCNAMERecords, CNAMERecord } from "../utils/cname";
@@ -20,7 +20,7 @@ D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     ... CreateCNAMERecords(HomeExtServices, Home),
 
     /* DC records */
-    ... CreateCNAMERecords(DockerExtServices, Charlie),
+    ... CreateCNAMERecords(DCExtServices, Charlie),
 
     /* CloudVM records */
     ... CreateCNAMERecords(CloudVMServices, AzCloudVM),
