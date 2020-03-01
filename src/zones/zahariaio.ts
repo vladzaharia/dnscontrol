@@ -41,7 +41,7 @@ D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     ... CreateCNAMERecords(HomeServices, Home, CfProxyOn),
 
     /* DC records */
-    ... CreateCNAMERecords(DCServices, Charlie),
+    ... CreateCNAMERecords(DCServices, Charlie, CfProxyOn),
 
     /* CloudVM records */
     ... CreateCNAMERecords(CloudVMServices, AzCloudVM),
