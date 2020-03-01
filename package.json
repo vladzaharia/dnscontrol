@@ -1,0 +1,21 @@
+{
+  "name": "dnscontrol-ts",
+  "version": "1.0.0",
+  "description": "Reproducible DNS record entries for zhr.one properties",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack build"
+  },
+  "author": "Vlad Zaharia",
+  "license": "All Rights Reserved",
+  "devDependencies": {
+    "@types/node": "^13.7.7",
+    "@types/webpack": "^4.41.7",
+    "@types/webpack-env": "^1.15.1",
+    "copy-webpack-plugin": "^5.1.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
+}
