@@ -9,6 +9,7 @@ export function CreateOffice365Records(mxDomain: string, dnsValidatorId: string)
         CNAME('autodiscover', 'autodiscover.outlook.com.'),
         CNAME('enterpriseenrollment', 'enterpriseenrollment.manage.microsoft.com.'),
         CNAME('enterpriseregistration', 'enterpriseregistration.windows.net.'),
+        CNAME('msoid', 'clientconfig.microsoftonline-p.net.'),
         CNAME('lyncdiscover', 'webdir.online.lync.com.'),
         CNAME('sip', 'sipdir.online.lync.com.'),
         SRV('_sipfederationtls._tcp', 100, 1, 5061, 'sipfed.online.lync.com.'),

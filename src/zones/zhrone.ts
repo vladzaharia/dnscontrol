@@ -31,7 +31,7 @@ const DCServices = [
     /* Warmitup Services */
     'chat', // Mattermost
     'mrmr', // Mumble
-]
+];
 
 D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
     /* Infrastructure */
