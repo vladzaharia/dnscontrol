@@ -1,6 +1,6 @@
 export function GetOffice365Records(mxDomain: string, dnsValidatorId: string) {
     return [
-        MX('@', 0, `${mxDomain}.protection.outlook.com.`),
+        MX('@', 0, `${mxDomain}.mail.protection.outlook.com.`),
         CNAME('autodiscover', 'autodiscover.outlook.com.'),
         CNAME('enterpriseenrollment', 'enterpriseenrollment.manage.microsoft.com.'),
         CNAME('enterpriseregistration', 'enterpriseregistration.windows.net.'),

@@ -4,7 +4,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
     entry: "./src/main.ts",
     output: {
-        path: path.resolve("./output"),
+        path: path.resolve("./out"),
         filename: "dnsconfig.js"
     },
     resolve: {
@@ -12,12 +12,10 @@ module.exports = {
         modules: ["src", "node_modules"].map(x => path.resolve(x)),
     },
     module: {
-        loaders: [
+        rules: [
             {
-                test: /\.ts$/,
-                use: [
-                    'ts-loader'
-                ],
+                test: /\.ts$/, 
+                use: 'ts-loader'
             }
         ]
     },
