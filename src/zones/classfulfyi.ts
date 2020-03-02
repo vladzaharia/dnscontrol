@@ -2,6 +2,7 @@ import { CfProxyOn, CloudflareDns } from '../providers/cloudflare';
 import { NoRegistrar } from '../providers/noregistrar';
 import { Charlie } from '../services/core';
 import { CreateOffice365Records } from '../services/office365';
+// eslint-disable-next-line no-unused-vars
 import { CreateCNAMERecords, CNAMERecord } from '../utils/cname';
 
 const ClassfulInstances: CNAMERecord[] = [
