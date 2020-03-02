@@ -11,12 +11,14 @@ const ClassfulInstances: Record[] = [
     { name: 'dev', proxy: true },
 ];
 
+console.log('Zone: classful.fyi - Classful (non-PHS)');
+
 D('classful.fyi', NoRegistrar, DnsProvider(CloudflareDns),
     /* Basic records */
     A('@', '104.37.168.30', CfProxyOn),
 
     /* Classful instances */
-    ...CreateRecords(ClassfulInstances, Charlie),
+    ...CreateRecords('Classful instances', ClassfulInstances, Charlie),
 
     /* Office 365 records */
     ...CreateOffice365Records('classful-fyi', 'ms37503503')

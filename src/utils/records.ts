@@ -6,9 +6,11 @@ import { CfProxyOn, CfSSLOn } from "../providers/cloudflare";
  * @param target fqdn for CNAME or IP address for A
  * @param cfSettings Cloudflare settings to apply to all records
  */
-export function CreateRecords(records: Record[], target?: string) {
+export function CreateRecords(groupName: string, records: Record[], target?: string) {
+    console.log(`\nGroup: ${groupName}`);
+
     return records.map((record: Record) => {
-        if (record.type === 'a') {
+        if (record.type === 'A') {
             return CreateRecord(A, record, target);
         }
         return CreateRecord(CNAME, record, target)
@@ -18,18 +20,20 @@ export function CreateRecords(records: Record[], target?: string) {
 function CreateRecord(type: (name: string, target?: string, ... modifiers: any[]) => any, record: Record, target: string) {
     const finalTarget = record.target || target;
 
-        if (record.proxy) {
-            if (record.ssl) {
-                return type(record.name, finalTarget, CfProxyOn, CfSSLOn);
-            }
-            
-            return type(record.name, finalTarget, CfProxyOn);
-        }
+    console.log(`${record.description || 'Service'}: ${record.name} -> ${finalTarget}`);
 
-        return type(record.name, finalTarget);
+    if (record.proxy) {
+        if (record.ssl) {
+            return type(record.name, finalTarget, CfProxyOn, CfSSLOn);
+        }
+        
+        return type(record.name, finalTarget, CfProxyOn);
+    }
+
+    return type(record.name, finalTarget);
 }
 
-export type RecordType = 'cname' | 'a';
+export type RecordType = 'CNAME' | 'A';
 
 export interface Record {
     /**

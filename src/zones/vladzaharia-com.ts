@@ -3,6 +3,8 @@ import { NoRegistrar } from "../providers/noregistrar";
 import { Charlie } from "../services/core";
 import { CreateOffice365Records } from "../services/office365";
 
+console.log('Zone: vladzaharia.com - Old Site');
+
 D('vladzaharia.com', NoRegistrar, DnsProvider(CloudflareDns),
     /* Basic records */
     A('@', '104.37.168.30', CfProxyOn),

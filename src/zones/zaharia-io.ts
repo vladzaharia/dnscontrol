@@ -7,6 +7,8 @@ import { HomeExtServices } from "../services/home";
 import { CreateOffice365Records } from "../services/office365";
 import { CreateRecords } from "../utils/records";
 
+console.log('Zone: zaharia.io - External Services');
+
 D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     /* Infrastructure */
     A('@', '104.37.168.30'),
@@ -15,13 +17,13 @@ D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     CNAME('parents', Parents),
 
     /* Home records */
-    ... CreateRecords(HomeExtServices, Home),
+    ... CreateRecords('Home', HomeExtServices, Home),
 
     /* DC records */
-    ... CreateRecords(DCExtServices, Charlie),
+    ... CreateRecords('DC', DCExtServices, Charlie),
 
     /* Azure records */
-    ... CreateRecords(AzureExtServices),
+    ... CreateRecords('Azure', AzureExtServices),
 
     /* Office 365 records */
     ... CreateOffice365Records('zaharia-io', 'ms62227587'),

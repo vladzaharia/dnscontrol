@@ -36,16 +36,16 @@ export const HomeIntServices: Record[] = [
 ];
 
 export const HomeLocalServices: Record[] = [
-    { name: 'router.local', type: 'a', description: 'Router', target: '10.0.10.1'},
-    { name: 'server.local', type: 'a', description: 'New Server - Windows', target: '10.0.11.250'},
-    { name: 'linux.server.local', type: 'a', description: 'New Server - Linux', target: '10.0.11.251'},
-    { name: 'nas.local', type: 'a', description: 'NAS', target: '10.0.11.252'},
+    { name: 'router.local', type: 'A', description: 'Router', target: '10.0.10.1'},
+    { name: 'server.local', type: 'A', description: 'New Server - Windows', target: '10.0.11.250'},
+    { name: 'linux.server.local', type: 'A', description: 'New Server - Linux', target: '10.0.11.251'},
+    { name: 'nas.local', type: 'A', description: 'NAS', target: '10.0.11.252'},
 
     /* Home DC */
-    { name: 'dc.local', type: 'a', description: 'Home DC (Local)', target: '10.0.11.200'},
-    { name: 'docker.dc.local', type: 'a', description: 'Docker', target: '10.0.11.201'},
-    { name: 'pihole.dc.local', type: 'a', description: 'Pihole', target: '10.0.11.202'},
-    { name: 'pritunl.dc.local', type: 'a', description: 'Pritunl', target: '10.0.11.203'},
-    { name: 'openfaas.dc.local', type: 'a', description: 'OpenFaaS', target: '10.0.11.205'},
-    { name: 'atlassian.dc.local', type: 'a', description: 'Atlassian', target: '10.0.11.206'},
+    { name: 'dc.local', type: 'A', description: 'Home DC (Local)', target: '10.0.11.200'},
+    { name: 'docker.dc.local', type: 'A', description: 'Docker', target: '10.0.11.201'},
+    { name: 'pihole.dc.local', type: 'A', description: 'Pihole', target: '10.0.11.202'},
+    { name: 'pritunl.dc.local', type: 'A', description: 'Pritunl', target: '10.0.11.203'},
+    { name: 'openfaas.dc.local', type: 'A', description: 'OpenFaaS', target: '10.0.11.205'},
+    { name: 'atlassian.dc.local', type: 'A', description: 'Atlassian', target: '10.0.11.206'},
 ];

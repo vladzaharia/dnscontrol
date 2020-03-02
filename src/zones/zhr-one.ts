@@ -7,16 +7,18 @@ import { HomeIntServices, HomeLocalServices } from "../services/home";
 import { CreateMailcowRecords } from "../services/mailcow";
 import { CreateRecords } from "../utils/records";
 
+console.log('Zone: zhr.one - Internal Services');
+
 D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
     /* Home records */
-    ... CreateRecords(HomeIntServices, Home),
-    ... CreateRecords(HomeLocalServices),
+    ... CreateRecords('Home', HomeIntServices, Home),
+    ... CreateRecords('Home - Local', HomeLocalServices),
 
     /* DC records */
-    ... CreateRecords(DCIntServices, Charlie),
+    ... CreateRecords('DC', DCIntServices, Charlie),
 
     /* Azure records */
-    ... CreateRecords(AzureIntServices),
+    ... CreateRecords('Azure', AzureIntServices),
 
     /* Core records */
     ... CreateCoreRecords(),
