@@ -1,53 +1,51 @@
 // eslint-disable-next-line no-unused-vars
-import { CNAMERecord } from "../utils/cname";
+import { Record } from "../utils/records";
 
 /**
  * External (zaharia.io) Home services
  */
-export const HomeExtServices: CNAMERecord[] = [
-    { name: 'books', proxy: true }, // Calibre
-    { name: 'deluge', proxy: true }, // Deluge
+export const HomeExtServices: Record[] = [
+    { name: 'books', description: 'Calibre', proxy: true },
+    { name: 'deluge', description: 'Deluge', proxy: true },
     { name: 'home', proxy: true }, 
-    { name: 'media' }, // Ombi
-    { name: 'radarr', proxy: true }, // Radarr
-    { name: 'sabnzbd', proxy: true }, // SabNZBd
-    { name: 'sonarr', proxy: true }, // Sonarr
-    { name: 'stats', proxy: true }, // Tautulli
+    { name: 'media', description: 'Ombi' },
+    { name: 'radarr', description: 'Radarr', proxy: true },
+    { name: 'sabnzbd', description: 'SabNZBd', proxy: true },
+    { name: 'sonarr', description: 'Sonarr', proxy: true },
+    { name: 'stats', description: 'Tautulli', proxy: true },
 ];
 
 /**
  * Internal (zhr.one) Home services
  */
-export const HomeIntServices: CNAMERecord[] = [
+export const HomeIntServices: Record[] = [
     /* Infrastructure */
-    { name: 'proxmox-home' },
-    { name: 'traefik-home', proxy: true },
-    { name: 'portainer-home', proxy: true },
+    { name: 'proxmox-home', description: 'Home Proxmox' },
+    { name: 'traefik-home', description: 'Home Traefik', proxy: true },
+    { name: 'portainer-home', description: 'Home Portainer', proxy: true },
 
     /* Internal Services */
-    { name: 'f' }, // OpenFaaS
-    { name: 'home' }, // Pritunl VPN
-    { name: 'ping' }, // Statping
-    { name: 'rd' }, // Guacamole
+    { name: 'f', description: 'OpenFaaS' },
+    { name: 'home', description: 'Home Pritunl VPN' },
+    { name: 'ping', description: 'Statping' },
+    { name: 'rd', description: 'Guacamole' }, 
 
     /* Experimental Services */
-    { name: 'crowd' }, // Atlassian Crowd (2/29)
-    { name: 'jira' }, // Atlassian JIRA (2/29)
+    { name: 'crowd', description: 'Atlassian Crowd' }, // Added 2/29
+    { name: 'jira', description: 'Atlassian JIRA' }, // Added 2/29
 ];
 
-export function CreateHomeLocalRecords(): any {
-    return [
-        A('router.local', '10.0.10.1'),
+export const HomeLocalServices: Record[] = [
+    { name: 'router.local', type: 'a', description: 'Router', target: '10.0.10.1'},
+    { name: 'server.local', type: 'a', description: 'New Server - Windows', target: '10.0.11.250'},
+    { name: 'linux.server.local', type: 'a', description: 'New Server - Linux', target: '10.0.11.251'},
+    { name: 'nas.local', type: 'a', description: 'NAS', target: '10.0.11.252'},
 
-        A('server.local', '10.0.11.250'),
-        A('linux.server.local', '10.0.11.251'),
-        A('nas.local', '10.0.11.252'),
-
-        A('dc.local', '10.0.11.200'),
-        A('docker.dc.local', '10.0.11.201'),
-        A('pihole.dc.local', '10.0.11.202'),
-        A('pritunl.dc.local', '10.0.11.203'),
-        A('openfaas.dc.local', '10.0.11.205'),
-        A('atlassian.dc.local', '10.0.11.206')
-    ];
-}
+    /* Home DC */
+    { name: 'dc.local', type: 'a', description: 'Home DC (Local)', target: '10.0.11.200'},
+    { name: 'docker.dc.local', type: 'a', description: 'Docker', target: '10.0.11.201'},
+    { name: 'pihole.dc.local', type: 'a', description: 'Pihole', target: '10.0.11.202'},
+    { name: 'pritunl.dc.local', type: 'a', description: 'Pritunl', target: '10.0.11.203'},
+    { name: 'openfaas.dc.local', type: 'a', description: 'OpenFaaS', target: '10.0.11.205'},
+    { name: 'atlassian.dc.local', type: 'a', description: 'Atlassian', target: '10.0.11.206'},
+];
