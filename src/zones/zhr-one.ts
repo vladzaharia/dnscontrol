@@ -1,6 +1,6 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
-import { CreateCoreRecords, Home, Charlie, Delta } from "../services/core";
+import { Home, Charlie, Delta, CoreServices } from "../services/core";
 import { AzureIntServices } from "../services/azure";
 import { DCIntServices } from "../services/dc";
 import { HomeIntServices, HomeLocalServices } from "../services/home";
@@ -10,6 +10,9 @@ import { CreateRecords } from "../utils/records";
 console.log('Zone: zhr.one - Internal Services');
 
 D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
+    /* Core records */
+    ... CreateRecords('Core', CoreServices),
+
     /* Home records */
     ... CreateRecords('Home', HomeIntServices, Home),
     ... CreateRecords('Home - Local', HomeLocalServices),
@@ -19,9 +22,6 @@ D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
 
     /* Azure records */
     ... CreateRecords('Azure', AzureIntServices),
-
-    /* Core records */
-    ... CreateCoreRecords(),
 
     /* Mailcow records */
     ... CreateMailcowRecords(Delta, 

@@ -1,3 +1,6 @@
+// eslint-disable-next-line no-unused-vars
+import { Record } from "../utils/records";
+
 /**
  * DC Alpha - Currently DC Host
  */
@@ -39,17 +42,16 @@ export const AzCloudVM = 'cloudvm.qnc.core.zhr.one.';
 export const AzVPN = 'vpn.qnc.core.zhr.one.';
 
 /**
- * Get all core records
+ * Core service records
  */
-export function CreateCoreRecords() {
-    return [
-        A('alpha.sea.core', '104.37.168.28'), // DC Host
-        A('beta.sea.core', '104.37.168.29'), // Phone
-        A('charlie.sea.core', '104.37.168.30'), // Docker
-        A('delta.sea.core', '104.37.168.31'), // Mail
-        A('home.sea.core', '174.127.231.221'), // Home
-        A('parents.van.core', '64.46.8.37'), // Parents
-        A('cloudvm.qnc.core', '52.183.82.105'), // Azure CloudVM
-        A('vpn.qnc.core', '52.247.206.58'), // Azure VPN
-    ];
-}
+export const CoreServices: Record[] = [
+    { name: 'alpha.sea.core', type: 'A', description: 'DC Host', target: '104.37.168.28' },
+    { name: 'beta.sea.core', type: 'A', description: 'Phone', target: '104.37.168.29' },
+    { name: 'charlie.sea.core', type: 'A', description: 'Docker', target: '104.37.168.30' },
+    { name: 'delta.sea.core', type: 'A', description: 'Mail', target: '104.37.168.31' },
+    { name: 'home.sea.core', type: 'A', description: 'Home', target: '174.127.231.221' },
+    { name: 'parents.van.core', type: 'A', description: 'Parents', target: '64.46.8.37' },
+    { name: 'cloudvm.qnc.core', type: 'A', description: 'Azure CloudVM', target: '52.183.82.105' },
+    { name: 'vpn.qnc.core', type: 'A', description: 'Azure VPN', target: '52.247.206.58' },
+
+];
