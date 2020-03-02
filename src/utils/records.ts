@@ -20,7 +20,7 @@ export function CreateRecords(groupName: string, records: Record[], target?: str
 function CreateRecord(type: (name: string, target?: string, ... modifiers: any[]) => any, record: Record, target: string) {
     const finalTarget = record.target || target;
 
-    console.log(`${record.description || 'Service'}: ${record.name} -> ${finalTarget}`);
+    console.log(`  ${record.description || 'Service'}: ${record.name} -> ${finalTarget}`);
 
     if (record.proxy) {
         if (record.ssl) {
