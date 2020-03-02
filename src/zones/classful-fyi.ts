@@ -1,9 +1,9 @@
-import { CfProxyOn, CloudflareDns } from '../providers/cloudflare';
+import { CloudflareDns } from '../providers/cloudflare';
 import { NoRegistrar } from '../providers/noregistrar';
-import { Charlie } from '../services/core';
+import { Cobalt } from '../services/core';
 import { CreateOffice365Records } from '../services/office365';
 // eslint-disable-next-line no-unused-vars
-import { CreateRecords, Record } from '../utils/records';
+import { CreateRecords, Record, CreateRecord } from '../utils/records';
 
 const ClassfulInstances: Record[] = [
     { name: 'www', proxy: true },
@@ -11,12 +11,14 @@ const ClassfulInstances: Record[] = [
     { name: 'dev', proxy: true },
 ];
 
+console.log('Zone: classful.fyi - Classful (non-PHS)');
+
 D('classful.fyi', NoRegistrar, DnsProvider(CloudflareDns),
     /* Basic records */
-    A('@', '104.37.168.30', CfProxyOn),
+    CreateRecord({ name: '@', type: 'A', target: '104.37.168.30', proxy: true }),    
 
     /* Classful instances */
-    ...CreateRecords(ClassfulInstances, Charlie),
+    ...CreateRecords('Classful instances', ClassfulInstances, Cobalt),
 
     /* Office 365 records */
     ...CreateOffice365Records('classful-fyi', 'ms37503503')

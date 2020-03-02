@@ -1,27 +1,26 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { AzureExtServices } from "../services/azure";
-import { Home, Charlie, Parents } from "../services/core";
+import { Helium, Cobalt } from "../services/core";
 import { DCExtServices } from "../services/dc";
 import { HomeExtServices } from "../services/home";
 import { CreateOffice365Records } from "../services/office365";
-import { CreateRecords } from "../utils/records";
+import { CreateRecords, CreateRecord } from "../utils/records";
+
+console.log('Zone: zaharia.io - External Services');
 
 D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     /* Infrastructure */
-    A('@', '104.37.168.30'),
-
-    /* Internal services */
-    CNAME('parents', Parents),
+    CreateRecord({ name: '@', type: 'A', target: '104.37.168.30' }),
 
     /* Home records */
-    ... CreateRecords(HomeExtServices, Home),
+    ... CreateRecords('Home', HomeExtServices, Helium),
 
     /* DC records */
-    ... CreateRecords(DCExtServices, Charlie),
+    ... CreateRecords('DC', DCExtServices, Cobalt),
 
     /* Azure records */
-    ... CreateRecords(AzureExtServices),
+    ... CreateRecords('Azure', AzureExtServices),
 
     /* Office 365 records */
     ... CreateOffice365Records('zaharia-io', 'ms62227587'),

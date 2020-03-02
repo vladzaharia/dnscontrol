@@ -1,55 +1,57 @@
-/**
- * DC Alpha - Currently DC Host
- */
-export const Alpha = 'alpha.sea.core.zhr.one.';
+// eslint-disable-next-line no-unused-vars
+import { Record } from "../utils/records";
 
 /**
- * DC Beta - Currently Phone
+ * Argon - DC Host
  */
-export const Beta = 'beta.sea.core.zhr.one.';
+export const Argon = 'ar.sea.core.zhr.one.';
 
 /**
- * DC Charlie - Currently Docker
+ * Barium - Phone
  */
-export const Charlie = 'charlie.sea.core.zhr.one.';
+export const Barium = 'ba.sea.core.zhr.one.';
 
 /**
- * DC Delta - Currently Mail
+ * Cobalt - Docker
  */
-export const Delta = 'delta.sea.core.zhr.one.';
+export const Cobalt = 'co.sea.core.zhr.one.';
 
 /**
- * Home
+ * Gallium - Mail
  */
-export const Home = 'home.sea.core.zhr.one.';
+export const Gallium = 'ga.sea.core.zhr.one.';
 
 /**
- * Parents
+ * Helium - Home
  */
-export const Parents = 'parents.van.core.zhr.one.';
+export const Helium = 'he.sea.core.zhr.one.';
 
 /**
- * Azure CloudVM
+ * Palladium - Parents
  */
-export const AzCloudVM = 'cloudvm.qnc.core.zhr.one.';
+export const Palladium = 'pd.van.core.zhr.one.';
 
 /**
- * Azure VPN
+ * Iridium - Azure CloudVM
  */
-export const AzVPN = 'vpn.qnc.core.zhr.one.';
+export const Iridium = 'ir.qnc.core.zhr.one.';
 
 /**
- * Get all core records
+ * Lithium - Azure VPN
  */
-export function CreateCoreRecords() {
-    return [
-        A('alpha.sea.core', '104.37.168.28'), // DC Host
-        A('beta.sea.core', '104.37.168.29'), // Phone
-        A('charlie.sea.core', '104.37.168.30'), // Docker
-        A('delta.sea.core', '104.37.168.31'), // Mail
-        A('home.sea.core', '174.127.231.221'), // Home
-        A('parents.van.core', '64.46.8.37'), // Parents
-        A('cloudvm.qnc.core', '52.183.82.105'), // Azure CloudVM
-        A('vpn.qnc.core', '52.247.206.58'), // Azure VPN
-    ];
-}
+export const Lithium = 'li.qnc.core.zhr.one.';
+
+/**
+ * Core service records
+ */
+export const CoreServices: Record[] = [
+    { name: 'ar.sea.core', type: 'A', description: 'Argon - DC Host', target: '104.37.168.28' },
+    { name: 'ba.sea.core', type: 'A', description: 'Barium - Phone', target: '104.37.168.29' },
+    { name: 'co.sea.core', type: 'A', description: 'Cobalt - Docker', target: '104.37.168.30' },
+    { name: 'ga.sea.core', type: 'A', description: 'Gallium - Mail', target: '104.37.168.31' },
+    { name: 'he.sea.core', type: 'A', description: 'Helium - Home', target: '174.127.231.221' },
+    { name: 'pd.van.core', type: 'A', description: 'Palladium - Parents', target: '64.46.8.37' },
+    { name: 'ir.qnc.core', type: 'A', description: 'Iridium - Azure CloudVM', target: '52.183.82.105' },
+    { name: 'li.qnc.core', type: 'A', description: 'Lithium - Azure VPN', target: '52.247.206.58' },
+
+];
