@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "build": "webpack",
-    "preview": "npm run build && cd out && ../lib/dnscontrol preview",
-    "push": "npm run preview && cli-confirm \"Are you sure you want to push?\" && cd out && ../lib/dnscontrol push",
-    "push-nc": "npm run build && cd out && ../lib/dnscontrol push"
+    "preview": "npm run build && cd out && ./../lib/dnscontrol preview",
+    "push": "npm run preview && cli-confirm \"Are you sure you want to push?\" && cd out && ./../lib/dnscontrol push",
+    "push-nc": "npm run build && cd out && ./../lib/dnscontrol push"
   },
   "author": "Vlad Zaharia",
   "license": "All Rights Reserved",
