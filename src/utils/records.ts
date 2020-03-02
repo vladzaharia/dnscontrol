@@ -10,18 +10,23 @@ export function CreateRecords(groupName: string, records: Record[], target?: str
     console.log(`\nGroup: ${groupName}`);
 
     return records.map((record: Record) => {
-        if (record.type === 'A') {
-            return CreateRecord(A, record, target);
-        }
-        return CreateRecord(CNAME, record, target)
+        return CreateRecord(record, target);
     });
 }
 
-function CreateRecord(type: (name: string, target?: string, ... modifiers: any[]) => any, record: Record, target: string) {
+export function CreateRecord(record: Record, target?: string) {
     const finalTarget = record.target || target;
 
     console.log(`  ${record.description || 'Service'}: ${record.name} -> ${finalTarget}`);
 
+    // Determine record type
+    let type: (name: string, target?: string, ... modifiers: any[]) => any = CNAME;
+
+    if (record.type === 'A') {
+        type = A;
+    }
+
+    // Add proxy/ssl tags
     if (record.proxy) {
         if (record.ssl) {
             return type(record.name, finalTarget, CfProxyOn, CfSSLOn);
