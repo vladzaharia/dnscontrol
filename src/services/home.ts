@@ -34,3 +34,20 @@ export const HomeIntServices: CNAMERecord[] = [
     { name: 'crowd' }, // Atlassian Crowd (2/29)
     { name: 'jira' }, // Atlassian JIRA (2/29)
 ];
+
+export function CreateHomeLocalRecords(): any {
+    return [
+        A('router.local', '10.0.10.1'),
+
+        A('server.local', '10.0.11.250'),
+        A('linux.server.local', '10.0.11.251'),
+        A('nas.local', '10.0.11.252'),
+
+        A('dc.local', '10.0.11.200'),
+        A('docker.dc.local', '10.0.11.201'),
+        A('pihole.dc.local', '10.0.11.202'),
+        A('pritunl.dc.local', '10.0.11.203'),
+        A('openfaas.dc.local', '10.0.11.205'),
+        A('atlassian.dc.local', '10.0.11.206')
+    ];
+}
