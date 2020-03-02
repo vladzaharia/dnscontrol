@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // Version 1
 // https://stackexchange.github.io/dnscontrol/js
 type Ttl = string | number;

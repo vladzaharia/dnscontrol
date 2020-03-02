@@ -4,10 +4,12 @@
   "description": "Reproducible DNS record entries for zhr.one properties",
   "private": true,
   "scripts": {
-    "build": "webpack",
+    "build": "npm run lint && webpack",
     "preview": "npm run build && cd out && ../lib/dnscontrol preview",
     "push": "npm run preview && cli-confirm \"Are you sure you want to push?\" && cd out && ../lib/dnscontrol push",
-    "push-nc": "npm run build && cd out && ../lib/dnscontrol push"
+    "push-nc": "npm run build && cd out && ../lib/dnscontrol push",
+    "lint": "eslint --ext .ts ."
+
   },
   "author": "Vlad Zaharia",
   "license": "All Rights Reserved",
@@ -15,8 +17,12 @@
     "@types/node": "^13.7.7",
     "@types/webpack": "^4.41.7",
     "@types/webpack-env": "^1.15.1",
+    "@typescript-eslint/eslint-plugin": "^2.21.0",
+    "@typescript-eslint/parser": "^2.21.0",
     "cli-confirm": "^1.0.1",
     "copy-webpack-plugin": "^5.1.1",
+    "eslint": "^6.8.0",
+    "eslint-config-typescript": "^3.0.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
     "webpack": "^4.41.6",

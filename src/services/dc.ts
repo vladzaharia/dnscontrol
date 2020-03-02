@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { CNAMERecord } from "../utils/cname";
 import { Alpha, Beta } from "./core";
 

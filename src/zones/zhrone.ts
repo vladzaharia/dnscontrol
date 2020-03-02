@@ -1,6 +1,6 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
-import { CreateCoreRecords, Home, Alpha, Charlie, AzVPN, AzCloudVM, Beta, Delta } from "../services/core";
+import { CreateCoreRecords, Home, Charlie, AzCloudVM, Delta } from "../services/core";
 import { AzureIntServices } from "../services/azure";
 import { DCIntServices } from "../services/dc";
 import { HomeIntServices } from "../services/home";
