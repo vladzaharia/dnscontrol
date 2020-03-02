@@ -1,22 +1,22 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
-import { CreateCoreRecords, Home, Charlie, AzCloudVM, Delta } from "../services/core";
+import { CreateCoreRecords, Home, Charlie, Delta } from "../services/core";
 import { AzureIntServices } from "../services/azure";
 import { DCIntServices } from "../services/dc";
-import { HomeIntServices, CreateHomeLocalRecords } from "../services/home";
+import { HomeIntServices, HomeLocalServices } from "../services/home";
 import { CreateMailcowRecords } from "../services/mailcow";
-import { CreateCNAMERecords } from "../utils/cname";
+import { CreateRecords } from "../utils/records";
 
 D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
     /* Home records */
-    ... CreateCNAMERecords(HomeIntServices, Home),
-    ... CreateHomeLocalRecords(),
+    ... CreateRecords(HomeIntServices, Home),
+    ... CreateRecords(HomeLocalServices),
 
     /* DC records */
-    ... CreateCNAMERecords(DCIntServices, Charlie),
+    ... CreateRecords(DCIntServices, Charlie),
 
     /* Azure records */
-    ... CreateCNAMERecords(AzureIntServices, AzCloudVM),
+    ... CreateRecords(AzureIntServices),
 
     /* Core records */
     ... CreateCoreRecords(),

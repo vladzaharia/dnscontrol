@@ -1,11 +1,11 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { AzureExtServices } from "../services/azure";
-import { Home, Charlie, AzCloudVM, Parents } from "../services/core";
+import { Home, Charlie, Parents } from "../services/core";
 import { DCExtServices } from "../services/dc";
 import { HomeExtServices } from "../services/home";
 import { CreateOffice365Records } from "../services/office365";
-import { CreateCNAMERecords } from "../utils/cname";
+import { CreateRecords } from "../utils/records";
 
 D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     /* Infrastructure */
@@ -15,13 +15,13 @@ D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     CNAME('parents', Parents),
 
     /* Home records */
-    ... CreateCNAMERecords(HomeExtServices, Home),
+    ... CreateRecords(HomeExtServices, Home),
 
     /* DC records */
-    ... CreateCNAMERecords(DCExtServices, Charlie),
+    ... CreateRecords(DCExtServices, Charlie),
 
     /* Azure records */
-    ... CreateCNAMERecords(AzureExtServices, AzCloudVM),
+    ... CreateRecords(AzureExtServices),
 
     /* Office 365 records */
     ... CreateOffice365Records('zaharia-io', 'ms62227587'),

@@ -1,31 +1,31 @@
 // eslint-disable-next-line no-unused-vars
-import { CNAMERecord } from "../utils/cname";
+import { Record } from "../utils/records";
 import { Alpha, Beta } from "./core";
 
 /**
  * External (zaharia.io) DC-Docker Services
  */
-export const DCExtServices: CNAMERecord[] = [
-    { name: 'asset', proxy: true }, // SnipeIt
-    { name: 'irc', proxy: true }, // TheLounge
-    { name: 'network', proxy: true }, // JIT
-    { name: 'phonesvc', target: Beta } // 3CX (Legacy)
+export const DCExtServices: Record[] = [
+    { name: 'asset', description: 'SnipeIt', proxy: true },
+    { name: 'irc', description: 'TheLoungs', proxy: true },
+    { name: 'network', description: 'Network', proxy: true },
+    { name: 'phonesvc', description: "3CX (Legacy)", target: Beta },
 ];
 
 /**
  * Internal (zhr.one) DC-Docker Services
  */
-export const DCIntServices: CNAMERecord[] = [
+export const DCIntServices: Record[] = [
     /* Infrastructure */
-    { name: 'proxmox-dc', target: Alpha },
-    { name: 'traefik-dc', proxy: true },
-    { name: 'portainer-dc', proxy: true },
+    { name: 'proxmox-dc', description: 'DC Proxmox', target: Alpha },
+    { name: 'traefik-dc', description: 'DC Traefik', proxy: true },
+    { name: 'portainer-dc', description: 'DC Portainer', proxy: true },
 
     /* Internal Services */
-    { name: 'dash', proxy: true }, // Heimdall
-    { name: 'phone', target: Beta }, // 3CX
+    { name: 'dash', description: 'Heimdall', proxy: true },
+    { name: 'phone', description: '3CX', target: Beta },
 
     /* Warmitup Services */
-    { name: 'chat' }, // Mattermost
-    { name: 'mrmr' }, // Mumble
+    { name: 'chat', description: 'Mattermost' },
+    { name: 'mrmr', description: 'Mumble' },
 ];
