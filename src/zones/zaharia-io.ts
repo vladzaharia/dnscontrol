@@ -1,7 +1,7 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { AzureExtServices } from "../services/azure";
-import { Home, Charlie } from "../services/core";
+import { Helium, Cobalt } from "../services/core";
 import { DCExtServices } from "../services/dc";
 import { HomeExtServices } from "../services/home";
 import { CreateOffice365Records } from "../services/office365";
@@ -14,10 +14,10 @@ D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     CreateRecord({ name: '@', type: 'A', target: '104.37.168.30' }),
 
     /* Home records */
-    ... CreateRecords('Home', HomeExtServices, Home),
+    ... CreateRecords('Home', HomeExtServices, Helium),
 
     /* DC records */
-    ... CreateRecords('DC', DCExtServices, Charlie),
+    ... CreateRecords('DC', DCExtServices, Cobalt),
 
     /* Azure records */
     ... CreateRecords('Azure', AzureExtServices),

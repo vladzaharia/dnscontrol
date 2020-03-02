@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { Record } from "../utils/records";
-import { Parents } from "./core";
+import { Palladium } from "./core";
 
 /**
  * External (zaharia.io) Home services
@@ -10,7 +10,7 @@ export const HomeExtServices: Record[] = [
     { name: 'deluge', description: 'Deluge', proxy: true },
     { name: 'home', proxy: true }, 
     { name: 'media', description: 'Ombi' },
-    { name: 'parents', description: 'Parents (Legacy)', target: Parents },
+    { name: 'parents', description: 'Parents (Legacy)', target: Palladium },
     { name: 'radarr', description: 'Radarr', proxy: true },
     { name: 'sabnzbd', description: 'SabNZBd', proxy: true },
     { name: 'sonarr', description: 'Sonarr', proxy: true },
@@ -29,7 +29,7 @@ export const HomeIntServices: Record[] = [
     /* Internal Services */
     { name: 'f', description: 'OpenFaaS' },
     { name: 'home', description: 'Home Pritunl VPN' },
-    { name: 'parents', description: 'Parents', target: Parents },
+    { name: 'parents', description: 'Parents', target: Palladium },
     { name: 'ping', description: 'Statping' },
     { name: 'rd', description: 'Guacamole' }, 
 
