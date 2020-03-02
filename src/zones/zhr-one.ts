@@ -3,13 +3,14 @@ import { NoRegistrar } from "../providers/noregistrar";
 import { CreateCoreRecords, Home, Charlie, AzCloudVM, Delta } from "../services/core";
 import { AzureIntServices } from "../services/azure";
 import { DCIntServices } from "../services/dc";
-import { HomeIntServices } from "../services/home";
+import { HomeIntServices, CreateHomeLocalRecords } from "../services/home";
 import { CreateMailcowRecords } from "../services/mailcow";
 import { CreateCNAMERecords } from "../utils/cname";
 
 D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
     /* Home records */
     ... CreateCNAMERecords(HomeIntServices, Home),
+    ... CreateHomeLocalRecords(),
 
     /* DC records */
     ... CreateCNAMERecords(DCIntServices, Charlie),

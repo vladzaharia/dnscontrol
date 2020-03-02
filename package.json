@@ -6,8 +6,6 @@
   "scripts": {
     "build": "npm run lint && webpack",
     "preview": "npm run build && cd out && ../lib/dnscontrol preview",
-    "push": "npm run preview && cli-confirm \"Are you sure you want to push?\" && cd out && ../lib/dnscontrol push",
-    "push-nc": "npm run build && cd out && ../lib/dnscontrol push",
     "lint": "eslint --ext .ts ."
 
   },
