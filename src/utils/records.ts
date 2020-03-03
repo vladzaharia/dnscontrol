@@ -1,6 +1,7 @@
 import { CfProxyOn, CfSSLOn } from "../providers/cloudflare";
 
-type DNSControlRecord = (name: string, target?: string, ... modifiers: any[]) => any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type DNSControlRecord = (name: string, target?: string, ... modifiers: any[]) => any;
 
 export type RecordType = 'CNAME' | 'A';
 

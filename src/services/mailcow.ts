@@ -1,9 +1,11 @@
+import { DNSControlRecord } from "../utils/records";
+
 /**
  * Creates records for Office365, including Exchange/Teams/Intune.
  * @param mxDomain Beginning part of MX domain
  * @param dnsValidatorId MS= validation ID
  */
-export function CreateMailcowRecords(target: string, certificate: string, dkimKey: string) {
+export function CreateMailcowRecords(target: string, certificate: string, dkimKey: string): DNSControlRecord[] {
     return [
         MX('@', 0, target),
         CNAME('mail', target),
