@@ -2,7 +2,6 @@ import { CloudflareDns } from '../providers/cloudflare';
 import { NoRegistrar } from '../providers/noregistrar';
 import { Cobalt } from '../services/core';
 import { CreateOffice365Records } from '../services/office365';
-// eslint-disable-next-line no-unused-vars
 import { CreateRecords, Record, CreateRecord } from '../utils/records';
 
 const ClassfulInstances: Record[] = [

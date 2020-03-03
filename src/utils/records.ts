@@ -1,42 +1,6 @@
 import { CfProxyOn, CfSSLOn } from "../providers/cloudflare";
 
-/**
- * Creates CNAME or A records for all subdomains towards one destination.
- * @param records All subdomains to create records for.
- * @param target fqdn for CNAME or IP address for A
- * @param cfSettings Cloudflare settings to apply to all records
- */
-export function CreateRecords(groupName: string, records: Record[], target?: string) {
-    console.log(`\nGroup: ${groupName}`);
-
-    return records.map((record: Record) => {
-        return CreateRecord(record, target);
-    });
-}
-
-export function CreateRecord(record: Record, target?: string) {
-    const finalTarget = record.target || target;
-
-    console.log(`  ${record.description || 'Service'}: ${record.name} -> ${finalTarget}`);
-
-    // Determine record type
-    let type: (name: string, target?: string, ... modifiers: any[]) => any = CNAME;
-
-    if (record.type === 'A') {
-        type = A;
-    }
-
-    // Add proxy/ssl tags
-    if (record.proxy) {
-        if (record.ssl) {
-            return type(record.name, finalTarget, CfProxyOn, CfSSLOn);
-        }
-        
-        return type(record.name, finalTarget, CfProxyOn);
-    }
-
-    return type(record.name, finalTarget);
-}
+type DNSControlRecord = (name: string, target?: string, ... modifiers: any[]) => any;
 
 export type RecordType = 'CNAME' | 'A';
 
@@ -73,4 +37,42 @@ export interface Record {
      * Default: true
      */
     ssl?: boolean;
+}
+
+export function CreateRecord(record: Record, target?: string): DNSControlRecord {
+    const finalTarget = record.target || target;
+
+    console.log(`  ${record.description || 'Service'}: ${record.name} -> ${finalTarget}`);
+
+    // Determine record type
+    let type: DNSControlRecord = CNAME;
+
+    if (record.type === 'A') {
+        type = A;
+    }
+
+    // Add proxy/ssl tags
+    if (record.proxy) {
+        if (record.ssl) {
+            return type(record.name, finalTarget, CfProxyOn, CfSSLOn);
+        }
+        
+        return type(record.name, finalTarget, CfProxyOn);
+    }
+
+    return type(record.name, finalTarget);
+}
+
+/**
+ * Creates CNAME or A records for all subdomains towards one destination.
+ * @param records All subdomains to create records for.
+ * @param target fqdn for CNAME or IP address for A
+ * @param cfSettings Cloudflare settings to apply to all records
+ */
+export function CreateRecords(groupName: string, records: Record[], target?: string): DNSControlRecord[] {
+    console.log(`\nGroup: ${groupName}`);
+
+    return records.map((record: Record) => {
+        return CreateRecord(record, target);
+    });
 }

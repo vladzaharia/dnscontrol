@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { Record } from "../utils/records";
 import { Argon, Barium } from "./core";
 

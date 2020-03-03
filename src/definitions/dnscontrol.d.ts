@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // Version 1
 // https://stackexchange.github.io/dnscontrol/js
 type Ttl = string | number;
@@ -23,7 +23,6 @@ declare function NAMESERVER(name: string, ip?: string, ...modifiers: any[]): any
 declare function NO_PURGE(): any;
 declare function NS(name: string, target: string, ...modifiers: any[]): any;
 declare function PTR(name: string, target: string, ...modifiers: any[]): any;
-declare function NO_PURGE(): any;
 declare function TLSA(name: string, usage: number, selector: number, type: number, certificate: string, ...modifiers: any[]): any;
 declare function TXT(name: string, contents: string, ...modifiers: any[]): any;
 
