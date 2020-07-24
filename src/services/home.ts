@@ -1,35 +1,54 @@
-import { CNAMERecord } from "../utils/cname";
+import { Record } from "../utils/records";
+import { Palladium } from "./core";
 
 /**
  * External (zaharia.io) Home services
  */
-export const HomeExtServices: CNAMERecord[] = [
-    { name: 'books', proxy: true }, // Calibre
-    { name: 'deluge', proxy: true }, // Deluge
+export const HomeExtServices: Record[] = [
+    { name: 'books', description: 'Calibre', proxy: true },
+    { name: 'deluge', description: 'Deluge', proxy: true },
     { name: 'home', proxy: true }, 
-    { name: 'media' }, // Ombi
-    { name: 'radarr', proxy: true }, // Radarr
-    { name: 'sabnzbd', proxy: true }, // SabNZBd
-    { name: 'sonarr', proxy: true }, // Sonarr
-    { name: 'stats', proxy: true }, // Tautulli
+    { name: 'media', description: 'Ombi' },
+    { name: 'parents', description: 'Parents (Legacy)', target: Palladium },
+    { name: 'radarr', description: 'Radarr', proxy: true },
+    { name: 'sabnzbd', description: 'SabNZBd', proxy: true },
+    { name: 'sonarr', description: 'Sonarr', proxy: true },
+    { name: 'stats', description: 'Tautulli', proxy: true },
 ];
 
 /**
  * Internal (zhr.one) Home services
  */
-export const HomeIntServices: CNAMERecord[] = [
+export const HomeIntServices: Record[] = [
     /* Infrastructure */
-    { name: 'proxmox-home' },
-    { name: 'traefik-home', proxy: true },
-    { name: 'portainer-home', proxy: true },
+    { name: 'proxmox-home', description: 'Home Proxmox' },
+    { name: 'traefik-home', description: 'Home Traefik', proxy: true },
+    { name: 'portainer-home', description: 'Home Portainer', proxy: true },
+    { name: 'vault', description: 'Hashicorp Vault' }, 
+    { name: 'consul', description: 'Hashicorp Consul' }, 
+
 
     /* Internal Services */
-    { name: 'f' }, // OpenFaaS
-    { name: 'home' }, // Pritunl VPN
-    { name: 'ping' }, // Statping
-    { name: 'rd' }, // Guacamole
+    { name: 'home', description: 'Home Pritunl VPN' },
+    { name: 'parents', description: 'Parents', target: Palladium },
+    { name: 'ping', description: 'Statping' },
+    { name: 'rd', description: 'Guacamole' }, 
 
     /* Experimental Services */
-    { name: 'crowd' }, // Atlassian Crowd (2/29)
-    { name: 'jira' }, // Atlassian JIRA (2/29)
+    { name: 'sync', description: 'SyncLounge' }, // Added 3/18
+
+];
+
+export const HomeLocalServices: Record[] = [
+    { name: 'router.local', description: 'Router', type: 'A', target: '10.0.1.1'},
+    { name: 'server.local', description: 'New Server - Windows', type: 'A', target: '10.0.11.250'},
+    { name: 'linux.server.local', description: 'New Server - Linux', type: 'A', target: '10.0.11.251'},
+    { name: 'nas.local', description: 'NAS', type: 'A', target: '10.0.11.252'},
+
+    /* Home DC */
+    { name: 'dc.local', description: 'Home DC (Local)', type: 'A', target: '10.0.11.200'},
+    { name: 'docker.dc.local', description: 'Docker', type: 'A', target: '10.0.11.201'},
+    { name: 'plex.dc.local', description: 'Plex', type: 'A', target: '10.0.11.202'},
+    { name: 'pritunl.dc.local', description: 'Pritunl', type: 'A', target: '10.0.11.203'},
+    { name: 'hashicorp.dc.local', description: 'Hashicorp', type: 'A', target: '10.0.11.205'},
 ];

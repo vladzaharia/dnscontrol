@@ -1,27 +1,26 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { AzureExtServices } from "../services/azure";
-import { Home, Alpha, Charlie, AzVPN, AzCloudVM, Beta, Parents } from "../services/core";
+import { Helium, Cobalt } from "../services/core";
 import { DCExtServices } from "../services/dc";
 import { HomeExtServices } from "../services/home";
 import { CreateOffice365Records } from "../services/office365";
-import { CreateCNAMERecords, CNAMERecord } from "../utils/cname";
+import { CreateRecords, CreateRecord } from "../utils/records";
+
+console.log('Zone: zaharia.io - External Services');
 
 D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     /* Infrastructure */
-    A('@', '104.37.168.30'),
-
-    /* Internal services */
-    CNAME('parents', Parents),
+    CreateRecord({ name: '@', type: 'A', target: '104.37.168.30' }),
 
     /* Home records */
-    ... CreateCNAMERecords(HomeExtServices, Home),
+    ... CreateRecords('Home', HomeExtServices, Helium),
 
     /* DC records */
-    ... CreateCNAMERecords(DCExtServices, Charlie),
+    ... CreateRecords('DC', DCExtServices, Cobalt),
 
     /* Azure records */
-    ... CreateCNAMERecords(AzureExtServices, AzCloudVM),
+    ... CreateRecords('Azure', AzureExtServices),
 
     /* Office 365 records */
     ... CreateOffice365Records('zaharia-io', 'ms62227587'),
@@ -34,5 +33,6 @@ D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     TXT('@', 'google-site-verification=WETSfRG3EQBO5qEqoYSR44ddFko1FK0N2gPZ6oBTqUw'),
     TXT('@', 'google-site-verification=NcAvCR5iStgrG2K5wshIX3B4NNstPUjZIguj-hHgcmE'),
     TXT('@', 'keybase-site-verification=eJxka9pBhTcx2J_ahxec12e_FCSJgc0Jfv51zt6cEn8'),
-    TXT('@', 'atlassian-domain-verification=aWQoyeXxK5bbFI7GUl4ALmaSziAqbOMMXdNQeMtbaGzE3ALZgXNGtF885NpV6IxA')
+    TXT('@', 'atlassian-domain-verification=aWQoyeXxK5bbFI7GUl4ALmaSziAqbOMMXdNQeMtbaGzE3ALZgXNGtF885NpV6IxA'),
+    TXT('@', 'ybqnhr2z5gddd1kxbgdv6873s7ng47v6')
 );

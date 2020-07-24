@@ -1,9 +1,11 @@
+import { DNSControlRecord } from "../utils/records";
+
 /**
  * Creates records for Office365, including Exchange/Teams/Intune.
  * @param mxDomain Beginning part of MX domain
  * @param dnsValidatorId MS= validation ID
  */
-export function CreateOffice365Records(mxDomain: string, dnsValidatorId: string) {
+export function CreateOffice365Records(mxDomain: string, dnsValidatorId: string): DNSControlRecord[] {
     return [
         MX('@', 0, `${mxDomain}.mail.protection.outlook.com.`),
         CNAME('autodiscover', 'autodiscover.outlook.com.'),
