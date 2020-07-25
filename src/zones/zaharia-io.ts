@@ -33,5 +33,6 @@ D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     TXT('@', 'google-site-verification=WETSfRG3EQBO5qEqoYSR44ddFko1FK0N2gPZ6oBTqUw'),
     TXT('@', 'google-site-verification=NcAvCR5iStgrG2K5wshIX3B4NNstPUjZIguj-hHgcmE'),
     TXT('@', 'keybase-site-verification=eJxka9pBhTcx2J_ahxec12e_FCSJgc0Jfv51zt6cEn8'),
-    TXT('@', 'atlassian-domain-verification=aWQoyeXxK5bbFI7GUl4ALmaSziAqbOMMXdNQeMtbaGzE3ALZgXNGtF885NpV6IxA')
+    TXT('@', 'atlassian-domain-verification=aWQoyeXxK5bbFI7GUl4ALmaSziAqbOMMXdNQeMtbaGzE3ALZgXNGtF885NpV6IxA'),
+    TXT('@', 'ybqnhr2z5gddd1kxbgdv6873s7ng47v6')
 );

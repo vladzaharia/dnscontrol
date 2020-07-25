@@ -23,6 +23,9 @@ export const DCIntServices: Record[] = [
     /* Internal Services */
     { name: 'dash', description: 'Heimdall', proxy: true },
     { name: 'phone', description: '3CX', target: Barium },
+    { name: 'tesla', description: 'TeslaMate' }, 
+    { name: 'tesla-gf', description: 'TeslaMate - Grafana' }, 
+
 
     /* Warmitup Services */
     { name: 'chat', description: 'Mattermost' },

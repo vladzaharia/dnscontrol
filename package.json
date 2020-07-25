@@ -5,7 +5,12 @@
   "private": true,
   "scripts": {
     "build": "npm run lint && webpack",
-    "preview": "npm run build && cd out && ../lib/dnscontrol preview",
+    "preview": "run-script-os",
+    "preview:default": "npm run build && cd out && ../lib/dnscontrol preview",
+    "preview:win32": "npm run build && cd out && ..\\lib\\dnscontrol preview",
+    "push": "run-script-os",
+    "push:default": "npm run build && cd out && ../lib/dnscontrol push",
+    "push:win32": "npm run build && cd out && ..\\lib\\dnscontrol push",
     "lint": "eslint --ext .ts ."
   },
   "author": "Vlad Zaharia",
@@ -25,6 +30,7 @@
     "eslint-plugin-node": "^9.2.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "run-script-os": "^1.1.1",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
     "webpack": "^4.41.6",

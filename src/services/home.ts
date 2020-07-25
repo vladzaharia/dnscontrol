@@ -24,21 +24,23 @@ export const HomeIntServices: Record[] = [
     { name: 'proxmox-home', description: 'Home Proxmox' },
     { name: 'traefik-home', description: 'Home Traefik', proxy: true },
     { name: 'portainer-home', description: 'Home Portainer', proxy: true },
+    { name: 'vault', description: 'Hashicorp Vault' }, 
+    { name: 'consul', description: 'Hashicorp Consul' }, 
+
 
     /* Internal Services */
-    { name: 'f', description: 'OpenFaaS' },
     { name: 'home', description: 'Home Pritunl VPN' },
     { name: 'parents', description: 'Parents', target: Palladium },
     { name: 'ping', description: 'Statping' },
     { name: 'rd', description: 'Guacamole' }, 
 
     /* Experimental Services */
-    { name: 'crowd', description: 'Atlassian Crowd' }, // Added 2/29
-    { name: 'jira', description: 'Atlassian JIRA' }, // Added 2/29
+    { name: 'sync', description: 'SyncLounge' }, // Added 3/18
+
 ];
 
 export const HomeLocalServices: Record[] = [
-    { name: 'router.local', description: 'Router', type: 'A', target: '10.0.10.1'},
+    { name: 'router.local', description: 'Router', type: 'A', target: '10.0.1.1'},
     { name: 'server.local', description: 'New Server - Windows', type: 'A', target: '10.0.11.250'},
     { name: 'linux.server.local', description: 'New Server - Linux', type: 'A', target: '10.0.11.251'},
     { name: 'nas.local', description: 'NAS', type: 'A', target: '10.0.11.252'},
@@ -46,8 +48,7 @@ export const HomeLocalServices: Record[] = [
     /* Home DC */
     { name: 'dc.local', description: 'Home DC (Local)', type: 'A', target: '10.0.11.200'},
     { name: 'docker.dc.local', description: 'Docker', type: 'A', target: '10.0.11.201'},
-    { name: 'pihole.dc.local', description: 'Pihole', type: 'A', target: '10.0.11.202'},
+    { name: 'plex.dc.local', description: 'Plex', type: 'A', target: '10.0.11.202'},
     { name: 'pritunl.dc.local', description: 'Pritunl', type: 'A', target: '10.0.11.203'},
-    { name: 'openfaas.dc.local', description: 'OpenFaaS', type: 'A', target: '10.0.11.205'},
-    { name: 'atlassian.dc.local', description: 'Atlassian', type: 'A', target: '10.0.11.206'},
+    { name: 'hashicorp.dc.local', description: 'Hashicorp', type: 'A', target: '10.0.11.205'},
 ];
