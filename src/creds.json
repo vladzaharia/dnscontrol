@@ -2,4 +2,4 @@
     "cloudflare": {
         "apitoken": "$CF_API"
     }
-}  
+}
