@@ -45,8 +45,8 @@ export const HomeLocalServices: Record[] = [
     { name: 'linux.server.local', description: 'New Server - Linux', type: 'A', target: '10.0.11.251'},
     { name: 'nas.local', description: 'NAS', type: 'A', target: '10.0.11.252'},
 
-    /* Home DC */
-    { name: 'dc.local', description: 'Home DC (Local)', type: 'A', target: '10.0.11.200'},
+    /* Home Westin */
+    { name: 'dc.local', description: 'Home Westin (Local)', type: 'A', target: '10.0.11.200'},
     { name: 'docker.dc.local', description: 'Docker', type: 'A', target: '10.0.11.201'},
     { name: 'plex.dc.local', description: 'Plex', type: 'A', target: '10.0.11.202'},
     { name: 'pritunl.dc.local', description: 'Pritunl', type: 'A', target: '10.0.11.203'},
