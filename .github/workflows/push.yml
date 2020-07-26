@@ -10,14 +10,13 @@ env:
 jobs:
   push:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - name: Use Node.js v14
+      uses: actions/setup-node@v2-beta
       with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run push
+        node-version: '14'
+    - name: Download dependencies
+      run: npm ci
+    - name: Build and push records
+      run: npm run push
