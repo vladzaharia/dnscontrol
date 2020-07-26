@@ -2,7 +2,7 @@ import { Record } from "../utils/records";
 import { Argon, Barium } from "./core";
 
 /**
- * External (zaharia.io) DC-Docker Services
+ * External (zaharia.io) Westin-Docker Services
  */
 export const DCExtServices: Record[] = [
     { name: 'asset', description: 'SnipeIt', proxy: true },
@@ -12,13 +12,13 @@ export const DCExtServices: Record[] = [
 ];
 
 /**
- * Internal (zhr.one) DC-Docker Services
+ * Internal (zhr.one) Westin-Docker Services
  */
 export const DCIntServices: Record[] = [
     /* Infrastructure */
-    { name: 'proxmox-dc', description: 'DC Proxmox', target: Argon },
-    { name: 'traefik-dc', description: 'DC Traefik', proxy: true },
-    { name: 'portainer-dc', description: 'DC Portainer', proxy: true },
+    { name: 'proxmox-dc', description: 'Westin Proxmox', target: Argon },
+    { name: 'traefik-dc', description: 'Westin Traefik', proxy: true },
+    { name: 'portainer-dc', description: 'Westin Portainer', proxy: true },
 
     /* Internal Services */
     { name: 'dash', description: 'Heimdall', proxy: true },

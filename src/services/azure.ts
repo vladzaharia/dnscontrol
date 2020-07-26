@@ -1,5 +1,5 @@
 import { Record } from "../utils/records";
-import { Lithium, Iridium } from "./core";
+import { Lithium, Iridium, Manganese } from "./core";
 
 /**
  * External (zaharia.io) Azure Services
@@ -17,4 +17,5 @@ export const AzureExtServices: Record[] = [
 export const AzureIntServices: Record[] = [
     { name: 'azure', description: "Azure Pritunl VPN", target: Lithium },
     { name: 'cloudvm', description: "Azure Cloud VM", target: Iridium },
+    { name: 'stream', description: "Azure Stream", target: Manganese },
 ];

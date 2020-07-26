@@ -17,8 +17,8 @@ D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
     ... CreateRecords('Home', HomeIntServices, Helium),
     ... CreateRecords('Home - Local', HomeLocalServices),
 
-    /* DC records */
-    ... CreateRecords('DC', DCIntServices, Cobalt),
+    /* Westin records */
+    ... CreateRecords('Westin', DCIntServices, Cobalt),
 
     /* Azure records */
     ... CreateRecords('Azure', AzureIntServices),

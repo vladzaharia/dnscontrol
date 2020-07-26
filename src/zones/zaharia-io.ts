@@ -16,8 +16,8 @@ D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     /* Home records */
     ... CreateRecords('Home', HomeExtServices, Helium),
 
-    /* DC records */
-    ... CreateRecords('DC', DCExtServices, Cobalt),
+    /* Westin records */
+    ... CreateRecords('Westin', DCExtServices, Cobalt),
 
     /* Azure records */
     ... CreateRecords('Azure', AzureExtServices),
