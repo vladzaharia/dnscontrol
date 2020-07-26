@@ -43,17 +43,17 @@ export const Lithium = 'li.qnc.core.zhr.one.';
 /**
  * Manganese - Azure Stream
  */
-export const Manganese = "mn.qnc.core.zhr.one";
+export const Manganese = "mn.qnc.core.zhr.one.";
 
 /**
  * Neon - Westin Spare 1 (Westin 5)
  */
-export const Neon = "ne.sea.core.zhr.one";
+export const Neon = "ne.sea.core.zhr.one.";
 
 /**
  * Oxygen - Westin Spare 2 (Westin 5)
  */
-export const Oxygen = "o.sea.core.zhr.one";
+export const Oxygen = "o.sea.core.zhr.one.";
 
 /**
  * Core service records
