@@ -22,5 +22,5 @@ D('ggstream.app', NoRegistrar, DnsProvider(CloudflareDns),
     SRV('_sip._tls', 20, 1, 5061, GetHost('Barium')),
 
     /* Domain verification records */
-    TXT('@', 'ybqnhr2z5gddd1kxbgdv6873s7ng47v6')
+    TXT('@', 'z5kq9zxtp10ft5vty3h4rkhv9qfkcbl4')
 );
