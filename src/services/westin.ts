@@ -17,7 +17,6 @@ export const WestinExtServices: Record[] = [
 export const WestinSiteServices: Record[] = [
     { name: '@', description: 'Site - Root (IP)', type: 'A', target: GetIP('Cobalt'), proxy: true },
     { name: 'www', description: 'Site - WWW', proxy: true },
-    { name: 'stream', description: 'GGStream - Azure', target: GetHost('Manganese') },
 ];
 
 /**

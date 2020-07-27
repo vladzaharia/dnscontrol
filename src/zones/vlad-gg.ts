@@ -4,12 +4,15 @@ import { GetHost } from "../services/core";
 import { CreateMailcowRecords } from "../services/mailcow";
 import { CreateRecords } from "../utils/record";
 import { WestinSiteServices } from "../services/westin";
+import { GGStreamSiteServices } from "../services/ggstream";
 
 console.log('Zone: vlad.gg - New Site');
 
 D('vlad.gg', NoRegistrar, DnsProvider(CloudflareDns),
     /* Basic records */
     CreateRecords('vlad.gg', WestinSiteServices, 'Cobalt'),
+
+    ... CreateRecords('vlad.gg - GGStream', GGStreamSiteServices),
 
     /* Mailcow records */
     ... CreateMailcowRecords(GetHost('Gallium'), 
