@@ -62,24 +62,24 @@ const Servers: ServerMap = {
     },
     'Manganese': {
         name: 'Manganese',
-        description: 'Azure Stream',
+        description: 'GGStream - Azure',
         prefix: 'mn',
         location: 'qnc',
         ip: '13.77.174.137'
     },
     'Neon': {
         name: 'Neon',
-        description: 'Westin Spare 1 (Westin 5)',
+        description: 'GGStream - Westin (Westin 5)',
         prefix: 'ne',
         location: 'sea',
-        ip: '104.37.168.28'
+        ip: '104.37.168.125'
     },
     'Oxygen': {
         name: 'Oxygen',
         description: 'Westin Spare 2 (Westin 6)',
         prefix: 'o',
         location: 'sea',
-        ip: '104.37.168.28'
+        ip: '104.37.168.126'
     },
 }
 
