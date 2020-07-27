@@ -5,7 +5,7 @@ import { WestinExtServices } from "../services/westin";
 import { HomeExtServices } from "../services/home";
 import { CreateOffice365Records } from "../services/office365";
 import { CreateRecords, CreateRecord } from "../utils/record";
-import { GetHost, GetIP } from "../services/core";
+import { GetIP } from "../services/core";
 
 console.log('Zone: zaharia.io - External Services');
 
@@ -14,10 +14,10 @@ D('zaharia.io', NoRegistrar, DnsProvider(CloudflareDns),
     CreateRecord({ name: '@', type: 'A', target: GetIP('Cobalt') }),
 
     /* Home records */
-    ... CreateRecords('Home', HomeExtServices, GetHost('Helium')),
+    ... CreateRecords('Home', HomeExtServices, 'Helium'),
 
     /* Westin records */
-    ... CreateRecords('Westin', WestinExtServices, GetHost('Cobalt')),
+    ... CreateRecords('Westin', WestinExtServices, 'Cobalt'),
 
     /* Azure records */
     ... CreateRecords('Azure', AzureExtServices),

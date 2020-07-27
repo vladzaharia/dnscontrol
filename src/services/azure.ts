@@ -17,5 +17,5 @@ export const AzureExtServices: Record[] = [
 export const AzureIntServices: Record[] = [
     { name: 'azure', description: "Azure Pritunl VPN", target: GetHost('Lithium') },
     { name: 'cloudvm', description: "Azure Cloud VM", target: GetHost('Iridium') },
-    { name: 'stream', description: "Azure Stream", target: GetHost('Manganese') },
+    { name: 'stream', description: "GGStream - Azure", target: GetHost('Manganese') },
 ];

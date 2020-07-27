@@ -1,6 +1,6 @@
 import { CloudflareDns } from '../providers/cloudflare';
 import { NoRegistrar } from '../providers/noregistrar';
-import { GetIP, GetHost } from '../services/core';
+import { GetIP } from '../services/core';
 import { CreateOffice365Records } from '../services/office365';
 import { CreateRecords, Record, CreateRecord } from '../utils/record';
 
@@ -17,7 +17,7 @@ D('classful.fyi', NoRegistrar, DnsProvider(CloudflareDns),
     CreateRecord({ name: '@', type: 'A', target: GetIP('Cobalt'), proxy: true }),    
 
     /* Classful instances */
-    ...CreateRecords('Classful instances', ClassfulInstances, GetHost('Cobalt')),
+    ...CreateRecords('Classful instances', ClassfulInstances, 'Cobalt'),
 
     /* Office 365 records */
     ...CreateOffice365Records('classful-fyi', 'ms37503503')

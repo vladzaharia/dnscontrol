@@ -14,11 +14,11 @@ D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
     ... CreateRecords('Core', GetCoreRecords()),
 
     /* Home records */
-    ... CreateRecords('Home', HomeIntServices, GetHost('Helium')),
+    ... CreateRecords('Home', HomeIntServices, 'Helium'),
     ... CreateRecords('Home - Local', HomeLocalServices),
 
     /* Westin records */
-    ... CreateRecords('Westin', WestinIntServices, GetHost('Cobalt')),
+    ... CreateRecords('Westin', WestinIntServices, 'Cobalt'),
 
     /* Azure records */
     ... CreateRecords('Azure', AzureIntServices),

@@ -1,14 +1,14 @@
-import { CfProxyOn, CloudflareDns } from "../providers/cloudflare";
+import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
-import { GetIP, GetHost } from "../services/core";
 import { CreateOffice365Records } from "../services/office365";
+import { CreateRecords } from "../utils/record";
+import { WestinSiteServices } from "../services/westin";
 
 console.log('Zone: vladzaharia.com - Old Site');
 
 D('vladzaharia.com', NoRegistrar, DnsProvider(CloudflareDns),
     /* Basic records */
-    A('@', GetIP('Cobalt'), CfProxyOn),
-    CNAME('www', GetHost('Cobalt'), CfProxyOn),
+    CreateRecords('vladzaharia.com', WestinSiteServices, 'Cobalt'),
 
     /* Office 365 records */
     ... CreateOffice365Records('vladzaharia-com', 'ms36958426'),
