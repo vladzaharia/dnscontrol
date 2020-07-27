@@ -21,6 +21,13 @@ export const GGStreamServices: Record[] = [
 /**
  * GGStream Site Extension
  */
-export const GGStreamSiteServices: Record[] = [
+export const GGStreamSiteExtServices: Record[] = [
     { name: 'stream', description: "GGStream - Site", target: GGStreamHost, proxy: true }
+];
+
+/**
+ * GGStream Legacy (zhr.one) Services
+ */
+export const GGStreamLegacyServices: Record[] = [
+    { name: 'stream', description: "GGStream - Legacy", target: GGStreamHost }
 ];
