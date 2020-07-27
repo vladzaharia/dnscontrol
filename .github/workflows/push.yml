@@ -21,4 +21,4 @@ jobs:
     - name: Build JS files
       run: npm run build
     - name: Generate and push records
-      run: npm run push
+      run: npm run push-ci
