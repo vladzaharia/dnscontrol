@@ -19,6 +19,12 @@ const SvcInstances: GGStreamInstance[] = [
         target: GetHost('Manganese')
 
     },
+    {
+        name: "Westin",
+        suffix: "westin",
+        target: GetHost('Neon')
+
+    },
 ];
 
 function GetRecords(): Record[] {
