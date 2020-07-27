@@ -18,5 +18,8 @@ jobs:
         node-version: '14'
     - name: Download dependencies
       run: npm ci
-    - name: Build and preview changes
+    - name: Build JS files
+      run: npm run build
+    - name: Generate and preview records
       run: npm run preview
+      
