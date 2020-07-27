@@ -18,5 +18,7 @@ jobs:
         node-version: '14'
     - name: Download dependencies
       run: npm ci
-    - name: Build and push records
+    - name: Build JS files
+      run: npm run build
+    - name: Generate and push records
       run: npm run push

@@ -1,4 +1,4 @@
-import { DNSControlRecord } from "../utils/records";
+import { DNSControlRecord } from "../utils/record";
 
 /**
  * Creates records for Office365, including Exchange/Teams/Intune.

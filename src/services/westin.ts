@@ -1,28 +1,38 @@
-import { Record } from "../utils/records";
-import { Argon, Barium } from "./core";
+import { Record } from "../utils/record";
+import { GetHost } from "./core";
 
 /**
  * External (zaharia.io) Westin-Docker Services
  */
-export const DCExtServices: Record[] = [
+export const WestinExtServices: Record[] = [
     { name: 'asset', description: 'SnipeIt', proxy: true },
     { name: 'irc', description: 'TheLoungs', proxy: true },
     { name: 'network', description: 'Network', proxy: true },
-    { name: 'phonesvc', description: "3CX (Legacy)", target: Barium },
+    { name: 'phonesvc', description: "3CX (Legacy)", target: GetHost('Barium') },
+];
+
+/**
+ * Site (vlad.gg) Westin-Docker Services
+ */
+export const WestinSiteServices: Record[] = [
+    { name: '@', description: 'Root IP', type: 'A', target: '' },
+    { name: 'irc', description: 'TheLoungs', proxy: true },
+    { name: 'network', description: 'Network', proxy: true },
+    { name: 'phonesvc', description: "3CX (Legacy)", target: GetHost('Barium') },
 ];
 
 /**
  * Internal (zhr.one) Westin-Docker Services
  */
-export const DCIntServices: Record[] = [
+export const WestinIntServices: Record[] = [
     /* Infrastructure */
-    { name: 'proxmox-dc', description: 'Westin Proxmox', target: Argon },
+    { name: 'proxmox-dc', description: 'Westin Proxmox', target: GetHost('Argon') },
     { name: 'traefik-dc', description: 'Westin Traefik', proxy: true },
     { name: 'portainer-dc', description: 'Westin Portainer', proxy: true },
 
     /* Internal Services */
     { name: 'dash', description: 'Heimdall', proxy: true },
-    { name: 'phone', description: '3CX', target: Barium },
+    { name: 'phone', description: '3CX', target: GetHost('Barium') },
     { name: 'tesla', description: 'TeslaMate' }, 
     { name: 'tesla-gf', description: 'TeslaMate - Grafana' }, 
 

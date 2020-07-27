@@ -1,8 +1,8 @@
 import { CloudflareDns } from '../providers/cloudflare';
 import { NoRegistrar } from '../providers/noregistrar';
-import { Cobalt } from '../services/core';
+import { GetIP, GetHost } from '../services/core';
 import { CreateOffice365Records } from '../services/office365';
-import { CreateRecords, Record, CreateRecord } from '../utils/records';
+import { CreateRecords, Record, CreateRecord } from '../utils/record';
 
 const ClassfulInstances: Record[] = [
     { name: 'www', proxy: true },
@@ -14,10 +14,10 @@ console.log('Zone: classful.fyi - Classful (non-PHS)');
 
 D('classful.fyi', NoRegistrar, DnsProvider(CloudflareDns),
     /* Basic records */
-    CreateRecord({ name: '@', type: 'A', target: '104.37.168.30', proxy: true }),    
+    CreateRecord({ name: '@', type: 'A', target: GetIP('Cobalt'), proxy: true }),    
 
     /* Classful instances */
-    ...CreateRecords('Classful instances', ClassfulInstances, Cobalt),
+    ...CreateRecords('Classful instances', ClassfulInstances, GetHost('Cobalt')),
 
     /* Office 365 records */
     ...CreateOffice365Records('classful-fyi', 'ms37503503')
