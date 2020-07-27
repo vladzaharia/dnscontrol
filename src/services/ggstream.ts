@@ -38,7 +38,8 @@ function GetRecords(): Record[] {
 export const GGStreamServices: Record[] = [
     { name: '@', description: "GGStream Root", target: UIIP, type: 'A', proxy: true },
     { name: 'www', description: "GGStream www", target: UIHost, proxy: true },
-    { name: 'svc', description: "GGStream Service - Routed", target: 'ggstream-svc.trafficmanager.net' },
+    { name: 'svc', description: "GGStream Service - Routed", target: 'ggstream-svc.trafficmanager.net.' },
+    { name: 'ingest', description: "GGStream Ingest - Routed", target: 'ggstream-ingest.trafficmanager.net.' },
 
     ... GetRecords(),
 ];
@@ -47,7 +48,7 @@ export const GGStreamServices: Record[] = [
  * GGStream Site Extension
  */
 export const GGStreamSiteExtServices: Record[] = [
-    { name: 'stream', description: "GGStream - Site", target: UIHost, proxy: true }
+    { name: 'stream', description: "GGStream - Personal", target: UIHost, proxy: true }
 ];
 
 interface GGStreamInstance {
