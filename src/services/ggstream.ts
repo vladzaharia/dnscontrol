@@ -16,6 +16,7 @@ export const GGStreamServices: Record[] = [
     { name: '@', description: "GGStream Root", target: GGStreamIP, type: 'A', proxy: true },
     { name: 'www', description: "GGStream www", target: GGStreamHost, proxy: true },
     { name: 'svc', description: "GGStream Service", target: GGStreamHost },
+    { name: 'svc-azure', description: "GGStream Service - Azure", target: GetHost('Manganese') },
 ];
 
 /**
@@ -23,11 +24,4 @@ export const GGStreamServices: Record[] = [
  */
 export const GGStreamSiteExtServices: Record[] = [
     { name: 'stream', description: "GGStream - Site", target: GGStreamHost, proxy: true }
-];
-
-/**
- * GGStream Legacy (zhr.one) Services
- */
-export const GGStreamLegacyServices: Record[] = [
-    { name: 'stream', description: "GGStream - Legacy", target: GGStreamHost }
 ];
