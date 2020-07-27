@@ -1,5 +1,5 @@
 import { Record } from "../utils/record";
-import { GetHost } from "./core";
+import { GetHost, GetIP } from "./core";
 
 /**
  * External (zaharia.io) Westin-Docker Services
@@ -15,10 +15,9 @@ export const WestinExtServices: Record[] = [
  * Site (vlad.gg) Westin-Docker Services
  */
 export const WestinSiteServices: Record[] = [
-    { name: '@', description: 'Root IP', type: 'A', target: '' },
-    { name: 'irc', description: 'TheLoungs', proxy: true },
-    { name: 'network', description: 'Network', proxy: true },
-    { name: 'phonesvc', description: "3CX (Legacy)", target: GetHost('Barium') },
+    { name: '@', description: 'Site - Root (IP)', type: 'A', target: GetIP('Cobalt'), proxy: true },
+    { name: 'www', description: 'Site - WWW', proxy: true },
+    { name: 'stream', description: 'GGStream - Azure', target: GetHost('Manganese') },
 ];
 
 /**
