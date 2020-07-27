@@ -3,13 +3,13 @@ import { NoRegistrar } from "../providers/noregistrar";
 import { GetHost } from "../services/core";
 import { CreateMailcowRecords } from "../services/mailcow";
 import { CreateRecords } from "../utils/record";
-import { WestinSiteServices } from "../services/westin";
+import { GGStreamServices } from "../services/ggstream";
 
 console.log('Zone: ggstream.app - GGStream');
 
 D('ggstream.app', NoRegistrar, DnsProvider(CloudflareDns),
     /* Basic records */
-    CreateRecords('ggstream.app', WestinSiteServices, 'Cobalt'),
+    CreateRecords('ggstream.app', GGStreamServices),
 
     /* Mailcow records */
     ... CreateMailcowRecords(GetHost('Gallium'), 

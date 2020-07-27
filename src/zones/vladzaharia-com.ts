@@ -3,12 +3,14 @@ import { NoRegistrar } from "../providers/noregistrar";
 import { CreateOffice365Records } from "../services/office365";
 import { CreateRecords } from "../utils/record";
 import { WestinSiteServices } from "../services/westin";
+import { GGStreamSiteExtServices } from "../services/ggstream";
 
 console.log('Zone: vladzaharia.com - Old Site');
 
 D('vladzaharia.com', NoRegistrar, DnsProvider(CloudflareDns),
     /* Basic records */
     CreateRecords('vladzaharia.com', WestinSiteServices, 'Cobalt'),
+    ... CreateRecords('vladzaharia.com - GGStream', GGStreamSiteExtServices),
 
     /* Office 365 records */
     ... CreateOffice365Records('vladzaharia-com', 'ms36958426'),

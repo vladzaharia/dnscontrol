@@ -6,6 +6,7 @@ import { WestinIntServices } from "../services/westin";
 import { HomeIntServices, HomeLocalServices } from "../services/home";
 import { CreateMailcowRecords } from "../services/mailcow";
 import { CreateRecords } from "../utils/record";
+import { GGStreamLegacyServices } from "../services/ggstream";
 
 console.log('Zone: zhr.one - Internal Services');
 
@@ -22,6 +23,9 @@ D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
 
     /* Azure records */
     ... CreateRecords('Azure', AzureIntServices),
+
+    /* GGStream legacy records */
+    ... CreateRecords('zhr.one - GGStream', GGStreamLegacyServices),
 
     /* Mailcow records */
     ... CreateMailcowRecords(GetHost('Gallium'), 
