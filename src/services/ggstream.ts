@@ -5,7 +5,7 @@ import { ElementNames } from "../utils/server";
 /**
  * UI Host
  */
-const UIServer: ElementNames = 'Manganese';
+const UIServer: ElementNames = 'Cobalt';
 const UIHost = GetHost(UIServer);
 const UIIP = GetIP(UIServer);
 
