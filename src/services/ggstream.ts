@@ -1,4 +1,4 @@
-import { Record } from "../utils/record";
+import { Record, RecordType } from "../utils/record";
 import { GetHost, GetIP } from "./core";
 import { ElementNames } from "../utils/server";
 
@@ -14,17 +14,16 @@ const UIIP = GetIP(UIServer);
  */
 const SvcInstances: GGStreamInstance[] = [
     {
-        name: "Azure",
-        suffix: "azure",
-        target: GetHost('Manganese')
-
+        name: "Seattle Origin",
+        suffix: "sea",
+        target: GetHost('Neon')
     },
     {
-        name: "Westin",
-        suffix: "westin",
-        target: GetHost('Neon')
-
-    },
+        name: "Azure East US",
+        suffix: "azeus",
+        target: "52.149.212.26",
+        type: "A"
+    }
 ];
 
 function GetRecords(): Record[] {
@@ -33,7 +32,7 @@ function GetRecords(): Record[] {
             name: `svc-${instance.suffix}`,
             description: `GGStream Service - ${instance.name}`,
             target: instance.target,
-
+            type: instance.type
         };
     });
 }
@@ -72,4 +71,9 @@ interface GGStreamInstance {
      * Target of instance
      */
     target: string;
+
+    /**
+     * Type of record
+     */
+    type?: RecordType;
 }

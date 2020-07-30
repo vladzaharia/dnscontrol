@@ -60,13 +60,6 @@ const Servers: ServerMap = {
         location: 'qnc',
         ip: '52.247.206.58'
     },
-    'Manganese': {
-        name: 'Manganese',
-        description: 'GGStream - Azure',
-        prefix: 'mn',
-        location: 'qnc',
-        ip: '13.77.174.137'
-    },
     'Neon': {
         name: 'Neon',
         description: 'GGStream - Westin (Westin 5)',
