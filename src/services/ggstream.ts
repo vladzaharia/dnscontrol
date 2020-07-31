@@ -18,12 +18,66 @@ const SvcInstances: GGStreamInstance[] = [
         suffix: "sea",
         target: GetHost('Neon')
     },
+
+    /* Azure North American Edges */
+    {
+        name: "Azure Canada Central",
+        suffix: "azcac",
+        target: "52.138.25.11",
+        type: "A"
+    },
+    {
+        name: "Azure Central US",
+        suffix: "azcus",
+        target: "13.89.243.170",
+        type: "A"
+    },
     {
         name: "Azure East US",
         suffix: "azeus",
         target: "52.149.212.26",
         type: "A"
-    }
+    },
+    {
+        name: "Azure South Central US",
+        suffix: "azscus",
+        target: "13.84.47.166",
+        type: "A"
+    },
+    {
+        name: "Azure West US",
+        suffix: "azwus",
+        target: "104.42.180.158",
+        type: "A"
+    },
+
+    /* Azure Europe Edges */
+    {
+        name: "Azure North Europe",
+        suffix: "azneu",
+        target: "23.101.49.82",
+        type: "A"
+    },
+    {
+        name: "Azure West Europe",
+        suffix: "azweu",
+        target: "104.45.26.59",
+        type: "A"
+    },
+
+    /* Azure Asia Edge */
+    {
+        name: "Azure Japan East",
+        suffix: "azjpe",
+        target: "52.185.133.249",
+        type: "A"
+    },
+    {
+        name: "Azure Southeast Asia",
+        suffix: "azseasia",
+        target: "13.76.152.37",
+        type: "A"
+    },
 ];
 
 function GetRecords(): Record[] {
