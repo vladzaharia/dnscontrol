@@ -7,7 +7,7 @@ import { GGStreamServices } from "../services/ggstream";
 
 console.log('Zone: ggstream.app - GGStream');
 
-D('ggstream.app', NoRegistrar, DnsProvider(CloudflareDns),
+D('ggstream.app', NoRegistrar, DnsProvider(CloudflareDns), NO_PURGE,
     /* Basic records */
     CreateRecords('ggstream.app', GGStreamServices),
 
