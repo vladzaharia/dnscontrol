@@ -22,5 +22,6 @@ D('ggstream.app', NoRegistrar, DnsProvider(CloudflareDns), NO_PURGE,
     SRV('_sip._tls', 20, 1, 5061, GetHost('Barium')),
 
     /* Domain verification records */
-    TXT('@', 'z5kq9zxtp10ft5vty3h4rkhv9qfkcbl4')
+    TXT('@', 'z5kq9zxtp10ft5vty3h4rkhv9qfkcbl4'),
+    TXT('_github-challenge-ggstream-app', '1847b10155')
 );
