@@ -15,8 +15,9 @@ export const WestinExtServices: Record[] = [
  * Site (vlad.gg) Westin-Docker Services
  */
 export const WestinSiteServices: Record[] = [
-    { name: '@', description: 'Site - Root (IP)', type: 'A', target: GetIP('Cobalt'), proxy: true },
-    { name: 'www', description: 'Site - WWW', proxy: true },
+    { name: '@', description: 'Site - Frontend @', type: 'A', target: GetIP('Cobalt'), proxy: true },
+    { name: 'www', description: 'Site - Frontend WWW', proxy: true },
+    { name: 'api', description: 'Site - Backend', proxy: true },
 ];
 
 /**
