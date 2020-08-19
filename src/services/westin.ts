@@ -17,7 +17,7 @@ export const WestinExtServices: Record[] = [
 export const WestinSiteServices: Record[] = [
     { name: '@', description: 'Site - Frontend @', type: 'A', target: GetIP('Cobalt'), proxy: true },
     { name: 'www', description: 'Site - Frontend WWW', proxy: true },
-    { name: 'backend', description: 'Site - Backend', proxy: true },
+    { name: 'backend', description: 'Site - Backend' },
 ];
 
 /**
