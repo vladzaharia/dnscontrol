@@ -7,7 +7,6 @@ import { GetHost } from "./core";
 export const HomeExtServices: Record[] = [
     { name: 'books', description: 'Calibre', proxy: true },
     { name: 'deluge', description: 'Deluge', proxy: true },
-    { name: 'home', proxy: true }, 
     { name: 'media', description: 'Ombi' },
     { name: 'parents', description: 'Parents (Legacy)', target: GetHost('Palladium') },
     { name: 'radarr', description: 'Radarr', proxy: true },
@@ -29,6 +28,7 @@ export const HomeIntServices: Record[] = [
 
 
     /* Internal Services */
+    { name: 'ha', description: 'HomeAssistant', proxy: true },
     { name: 'home', description: 'Home Pritunl VPN' },
     { name: 'parents', description: 'Parents', target: GetHost('Palladium') },
     { name: 'ping', description: 'Statping' },
