@@ -26,7 +26,6 @@ export const HomeIntServices: Record[] = [
     { name: 'vault', description: 'Hashicorp Vault' }, 
     { name: 'consul', description: 'Hashicorp Consul' }, 
 
-
     /* Internal Services */
     { name: 'ha', description: 'HomeAssistant', proxy: true },
     { name: 'home', description: 'Home Pritunl VPN' },
@@ -50,5 +49,6 @@ export const HomeLocalServices: Record[] = [
     { name: 'docker.dc.local', description: 'Docker', type: 'A', target: '10.0.11.201'},
     { name: 'plex.dc.local', description: 'Plex', type: 'A', target: '10.0.11.202'},
     { name: 'pritunl.dc.local', description: 'Pritunl', type: 'A', target: '10.0.11.203'},
+    { name: 'ansible.dc.local', description: 'Pritunl', type: 'A', target: '10.0.11.204'},
     { name: 'hashicorp.dc.local', description: 'Hashicorp', type: 'A', target: '10.0.11.205'},
 ];
