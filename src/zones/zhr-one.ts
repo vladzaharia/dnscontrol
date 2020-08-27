@@ -23,11 +23,12 @@ D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
     /* Azure records */
     ... CreateRecords('Azure', AzureIntServices),
 
-    /* Mailcow records */
-    ... CreateMailcowRecords(GetHost('Gallium'), 
-        '50851205087c610c5172c9a2934e86adacb1fb1e86d9160e212524af51e4cb6e', 
-        'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3KKCI2KaivFx2cfuQB/VVlY5Cfkxtsi5BtevOmnBRmWXvqTS1nqWCAPqPQs3AsPl3QON/VjInB3vw/unAjoxKQfQU19Fo4mm3FXvTCKTZTpmfBQomdn/lLdkKC+sRqndnvAfrA6VgK9MUaHSCZ6W/bVMkSllPiusW0YEox+xY5jFU8fuIdaq13RJ24EYRUp56MebI8TSAuGhgaZpHxw9OsON4X4IcOKypXQoFNZsuLBlA/6+lYygUeUoKad80duoEvAUbLi6kigGbAGsWOvJfkS3DzksPmHuBZN6rLpXyPBc3PR9iezd0hltRNjlwCIiykXWNbXD1QTHH+c6qULPsQIDAQAB'),
-
+    /* Office 365 records */
+    ... CreateOffice365Records('zhr-one', 'ms62227587'),
+    MX('*', 0, 'zhr-one.mail.protection.outlook.com.'),
+    CNAME('selector1._domainkey', 'selector1-zhr-one._domainkey.vladzaharia.onmicrosoft.com.'),
+    CNAME('selector2._domainkey', 'selector2-zhr-one._domainkey.vladzaharia.onmicrosoft.com.'),
+  
     /* 3CX SIP records */
     SRV('_sip._tcp', 20, 1, 5060, GetHost('Barium')),
     SRV('_sip._udp', 20, 1, 5060, GetHost('Barium')),
