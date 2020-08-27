@@ -11,16 +11,12 @@ D('ggstream.app', NoRegistrar, DnsProvider(CloudflareDns), NO_PURGE,
     /* Basic records */
     CreateRecords('ggstream.app', GGStreamServices),
 
-    /* Mailcow records */
-    ... CreateMailcowRecords(GetHost('Gallium'), 
-        '50851205087c610c5172c9a2934e86adacb1fb1e86d9160e212524af51e4cb6e', 
-        'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4aQU8ehwM/0DqFg9yhux7ElLbh9D/XPbuj0sinnQ/D5Z/fX86V1cdyL0WjaYQcjJP6WLhdvBtoQxwU/lrV+wXCQsrf6McpSBJWBm1xgEorkdmNd0CE6xgSZqVsQtIpGWGaluy1yT20WptwxpHFJ6WR0SPGdmeHXGr2+RJkRT2OZNbw9p796my++8vOjbr6QsrsaxRNdpNG51Y2r1WpPfrBu2jh0/R+kwwsJo7rN+ZHAefFIMRBb+M7Ydy0OsbXqJLXtWTKg31q3rK7qURKohI00SR0/JvOW2AqKDzz6P4E7OZqaj65Etq1caR+6y4RPp8TBFBtRYMmEGMaMFue/0dQIDAQAB'),
-
-    /* 3CX SIP records */
-    SRV('_sip._tcp', 20, 1, 5060, GetHost('Barium')),
-    SRV('_sip._udp', 20, 1, 5060, GetHost('Barium')),
-    SRV('_sip._tls', 20, 1, 5061, GetHost('Barium')),
-
+    /* Office 365 records */
+    ... CreateOffice365Records('zaharia-io', 'ms10047080'),
+    MX('*', 0, 'ggstream-app.mail.protection.outlook.com.'),
+    CNAME('selector1._domainkey', 'selector1-ggstream-app._domainkey.vladzaharia.onmicrosoft.com.'),
+    CNAME('selector2._domainkey', 'selector2-ggstream-app._domainkey.vladzaharia.onmicrosoft.com.'),
+  
     /* Domain verification records */
     TXT('@', 'z5kq9zxtp10ft5vty3h4rkhv9qfkcbl4'),
     TXT('_github-challenge-ggstream-app', '1847b10155')
