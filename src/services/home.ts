@@ -51,4 +51,7 @@ export const HomeLocalServices: Record[] = [
     { name: 'pritunl.dc.local', description: 'Pritunl', type: 'A', target: '10.0.11.203'},
     { name: 'ansible.dc.local', description: 'Pritunl', type: 'A', target: '10.0.11.204'},
     { name: 'hashicorp.dc.local', description: 'Hashicorp', type: 'A', target: '10.0.11.205'},
+    
+    /* Rancher k8s */
+    { name: 'rancher.dc.local', description: 'Rancher Master', type: 'A', target: '10.0.11.210'},
 ];
