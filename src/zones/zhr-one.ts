@@ -4,7 +4,7 @@ import { GetHost, GetCoreRecords } from "../services/core";
 import { AzureIntServices } from "../services/azure";
 import { WestinIntServices } from "../services/westin";
 import { HomeIntServices, HomeLocalServices } from "../services/home";
-import { CreateMailcowRecords } from "../services/mailcow";
+import { CreateOffice365Records } from "../services/office365";
 import { CreateRecords } from "../utils/record";
 
 console.log('Zone: zhr.one - Internal Services');
