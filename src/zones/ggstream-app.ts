@@ -11,7 +11,7 @@ D('ggstream.app', NoRegistrar, DnsProvider(CloudflareDns), NO_PURGE,
     CreateRecords('ggstream.app', GGStreamServices),
 
     /* Office 365 records */
-    ... CreateOffice365Records('zaharia-io', 'ms10047080'),
+    ... CreateOffice365Records('ggstream-app', 'ms10047080'),
     MX('*', 0, 'ggstream-app.mail.protection.outlook.com.'),
     CNAME('selector1._domainkey', 'selector1-ggstream-app._domainkey.vladzaharia.onmicrosoft.com.'),
     CNAME('selector2._domainkey', 'selector2-ggstream-app._domainkey.vladzaharia.onmicrosoft.com.'),
