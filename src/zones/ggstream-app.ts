@@ -1,7 +1,6 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
-import { GetHost } from "../services/core";
-import { CreateMailcowRecords } from "../services/mailcow";
+import { CreateOffice365Records } from "../services/office365";
 import { CreateRecords } from "../utils/record";
 import { GGStreamServices } from "../services/ggstream";
 
