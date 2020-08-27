@@ -34,7 +34,7 @@ export const WestinIntServices: Record[] = [
     { name: 'phone', description: '3CX', target: GetHost('Barium') },
     { name: 'tesla', description: 'TeslaMate' }, 
     { name: 'tesla-gf', description: 'TeslaMate - Grafana' }, 
-
+    { name: 'koding', description: 'Koding' },
 
     /* Warmitup Services */
     { name: 'chat', description: 'Mattermost' },
