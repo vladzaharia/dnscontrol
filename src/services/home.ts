@@ -40,8 +40,6 @@ export const HomeIntServices: Record[] = [
 
 export const HomeLocalServices: Record[] = [
     { name: 'router.local', description: 'Router', type: 'A', target: '10.0.1.1'},
-    { name: 'server.local', description: 'New Server - Windows', type: 'A', target: '10.0.11.250'},
-    { name: 'linux.server.local', description: 'New Server - Linux', type: 'A', target: '10.0.11.251'},
     { name: 'nas.local', description: 'NAS', type: 'A', target: '10.0.11.252'},
 
     /* Home Westin */
