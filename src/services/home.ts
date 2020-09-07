@@ -49,8 +49,8 @@ export const HomeLocalServices: Record[] = [
     
     /* Hashicorp */
     { name: 'hashicorp.dc.local', description: 'Hashicorp', type: 'A', target: '10.0.11.205'},
-    { name: 'vault', description: 'Hashicorp Vault', target: '10.0.11.205'}, 
-    { name: 'consul', description: 'Hashicorp Consul', target: '10.0.11.205'}, 
+    { name: 'vault', description: 'Hashicorp Vault', type: 'A', target: '10.0.11.205'}, 
+    { name: 'consul', description: 'Hashicorp Consul', type: 'A', target: '10.0.11.205'}, 
     
     /* Rancher k8s */
     { name: 'rancher.dc.local', description: 'Rancher Master', type: 'A', target: '10.0.11.210'},
