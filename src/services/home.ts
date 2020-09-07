@@ -23,8 +23,6 @@ export const HomeIntServices: Record[] = [
     { name: 'proxmox-home', description: 'Home Proxmox' },
     { name: 'traefik-home', description: 'Home Traefik', proxy: true },
     { name: 'portainer-home', description: 'Home Portainer', proxy: true },
-    { name: 'vault', description: 'Hashicorp Vault' }, 
-    { name: 'consul', description: 'Hashicorp Consul' }, 
 
     /* Internal Services */
     { name: 'ha', description: 'HomeAssistant', proxy: true },
@@ -48,7 +46,11 @@ export const HomeLocalServices: Record[] = [
     { name: 'plex.dc.local', description: 'Plex', type: 'A', target: '10.0.11.202'},
     { name: 'pritunl.dc.local', description: 'Pritunl', type: 'A', target: '10.0.11.203'},
     { name: 'ansible.dc.local', description: 'Pritunl', type: 'A', target: '10.0.11.204'},
+    
+    /* Hashicorp */
     { name: 'hashicorp.dc.local', description: 'Hashicorp', type: 'A', target: '10.0.11.205'},
+    { name: 'vault', description: 'Hashicorp Vault', target: '10.0.11.205'}, 
+    { name: 'consul', description: 'Hashicorp Consul', target: '10.0.11.205'}, 
     
     /* Rancher k8s */
     { name: 'rancher.dc.local', description: 'Rancher Master', type: 'A', target: '10.0.11.210'},
