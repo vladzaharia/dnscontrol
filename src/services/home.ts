@@ -57,4 +57,7 @@ export const HomeLocalServices: Record[] = [
     { name: 'alpha.rancher.local', description: 'Rancher Node 1', type: 'A', target: '10.0.11.210'},
     { name: 'beta.rancher.local', description: 'Rancher Node 2', type: 'A', target: '10.0.11.211'},
     { name: 'charlie.rancher.local', description: 'Rancher Node 3', type: 'A', target: '10.0.11.212'},
+    
+    /* Rancher (internally accessible) k8s services */
+    { name: 'traefik.rancher', description: 'Rancher Traefik', type: 'A', target: '10.0.11.210'},
 ];
