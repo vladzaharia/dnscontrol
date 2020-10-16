@@ -55,11 +55,12 @@ export const HomeLocalServices: Record[] = [
     /* Rancher k8s */
     { name: 'rancher.dc.local', description: 'Rancher Master', type: 'A', target: '10.0.11.210'},
     { name: 'alpha.rancher.local', description: 'Rancher Node 1', type: 'A', target: '10.0.11.210'},
-    { name: 'charlie.rancher.local', description: 'Rancher Node 3', type: 'A', target: '10.0.11.212'},
     
     /* VMWare ESXi */
     { name: 'beta.esxi.local', description: 'ESXi Node', type: 'A', target: '10.0.11.211'},
-    
+    { name: 'charlie.esxi.local', description: 'ESXi Node', type: 'A', target: '10.0.11.212'},
+
+   
     /* Rancher (internally accessible) k8s services */
     { name: 'traefik.rancher', description: 'Rancher Traefik', type: 'A', target: '10.0.11.210'},
 ];
