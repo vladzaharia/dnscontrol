@@ -20,12 +20,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new CopyWebpackPlugin([
-            {
-                from: "./src/creds.json",
-                to: "./creds.json"
-            }
-        ])
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: './src/creds.json', to: './creds.json' },
+              ],
+        })
     ],
     optimization: {
         minimize: false
