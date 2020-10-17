@@ -40,8 +40,8 @@ D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
   
     /* Digicert verification records */
     TXT('@', 'ybqnhr2z5gddd1kxbgdv6873s7ng47v6'),
-    TXT('*.local', '632q38bbb10q30fvhts82q0dhxbhzwkd'),
-    TXT('*.dc.local', '632q38bbb10q30fvhts82q0dhxbhzwkd'),
-    TXT('*.esxi.local', '632q38bbb10q30fvhts82q0dhxbhzwkd'),
-    TXT('*.rancher.local', '632q38bbb10q30fvhts82q0dhxbhzwkd'),
+    TXT('*.local', 'z06cmpqcxj900cwnn789jwfz6j3rd8bq'),
+    TXT('*.dc.local', 'z06cmpqcxj900cwnn789jwfz6j3rd8bq'),
+    TXT('*.esxi.local', 'z06cmpqcxj900cwnn789jwfz6j3rd8bq'),
+    TXT('*.rancher.local', 'z06cmpqcxj900cwnn789jwfz6j3rd8bq'),
 );
