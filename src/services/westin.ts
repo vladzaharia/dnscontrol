@@ -5,7 +5,6 @@ import { GetHost, GetIP } from "./core";
  * External (zaharia.io) Westin-Docker Services
  */
 export const WestinExtServices: Record[] = [
-    { name: 'asset', description: 'SnipeIt', proxy: true },
     { name: 'irc', description: 'TheLoungs', proxy: true },
     { name: 'network', description: 'Network', proxy: true },
     { name: 'phonesvc', description: "3CX (Legacy)", target: GetHost('Barium') },
@@ -30,6 +29,7 @@ export const WestinIntServices: Record[] = [
     { name: 'portainer-dc', description: 'Westin Portainer', proxy: true },
 
     /* Internal Services */
+    { name: 'asset', description: 'SnipeIt', proxy: true },
     { name: 'dash', description: 'Heimdall', proxy: true },
     { name: 'phone', description: '3CX', target: GetHost('Barium') },
     { name: 'tesla', description: 'TeslaMate' }, 
