@@ -57,7 +57,7 @@ export const HomeLocalServices: Record[] = [
     
     /* VMWare ESXi */
     { name: 'esxi.local', description: 'vCenter', type: 'A', target: '10.0.11.135'},
-    { name: 'esxi-alpha.local', description: 'ESXi Node 1', type: 'A', target: '10.0.11.210'},    
+    { name: 'esxi-alpha.local', description: 'ESXi Node 1', type: 'A', target: '10.0.11.200'},    
     { name: 'esxi-beta.local', description: 'ESXi Node 2', type: 'A', target: '10.0.11.211'},
     { name: 'esxi-charlie.local', description: 'ESXi Node 3', type: 'A', target: '10.0.11.212'},
     { name: 'esxi-delta.local', description: 'ESXi Node 4', type: 'A', target: '10.0.11.213'},    
