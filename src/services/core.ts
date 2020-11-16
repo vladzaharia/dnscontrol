@@ -115,7 +115,7 @@ export function GetIP(name: ElementNames): string {
 }
 
 export function GetCoreRecords(): Record[] {
-    return Object.keys(Servers).filter((key:string) => !Servers[key].excludeRecord).map((key: string): Record => {
+    return Object.keys(Servers).filter((key: string): boolean => { return !Servers[key].excludeRecord; }).map((key: string): Record => {
         const server = Servers[key];
 
         return {
