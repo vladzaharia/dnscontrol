@@ -5,13 +5,14 @@ export const TownhouseLocalServices: Record[] = [
     { name: 'router.local', description: 'Router', type: 'A', target: '10.10.0.1'},
 
     /* VMWare ESXi */
-    { name: 'esxi.local', description: 'Universe ESXi', type: 'A', target: '10.10.0.110'},
+    { name: 'esxi.local', description: 'ESXi Universe - vCenter', type: 'A', target: '10.10.0.100'},
     
     { name: 'universe.local', description: 'ESXi Universe', type: 'A', target: '10.10.0.111'},
     { name: 'andromeda.universe.local', description: 'ESXi Universe - NIC1', type: 'A', target: '10.10.0.111'},
     { name: 'centaurus.universe.local', description: 'ESXi Universe - NIC2', type: 'A', target: '10.10.0.112'},
     { name: 'fornax.universe.local', description: 'ESXi Universe - NIC3', type: 'A', target: '10.10.0.113'},
     { name: 'hydra.universe.local', description: 'ESXi Universe - NIC4', type: 'A', target: '10.10.0.114'},
+    { name: 'idrac.universe.local', description: 'ESXi Universe - iDRAC', type: 'A', target: '10.10.0.110'},
     
     { name: 'callisto.local', description: 'ESXi Node - Lenovo', type: 'A', target: '10.10.0.121'},
     { name: 'europa.local', description: 'ESXi Node - SK NUC', type: 'A', target: '10.10.0.122'},
