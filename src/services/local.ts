@@ -19,6 +19,9 @@ export const TownhouseLocalServices: Record[] = [
    
     /* Unraid */
     { name: 'galaxy.local', description: 'Unraid', type: 'A', target: '10.10.0.10'},
+    
+    /* Nextcloud */
+    { name: 'cloud.local', description: 'Nextcloud', type: 'A', target: '10.10.0.20'},
 ];
 
 export const HomeLocalServices: Record[] = [
