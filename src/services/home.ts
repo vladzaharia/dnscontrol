@@ -36,8 +36,28 @@ export const HomeIntServices: Record[] = [
 
 ];
 
+export const TownhouseLocalServices: Record[] = [
+    { name: 'router.local', description: 'Router', type: 'A', target: '10.10.0.1'},
+
+    /* VMWare ESXi */
+    { name: 'esxi.local', description: 'Universe ESXi', type: 'A', target: '10.10.0.110'},
+    
+    { name: 'universe.local', description: 'ESXi Universe', type: 'A', target: '10.10.0.111'},
+    { name: 'agalaxy-1.universe.local', description: 'ESXi Universe - NIC1', type: 'A', target: '10.10.0.111'},
+    { name: 'agalaxy-2.universe.local', description: 'ESXi Universe - NIC2', type: 'A', target: '10.10.0.112'},
+    { name: 'agalaxy-3.universe.local', description: 'ESXi Universe - NIC3', type: 'A', target: '10.10.0.113'},
+    { name: 'agalaxy-4.universe.local', description: 'ESXi Universe - NIC4', type: 'A', target: '10.10.0.114'},
+    
+    { name: 'agalaxy-1.local', description: 'ESXi Node - Lenovo', type: 'A', target: '10.10.0.121'},
+    { name: 'agalaxy-2.local', description: 'ESXi Node - SK NUC', type: 'A', target: '10.10.0.122'},
+    { name: 'agalaxy-3.local', description: 'ESXi Node - NUC', type: 'A', target: '10.10.0.123'},    
+   
+    /* Unraid */
+    { name: 'unraid.local', description: 'Unraid', type: 'A', target: '10.10.0.10'},
+];
+
 export const HomeLocalServices: Record[] = [
-    { name: 'router.local', description: 'Router', type: 'A', target: '10.0.1.1'},
+    { name: 'router-apt.local', description: 'Router', type: 'A', target: '10.0.1.1'},
     { name: 'nas.local', description: 'NAS', type: 'A', target: '10.0.11.252'},
 
     /* Home Westin */
@@ -56,7 +76,7 @@ export const HomeLocalServices: Record[] = [
     { name: 'rancher.dc.local', description: 'Rancher Master', type: 'A', target: '10.0.11.210'},
     
     /* VMWare ESXi */
-    { name: 'esxi.local', description: 'vCenter', type: 'A', target: '10.0.11.135'},
+    { name: 'esxi-apt.local', description: 'vCenter', type: 'A', target: '10.0.11.135'},
     { name: 'esxi-alpha.local', description: 'ESXi Node 1', type: 'A', target: '10.0.11.200'},    
     { name: 'esxi-beta.local', description: 'ESXi Node 2', type: 'A', target: '10.0.11.211'},
     { name: 'esxi-charlie.local', description: 'ESXi Node 3', type: 'A', target: '10.0.11.212'},
