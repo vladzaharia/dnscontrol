@@ -39,6 +39,14 @@ const Servers: ServerMap = {
         location: 'sea',
         ip: '174.127.231.21'
     },
+    'Thorium': {
+        name: 'Thorium',
+        description: 'Townhouse IP',
+        prefix: 'th',
+        location: 'sea',
+        ip: '174.127.231.21',
+        excludeRecord: true
+    },
     'Palladium': {
         name: 'Palladium',
         description: 'Parents Home IP',
@@ -107,7 +115,7 @@ export function GetIP(name: ElementNames): string {
 }
 
 export function GetCoreRecords(): Record[] {
-    return Object.keys(Servers).map((key: string): Record => {
+    return Object.keys(Servers).filter((key:string) => !Servers[key].excludeRecord).map((key: string): Record => {
         const server = Servers[key];
 
         return {
