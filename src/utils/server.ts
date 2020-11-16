@@ -30,6 +30,11 @@ export interface Server {
      * IP Address of the server.
      */
     ip: string;
+    
+    /**
+     * Exclude from record creation?
+     */
+    excludeRecord?: boolean;
 }
 
 export type ServerMap = {
