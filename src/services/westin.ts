@@ -27,6 +27,7 @@ export const WestinIntServices: Record[] = [
     { name: 'proxmox-dc', description: 'Westin Proxmox', target: GetHost('Argon') },
     { name: 'traefik-dc', description: 'Westin Traefik', proxy: true },
     { name: 'portainer-dc', description: 'Westin Portainer', proxy: true },
+    { name: 'network', description: 'ZeroTier Controller', proxy: true },
 
     /* Internal Services */
     { name: 'asset', description: 'SnipeIt', proxy: true },
