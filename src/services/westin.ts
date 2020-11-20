@@ -32,7 +32,7 @@ export const WestinIntServices: Record[] = [
     /* Internal Services */
     { name: 'asset', description: 'SnipeIt', proxy: true },
     { name: 'dash', description: 'Heimdall', proxy: true },
-    { name: 'dc', description: 'Netbox' },
+    { name: 'inv', description: 'Netbox' },
     { name: 'phone', description: '3CX', target: GetHost('Barium') },
     { name: 'tesla', description: 'TeslaMate' }, 
     { name: 'tesla-gf', description: 'TeslaMate - Grafana' }, 
