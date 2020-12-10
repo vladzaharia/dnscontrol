@@ -37,7 +37,7 @@ const Servers: ServerMap = {
         description: 'Home IP',
         prefix: 'he',
         location: 'sea',
-        ip: '174.127.231.21'
+        ip: '67.183.36.111'
     },
     'Thorium': {
         name: 'Thorium',
