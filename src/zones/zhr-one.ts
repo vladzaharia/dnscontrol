@@ -24,6 +24,9 @@ D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
 
     /* Azure records */
     ... CreateRecords('Azure', AzureIntServices),
+  
+    /* Upptime Status Monitor */
+    CNAME('up', 'vladzaharia.github.io.'),
 
     /* Office 365 records */
     ... CreateOffice365Records('zhr-one', 'ms62227587'),
