@@ -1,0 +1,14 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "npm install\nnpm run build"
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : "npm run push-ci"
+    }
+  },
+  "identifier" : "56620903-243E-48FF-A233-6E85A8579B7B",
+  "openLogOnRun" : "start"
+}
