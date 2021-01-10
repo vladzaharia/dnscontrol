@@ -3,7 +3,7 @@ import { NoRegistrar } from "../providers/noregistrar";
 import { GetHost, GetCoreRecords } from "../services/core";
 import { AzureIntServices } from "../services/azure";
 import { WestinIntServices } from "../services/westin";
-import { HomeIntServices } from "../services/home";
+import { HomeExtServices, HomeIntServices } from "../services/home";
 import { HomeLocalServices, TownhouseLocalServices } from "../services/local";
 import { CreateOffice365Records } from "../services/office365";
 import { CreateRecords } from "../utils/record";
