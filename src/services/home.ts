@@ -8,7 +8,6 @@ export const HomeExtServices: Record[] = [
     { name: 'books', description: 'Calibre', proxy: true },
     { name: 'deluge', description: 'Deluge', proxy: true },
     { name: 'media', description: 'Ombi' },
-    { name: 'parents', description: 'Parents (Legacy)', target: GetHost('Palladium') },
     { name: 'radarr', description: 'Radarr', proxy: true },
     { name: 'sabnzbd', description: 'SabNZBd', proxy: true },
     { name: 'sonarr', description: 'Sonarr', proxy: true },
