@@ -1,5 +1,4 @@
 import { Record } from "../utils/record";
-import { GetHost } from "./core";
 
 export const TownhouseLocalServices: Record[] = [
     { name: 'router.local', description: 'Router', type: 'A', target: '10.10.0.1'},
