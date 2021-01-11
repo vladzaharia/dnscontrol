@@ -33,4 +33,5 @@ export const  HomelabLocalServices: Record[] = [
     { name: 'traefik.local', description: 'Traefik' },
     { name: 'pdns.local', description: 'PowerDNS' },
     { name: 'hello.local', description: 'Hello k8s' },
+    { name: 'cost.local', description: 'Kubecost' },
 ];
