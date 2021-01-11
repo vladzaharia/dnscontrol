@@ -13,12 +13,10 @@ export const  HomelabLocalServices: Record[] = [
     { name: 'dns.local', description: 'UrBackup', type: 'A', target: '10.10.0.20' },
     { name: 'backup.local', description: 'UrBackup', type: 'A', target: '10.10.0.21' },
     { name: 'netboot.local', description: 'netboot.xyz', type: 'A', target: '10.10.0.22' },
-
-
     { name: 'cloud.local', description: 'Nextcloud', type: 'A', target: '10.10.0.200' },
 
     /* Rancher */
-    { name: 'master.rancher.local', description: 'Rancher Master Container', type: 'A', target: '10.10.0.100' },
+    { name: 'rancher.local', description: 'Rancher Master Container', type: 'A', target: '10.10.0.100' },
     
     /* Rancher Control/etcd Nodes */
     { name: 'odin.control.rancher.local', description: 'Rancher Control - Odin', type: 'A', target: '10.10.0.101' },
@@ -31,7 +29,6 @@ export const  HomelabLocalServices: Record[] = [
     { name: 'gaming.worker.rancher.local', description: 'Rancher Worker - Gaming', type: 'A', target: '10.10.0.121' },
    
     /* Rancher Core Services */
-    { name: 'rancher.local', description: 'Rancher UI' },
     { name: 'longhorn.local', description: 'Longhorn UI' },
     { name: 'traefik.local', description: 'Traefik' },
     { name: 'pdns.local', description: 'PowerDNS' },

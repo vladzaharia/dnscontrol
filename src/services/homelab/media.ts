@@ -6,7 +6,7 @@ export const  HomelabMediaServices: Record[] = [
 	{ name: 'sonarr.media', description: 'Sonarr' },
 	{ name: 'radarr.media', description: 'Radarr' },
 	{ name: 'sabnzbd.media', description: 'Sabnzbd' },
-	{ name: 'books.media', description: 'Calibre Web' },
+	{ name: 'calibre.media', description: 'Calibre Web' },
 
 	/* Media Servers */
 	{ name: 'airconnect.media', description: 'AirConnect', type: 'A', target: '10.10.16.101' },
