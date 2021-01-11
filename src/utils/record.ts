@@ -1,5 +1,5 @@
 import { CfProxyOn, CfSSLOn } from "../providers/cloudflare";
-import { ElementNames } from "./server";
+import { AdditionalNames, ElementNames } from "./server";
 import { GetHost } from "../services/core";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -42,7 +42,7 @@ export interface Record {
     ssl?: boolean;
 }
 
-export function CreateRecord(record: Record, targetName?: ElementNames): DNSControlRecord {
+export function CreateRecord(record: Record, targetName?: ElementNames | AdditionalNames): DNSControlRecord {
     const finalTarget = record.target || GetHost(targetName);
 
     console.log(`  ${record.description || 'Service'}: ${record.name} -> ${finalTarget}`);
@@ -72,7 +72,7 @@ export function CreateRecord(record: Record, targetName?: ElementNames): DNSCont
  * @param target fqdn for CNAME or IP address for A
  * @param cfSettings Cloudflare settings to apply to all records
  */
-export function CreateRecords(groupName: string, records: Record[], target?: ElementNames): DNSControlRecord[] {
+export function CreateRecords(groupName: string, records: Record[], target?: ElementNames | AdditionalNames): DNSControlRecord[] {
     console.log(`\nGroup: ${groupName}`);
 
     return records.map((record: Record) => {

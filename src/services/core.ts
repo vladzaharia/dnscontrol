@@ -1,5 +1,5 @@
 import { Record } from "../utils/record";
-import { ServerMap, ElementNames } from "../utils/server";
+import { AdditionalNames, ServerMap, ElementNames } from "../utils/server";
 
 const RootDomain = 'zhr.one';
 
@@ -82,6 +82,14 @@ const Servers: ServerMap = {
         location: 'sea',
         ip: '104.37.168.126'
     },
+    
+    'LocalTraefik': {
+        name: 'LocalTraefik',
+        description: 'Internal - Traefik Instance',
+        prefix: 'xx-lt',
+        location: 'sea',
+        ip: '10.10.0.201'
+    },
 }
 
 function GetPrefix(name: string): string {
@@ -94,7 +102,7 @@ function GetPrefix(name: string): string {
     return `${server.prefix}.${server.location}.core`;
 }
 
-export function GetHost(name: ElementNames): string {
+export function GetHost(name: ElementNames | AdditionalNames): string {
     const server = Servers[name];
 
     if (!server) {
@@ -104,7 +112,7 @@ export function GetHost(name: ElementNames): string {
     return `${GetPrefix(name)}.${RootDomain}.`;
 }
 
-export function GetIP(name: ElementNames): string {
+export function GetIP(name: ElementNames | AdditionalNames): string {
     const server = Servers[name];
 
     if (!server) {
