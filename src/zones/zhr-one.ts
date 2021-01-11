@@ -4,7 +4,10 @@ import { GetHost, GetCoreRecords } from "../services/core";
 import { AzureIntServices } from "../services/azure";
 import { WestinIntServices } from "../services/westin";
 import { HomeExtServices, HomeIntServices } from "../services/home";
-import { HomelabLocalServices } from "../services/local";
+import { HomelabIoTServices } from "../services/homelab/iot";
+import { HomelabLocalServices } from "../services/homelab/local";
+import { HomelabMediaServices } from "../services/homelab/media";
+import { HomelabZeroTierServices } from "../services/homelab/zerotier";
 import { CreateOffice365Records } from "../services/office365";
 import { CreateRecords } from "../utils/record";
 
@@ -17,7 +20,12 @@ D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
     /* Home records */
     ... CreateRecords('Home', HomeIntServices, 'Helium'),
     ... CreateRecords('Home - External', HomeExtServices, 'Helium'),
+
+    /* Homelab records */
+    ... CreateRecords('Homelab - IoT',  HomelabIoTServices, 'LocalTraefik'),
     ... CreateRecords('Homelab - Local',  HomelabLocalServices, 'LocalTraefik'),
+    ... CreateRecords('Homelab - Media',  HomelabMediaServices, 'LocalTraefik'),
+    ... CreateRecords('Homelab - ZeroTier',  HomelabZeroTierServices),
 
     /* Westin records */
     ... CreateRecords('Westin', WestinIntServices, 'Cobalt'),
