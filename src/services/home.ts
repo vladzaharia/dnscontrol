@@ -7,11 +7,14 @@ import { GetHost } from "./core";
 export const HomeExtServices: Record[] = [
     { name: 'books', description: 'Calibre', proxy: true },
     { name: 'deluge', description: 'Deluge', proxy: true },
-    { name: 'media', description: 'Ombi' },
+    { name: 'ombi', description: 'Ombi' },
     { name: 'radarr', description: 'Radarr', proxy: true },
     { name: 'sabnzbd', description: 'SabNZBd', proxy: true },
     { name: 'sonarr', description: 'Sonarr', proxy: true },
     { name: 'stats', description: 'Tautulli', proxy: true },
+    { name: 'gitlab', description: 'Gitlab' },
+    { name: 'minio', description: 'Gitlab Minio' },
+    { name: 'registry', description: 'Gitlab Registry' },
 ];
 
 /**
