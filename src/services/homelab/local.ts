@@ -34,5 +34,7 @@ export const  HomelabLocalServices: Record[] = [
     { name: 'pdns.local', description: 'PowerDNS' },
     { name: 'hello.local', description: 'Hello k8s' },
     { name: 'cost.local', description: 'Kubecost' },
+    
+    /* Rancher Apps */
     { name: 'dash.local', description: 'Local Dashboard' },
 ];
