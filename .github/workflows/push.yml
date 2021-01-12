@@ -6,10 +6,9 @@ on:
 
 env: 
   CF_API: ${{ secrets.CF_API }}
-
 jobs:
   push:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js v14
