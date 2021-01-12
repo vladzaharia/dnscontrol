@@ -14,6 +14,7 @@ export const  HomelabLocalServices: Record[] = [
     { name: 'backup.local', description: 'UrBackup', type: 'A', target: '10.10.0.21' },
     { name: 'netboot.local', description: 'netboot.xyz', type: 'A', target: '10.10.0.22' },
     { name: 'cloud.local', description: 'Nextcloud', type: 'A', target: '10.10.0.200' },
+    { name: 'gitlab.local', description: 'Gitlab', type: 'A', target: '10.10.0.211' },
 
     /* Rancher */
     { name: 'rancher.local', description: 'Rancher Master Container', type: 'A', target: '10.10.0.100' },
