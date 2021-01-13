@@ -6,6 +6,8 @@ on:
 
 env: 
   CF_API: ${{ secrets.CF_API }}
+  PDNS_URL: ${{ secrets.PDNS_URL }}
+  PDNS_KEY: ${{ secrets.PDNS_KEY }}
 
 jobs:
   preview:

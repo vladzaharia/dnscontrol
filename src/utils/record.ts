@@ -1,6 +1,6 @@
 import { CfProxyOn, CfSSLOn } from "../providers/cloudflare";
 import { AdditionalNames, ElementNames } from "./server";
-import { GetHost } from "../services/core";
+import { GetHost, GetIP } from "../services/core";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type DNSControlRecord = (name: string, target?: string, ... modifiers: any[]) => any;
@@ -42,10 +42,11 @@ export interface Record {
     ssl?: boolean;
 }
 
-export function CreateRecord(record: Record, targetName?: ElementNames | AdditionalNames): DNSControlRecord {
-    const finalTarget = record.target || GetHost(targetName);
+export function CreateRecord(record: Record, targetName?: ElementNames | AdditionalNames, suffix = ""): DNSControlRecord {
+    const finalName = record.name + suffix;
+    let finalTarget = record.target || GetHost(targetName);
 
-    console.log(`  ${record.description || 'Service'}: ${record.name} -> ${finalTarget}`);
+    console.log(`  ${record.description || 'Service'}: ${finalName} -> ${finalTarget}`);
 
     // Determine record type
     let type: DNSControlRecord = CNAME;
@@ -54,16 +55,22 @@ export function CreateRecord(record: Record, targetName?: ElementNames | Additio
         type = A;
     }
 
+    // Replace Local with IP
+    if (targetName == 'LocalTraefik') {
+        finalTarget = GetIP(targetName);
+        type = A;
+    }
+
     // Add proxy/ssl tags
     if (record.proxy) {
         if (record.ssl) {
-            return type(record.name, finalTarget, CfProxyOn, CfSSLOn);
+            return type(finalName, finalTarget, CfProxyOn, CfSSLOn);
         }
         
-        return type(record.name, finalTarget, CfProxyOn);
+        return type(finalName, finalTarget, CfProxyOn);
     }
 
-    return type(record.name, finalTarget);
+    return type(finalName, finalTarget);
 }
 
 /**
@@ -72,10 +79,10 @@ export function CreateRecord(record: Record, targetName?: ElementNames | Additio
  * @param target fqdn for CNAME or IP address for A
  * @param cfSettings Cloudflare settings to apply to all records
  */
-export function CreateRecords(groupName: string, records: Record[], target?: ElementNames | AdditionalNames): DNSControlRecord[] {
+export function CreateRecords(groupName: string, records: Record[], target?: ElementNames | AdditionalNames, suffix?: string): DNSControlRecord[] {
     console.log(`\nGroup: ${groupName}`);
 
     return records.map((record: Record) => {
-        return CreateRecord(record, target);
+        return CreateRecord(record, target, suffix);
     });
 }

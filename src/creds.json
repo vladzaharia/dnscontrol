@@ -1,5 +1,10 @@
 {
     "cloudflare": {
         "apitoken": "$CF_API"
-    }
+    },
+    "powerdns": {
+        "apiUrl": "$PDNS_URL",
+        "apiKey": "$PDNS_KEY",
+        "serverName": "localhost"
+      }
 }
