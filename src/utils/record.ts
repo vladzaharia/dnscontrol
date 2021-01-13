@@ -1,6 +1,6 @@
 import { CfProxyOn, CfSSLOn } from "../providers/cloudflare";
 import { AdditionalNames, ElementNames } from "./server";
-import { GetHost } from "../services/core";
+import { GetHost, GetIP } from "../services/core";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type DNSControlRecord = (name: string, target?: string, ... modifiers: any[]) => any;
@@ -44,7 +44,7 @@ export interface Record {
 
 export function CreateRecord(record: Record, targetName?: ElementNames | AdditionalNames, suffix = ""): DNSControlRecord {
     const finalName = record.name + suffix;
-    const finalTarget = record.target || GetHost(targetName);
+    let finalTarget = record.target || GetHost(targetName);
 
     console.log(`  ${record.description || 'Service'}: ${finalName} -> ${finalTarget}`);
 
@@ -52,6 +52,12 @@ export function CreateRecord(record: Record, targetName?: ElementNames | Additio
     let type: DNSControlRecord = CNAME;
 
     if (record.type === 'A') {
+        type = A;
+    }
+
+    // Replace Local with IP
+    if (targetName == 'LocalTraefik') {
+        finalTarget = GetIP(targetName);
         type = A;
     }
 
