@@ -9,5 +9,3 @@ export const  HomelabIoTServices: Record[] = [
 	/* IoT Devices */
 	{ name: 'teslausb', description: 'TeslaUSB', type: 'A', target: '10.10.16.174' },
 ];
-
-export default HomelabIoTServices;

@@ -15,5 +15,3 @@ export const  HomelabMediaServices: Record[] = [
 	{ name: 'stats', description: 'Tautulli' },
 	{ name: 'ombi', description: 'Ombi' },
 ];
-
-export default HomelabMediaServices;

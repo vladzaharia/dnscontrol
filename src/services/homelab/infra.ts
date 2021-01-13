@@ -25,5 +25,3 @@ export const HomelabInfraServices: Record[] = [
 	{ name: 'baldur.worker.rancher', description: 'Rancher Worker - Baldur', type: 'A', target: '10.10.0.113' },
 	{ name: 'gaming.worker.rancher', description: 'Rancher Worker - Gaming', type: 'A', target: '10.10.0.121' },
 ];
-
-export default HomelabInfraServices;
