@@ -6,6 +6,7 @@ export const HomelabInfraServices: Record[] = [
 	/* Unraid */
 	{ name: 'idrac', description: 'iDRAC', type: 'A', target: '10.10.0.110' },
 	{ name: 'galaxy', description: 'Unraid', type: 'A', target: '10.10.0.10' },	
+	{ name: 'pihole', description: 'Pihole', type: 'A', target: '10.10.0.20' },
 	{ name: 'backup', description: 'UrBackup', type: 'A', target: '10.10.0.21' },
 	{ name: 'netboot', description: 'netboot.xyz', type: 'A', target: '10.10.0.22' },
 
