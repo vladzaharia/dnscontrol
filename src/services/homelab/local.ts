@@ -33,6 +33,7 @@ export const  HomelabLocalServices: Record[] = [
     { name: 'longhorn.local', description: 'Longhorn UI' },
     { name: 'traefik.local', description: 'Traefik' },
     { name: 'pdns.local', description: 'PowerDNS' },
+    { name: 'pdns.infra', description: 'PowerDNS API' },
     { name: 'hello.local', description: 'Hello k8s' },
     { name: 'cost.local', description: 'Kubecost' },
     
