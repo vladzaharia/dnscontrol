@@ -19,5 +19,3 @@ export const  HomelabLocalServices: Record[] = [
     { name: 'cost', description: 'Kubecost' },
     { name: 'dash', description: 'Local Dashboard' },
 ];
-
-export default HomelabLocalServices;
