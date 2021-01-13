@@ -22,12 +22,12 @@ D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
     ... CreateRecords('Home', HomeIntServices, 'Helium'),
     ... CreateRecords('Home - External', HomeExtServices, 'Helium'),
 
-    /* Homelab records */
-    ... CreateRecords('Homelab - Infra',  HomelabInfraServices, 'LocalTraefik', ".infra"),
-    ... CreateRecords('Homelab - IoT',  HomelabIoTServices, 'LocalTraefik', ".iot"),
-    ... CreateRecords('Homelab - Local',  HomelabLocalServices, 'LocalTraefik', ".local"),
-    ... CreateRecords('Homelab - Media',  HomelabMediaServices, 'LocalTraefik', ".media"),
-    ... CreateRecords('Homelab - ZeroTier',  HomelabZeroTierServices, 'LocalTraefik', ".zt"),
+    // /* Homelab records */
+    // ... CreateRecords('Homelab - Infra',  HomelabInfraServices, 'LocalTraefik', ".infra"),
+    // ... CreateRecords('Homelab - IoT',  HomelabIoTServices, 'LocalTraefik', ".iot"),
+    // ... CreateRecords('Homelab - Local',  HomelabLocalServices, 'LocalTraefik', ".local"),
+    // ... CreateRecords('Homelab - Media',  HomelabMediaServices, 'LocalTraefik', ".media"),
+    // ... CreateRecords('Homelab - ZeroTier',  HomelabZeroTierServices, 'LocalTraefik', ".zt"),
 
     /* Westin records */
     ... CreateRecords('Westin', WestinIntServices, 'Cobalt'),
