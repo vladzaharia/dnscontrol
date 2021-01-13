@@ -56,7 +56,7 @@ export function CreateRecord(record: Record, targetName?: ElementNames | Additio
     }
 
     // Replace Local with IP
-    if (targetName == 'LocalTraefik') {
+    if (targetName == 'LocalTraefik' && !record.target) {
         finalTarget = GetIP(targetName);
         type = A;
     }
