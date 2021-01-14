@@ -15,6 +15,7 @@ export const HomeExtServices: Record[] = [
     { name: 'gitlab', description: 'Gitlab' },
     { name: 'minio', description: 'Gitlab Minio' },
     { name: 'registry', description: 'Gitlab Registry' },
+    { name: 'tp', description: 'Teleport' },
 ];
 
 /**
