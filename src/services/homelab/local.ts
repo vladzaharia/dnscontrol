@@ -9,6 +9,7 @@ export const  HomelabLocalServices: Record[] = [
     /* Unraid Services */
     { name: 'cloud', description: 'Nextcloud', type: 'A', target: '10.10.0.200' },
     { name: 'gitlab', description: 'Gitlab', type: 'A', target: '10.10.0.211' },
+    { name: 'games', description: 'Games', type: 'A', target: '10.10.0.212' },
 
     /* Rancher */
     { name: 'rancher', description: 'Rancher Master Container', type: 'A', target: '10.10.0.100' },
