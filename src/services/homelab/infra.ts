@@ -9,7 +9,7 @@ export const HomelabInfraServices: Record[] = [
 	{ name: 'pihole', description: 'Pihole', type: 'A', target: '10.10.0.20' },
 	{ name: 'backup', description: 'UrBackup', type: 'A', target: '10.10.0.21' },
 	{ name: 'netboot', description: 'netboot.xyz', type: 'A', target: '10.10.0.22' },
-	{ name: 'pterodactyl', description: 'Pterodactyl', type: 'A', target: '10.10.0.212' },
+	{ name: 'amp', description: 'AMP', type: 'A', target: '10.10.0.250' },
 
 	/* Rancher */
 	{ name: 'rancher', description: 'Rancher Master Container', type: 'A', target: '10.10.0.100' },
