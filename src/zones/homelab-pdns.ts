@@ -37,9 +37,9 @@ const Zones: HomelabZone[] = [
 ];
 
 // Create zone records
-Zones.forEach((zone) => {
-    D(zone.name, NoRegistrar, DnsProvider(PowerDns),
-        /* Basic records */
-        CreateRecords(zone.name, zone.records, 'LocalTraefik'),
-    );
-});
+// Zones.forEach((zone) => {
+//     D(zone.name, NoRegistrar, DnsProvider(PowerDns),
+//         /* Basic records */
+//         CreateRecords(zone.name, zone.records, 'LocalTraefik'),
+//     );
+// });
