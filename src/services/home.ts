@@ -16,6 +16,7 @@ export const HomeIntServices: Record[] = [
     { name: 'tp', description: 'Teleport' },
 
     /* Cloud */
+    { name: 'asset', description: 'SnipeIt' },
     { name: 'books', description: 'Calibre' },
     { name: 'ferdi', description: 'Ferdi' },
     { name: 'games', description: 'Pterodactyl' },
