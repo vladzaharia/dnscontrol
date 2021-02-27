@@ -22,6 +22,7 @@ export const HomeIntServices: Record[] = [
     { name: 'books', description: 'Calibre' },
     { name: 'ferdi', description: 'Ferdi' },
     { name: 'games', description: 'Pterodactyl' },
+    { name: 'gitlab', description: 'Gitlab' },
     { name: 'print', description: 'OctoPrint' },
 
     /* Media Pipeline */
