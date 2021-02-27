@@ -14,6 +14,8 @@ export const HomeIntServices: Record[] = [
     /* Infrastructure */
     { name: 'cockpit', description: 'Cockpit' },
     { name: 'tp', description: 'Teleport' },
+    { name: 'ca', description: 'zhr.one CA' },
+    { name: 'ca-ssh', description: 'zhr.one SSH CA' },
 
     /* Cloud */
     { name: 'asset', description: 'SnipeIt' },
