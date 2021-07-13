@@ -17,7 +17,6 @@ export const HomelabInfraServices: Record[] = [
 	{ name: 'rancher', description: 'Rancher Master Container', type: 'A', target: '10.10.0.100' },
 	{ name: 'longhorn', description: 'Longhorn UI' },
 	{ name: 'traefik', description: 'Traefik' },
-	{ name: 'pdns', description: 'PowerDNS API' },
 	{ name: 'tp', description: 'Teleport', type: 'A', target: '10.10.0.204' },
 	{ name: 'auth', description: 'Teleport Auth', type: 'A', target: '10.10.0.204' },
 	

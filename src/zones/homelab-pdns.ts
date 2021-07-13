@@ -1,5 +1,4 @@
 import { NoRegistrar } from "../providers/noregistrar";
-import { PowerDns } from "../providers/powerdns";
 import { CreateRecords, Record } from "../utils/record";
 
 import { HomelabInfraServices } from "../services/homelab/infra";
@@ -35,11 +34,3 @@ const Zones: HomelabZone[] = [
         records: HomelabZeroTierServices
     },
 ];
-
-// Create zone records
-// Zones.forEach((zone) => {
-//     D(zone.name, NoRegistrar, DnsProvider(PowerDns),
-//         /* Basic records */
-//         CreateRecords(zone.name, zone.records, 'LocalTraefik'),
-//     );
-// });

@@ -15,7 +15,6 @@ export const  HomelabLocalServices: Record[] = [
     { name: 'rancher', description: 'Rancher Master Container', type: 'A', target: '10.10.0.100' },
        
     /* Rancher Apps */
-    { name: 'pdns', description: 'PowerDNS' },
     { name: 'hello', description: 'Hello k8s' },
     { name: 'cost', description: 'Kubecost' },
     { name: 'dash', description: 'Local Dashboard' },
