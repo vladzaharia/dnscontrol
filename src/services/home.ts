@@ -12,20 +12,32 @@ export const HomeExtServices: Record[] = [
  */
 export const HomeIntServices: Record[] = [
     /* Infrastructure */
-    { name: 'cockpit', description: 'Cockpit' },
-    { name: 'tp', description: 'Teleport' },
+    { name: 'apt', description: 'apt Proxy' },
+    { name: 'backup', description: 'Backup' },
     { name: 'ca', description: 'zhr.one CA' },
     { name: 'ca-ssh', description: 'zhr.one SSH CA' },
+    { name: 'id', description: 'ID Proxy' },
 
     /* Cloud */
     { name: 'books', description: 'Calibre' },
-    { name: 'ferdi', description: 'Ferdi' },
+    { name: 'cloud', description: 'Nextcloud' },
+    { name: 'convos', description: 'Convos' },
     { name: 'games', description: 'Pterodactyl' },
     { name: 'gitlab', description: 'Gitlab' },
+
+    /* Smart Home */
+    { name: 'hass', description: 'Home Assistant' },
+    { name: 'hubitat', description: 'Hubitat' },
     { name: 'print', description: 'OctoPrint' },
+
+    /* Matrix */
+    { name: 'element', description: 'Element' },
+    { name: 'matrix', description: 'Matrix' },
 
     /* Media Pipeline */
     { name: 'ombi', description: 'Ombi' },
+    { name: 'lidarr', description: 'Lidarr' },
+    { name: 'readarr', description: 'Readarr' },
     { name: 'radarr', description: 'Radarr' },
     { name: 'sonarr', description: 'Sonarr' },
 
