@@ -5,9 +5,8 @@ console.log('Zone: vlad.gg - New Site');
 
 D('vlad.gg', NoRegistrar, DnsProvider(CloudflareDns),
     /* Basic records */
-    // CNAME('@', 'vladgg.netlify.app.'),
     CNAME('www', 'vladgg.netlify.app.'),
-    A('@', '104.37.168.30'),
+    A('@', '75.2.60.5'),
 
     /* HEY for Domains records */
     MX('@', 0, 'work-mx.app.hey.com.'),
