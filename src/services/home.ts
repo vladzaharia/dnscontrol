@@ -24,7 +24,7 @@ export const HomeIntServices: Record[] = [
     { name: 'convos', description: 'Convos' },
     { name: 'games', description: 'Pterodactyl' },
     { name: 'gitlab', description: 'Gitlab' },
-    { name: 'mail', description: 'Listmonk' },
+    { name: 'go', description: 'Shlink API' },
 
     /* Smart Home */
     { name: 'hass', description: 'Home Assistant' },
