@@ -19,13 +19,14 @@ export const HomeIntServices: Record[] = [
     { name: 'id', description: 'ID Proxy' },
 
     /* Cloud */
+    { name: 'ass', description: 'ASS' },
     { name: 'books', description: 'Calibre' },
     { name: 'cloud', description: 'Nextcloud' },
     { name: 'convos', description: 'Convos' },
     { name: 'games', description: 'Pterodactyl' },
     { name: 'gitlab', description: 'Gitlab' },
-    { name: 'shlink', description: 'Shlink UI' },
     { name: 'go', description: 'Shlink API' },
+    { name: 'shlink', description: 'Shlink UI' },
 
     /* Smart Home */
     { name: 'hass', description: 'Home Assistant' },
