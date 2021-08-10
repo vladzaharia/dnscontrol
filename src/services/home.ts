@@ -17,6 +17,7 @@ export const HomeIntServices: Record[] = [
     { name: 'ca', description: 'zhr.one CA' },
     { name: 'ca-ssh', description: 'zhr.one SSH CA' },
     { name: 'id', description: 'ID Proxy' },
+    { name: 's3', description: 'Minio S3' },
 
     /* Cloud */
     { name: 'ass', description: 'ASS' },
