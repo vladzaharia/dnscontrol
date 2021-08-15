@@ -48,6 +48,8 @@ export const HomeIntServices: Record[] = [
     { name: 'sonarr', description: 'Sonarr' },
     { name: 'jellyfin', description: 'Jellyfin' },
     { name: 'plex', description: 'Plex' },
+    { name: 'ariang', description: 'AriaNG' },
+    { name: 'aria2', description: 'Aria2 API' },
 
     /* TeslaMate */
     { name: 'tesla', description: 'TeslaMate' }, 
