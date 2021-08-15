@@ -27,6 +27,7 @@ export const HomeIntServices: Record[] = [
     { name: 'convos', description: 'Convos' },
     { name: 'games', description: 'Pterodactyl' },
     { name: 'gitlab', description: 'Gitlab' },
+    { name: 'gitpod', description: 'Gitpod' },
     { name: 'go', description: 'Shlink API' },
     { name: 'shlink', description: 'Shlink UI' },
     { name: 'bin', description: 'Hastebin' },
