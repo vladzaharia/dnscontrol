@@ -26,6 +26,7 @@ export const HomeIntServices: Record[] = [
     { name: 'cloud', description: 'Nextcloud' },
     { name: 'code', description: 'Code' },
     { name: 'convos', description: 'Convos' },
+    { name: 'docs', description: 'Docs' },
     { name: 'games', description: 'Pterodactyl' },
     { name: 'gitlab', description: 'Gitlab' },
     { name: 'gitpod', description: 'Gitpod' },
