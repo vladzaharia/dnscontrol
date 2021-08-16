@@ -24,6 +24,7 @@ export const HomeIntServices: Record[] = [
     { name: 'ass', description: 'ASS' },
     { name: 'books', description: 'Calibre' },
     { name: 'cloud', description: 'Nextcloud' },
+    { name: 'code', description: 'Code' },
     { name: 'convos', description: 'Convos' },
     { name: 'games', description: 'Pterodactyl' },
     { name: 'gitlab', description: 'Gitlab' },
