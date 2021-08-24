@@ -39,6 +39,7 @@ D('zhr.one', NoRegistrar, DnsProvider(CloudflareDns),
 
     /* Domain verification records */
     TXT('@', 'atlassian-domain-verification=aWQoyeXxK5bbFI7GUl4ALmaSziAqbOMMXdNQeMtbaGzE3ALZgXNGtF885NpV6IxA'),
+    TXT('@', 'keybase-site-verification=z79M8GrtyF-25fIHHrUfBlJmPbmcj5sNdIUOjsoIb00'),
     TXT('@', 'MS=ms10317245'),
   
     /* Digicert verification records */
