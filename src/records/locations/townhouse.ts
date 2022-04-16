@@ -15,7 +15,7 @@ export const TownhouseRecords: Record[] = [
 
   /* Personal Services */
   { name: "cloud", description: "Nextcloud" },
-  { name: "ml", description: "Machine Learning" },
+  { name: "ml", description: "Machine Learning", proxy: true },
   { name: "go", description: "Shlink API" },
   { name: "shlink", description: "Shlink UI" },
 
@@ -26,8 +26,8 @@ export const TownhouseRecords: Record[] = [
 
   /* Personal Media Services */
   { name: "books", description: "Calibre" },
-  { name: "music", description: "Airsonic" },
-  { name: "stash", description: "Stash" },
+  { name: "music", description: "Airsonic", proxy: true },
+  { name: "stash", description: "Stash", proxy: true },
 
   /* TeslaMate */
   { name: "tesla", description: "TeslaMate" },
