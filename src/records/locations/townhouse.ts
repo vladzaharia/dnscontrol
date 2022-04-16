@@ -32,5 +32,3 @@ export const TownhouseRecords: Record[] = [
   /* TeslaMate */
   { name: "tesla", description: "TeslaMate" },
 ];
-
-export const PolarisHomeServices: Record[] = [...PolarisVideoServices];
