@@ -26,8 +26,8 @@ export const TownhouseRecords: Record[] = [
 
   /* Personal Media Services */
   { name: "books", description: "Calibre" },
-  { name: "music", description: "Airsonic", proxy: true },
-  { name: "stash", description: "Stash", proxy: true },
+  { name: "music", description: "Airsonic" },
+  { name: "stash", description: "Stash" },
 
   /* TeslaMate */
   { name: "tesla", description: "TeslaMate" },
