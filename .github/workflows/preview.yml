@@ -2,24 +2,23 @@ name: DNSControl Preview
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
-env: 
+env:
   CF_API: ${{ secrets.CF_API }}
 
 jobs:
   preview:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js v14
-      uses: actions/setup-node@v2-beta
-      with:
-        node-version: '14'
-    - name: Download dependencies
-      run: npm ci
-    - name: Build JS files
-      run: npm run build
-    - name: Generate and preview records
-      run: npm run preview-ci
-      
+      - uses: actions/checkout@v2
+      - name: Use Node.js v14
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: "14"
+      - name: Download dependencies
+        run: npm ci
+      - name: Build JS files
+        run: npm run build
+      - name: Generate and preview records
+        run: npm run preview-ci

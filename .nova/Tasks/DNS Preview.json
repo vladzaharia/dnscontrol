@@ -1,14 +1,14 @@
 {
-  "actions" : {
-    "build" : {
-      "enabled" : true,
-      "script" : "npm install\nnpm run build"
+  "actions": {
+    "build": {
+      "enabled": true,
+      "script": "npm install\nnpm run build"
     },
-    "run" : {
-      "enabled" : true,
-      "script" : "npm run preview-ci"
+    "run": {
+      "enabled": true,
+      "script": "npm run preview-ci"
     }
   },
-  "identifier" : "6C6B06C6-6D14-4B63-BE56-F9416DF8BEE0",
-  "openLogOnRun" : "start"
+  "identifier": "6C6B06C6-6D14-4B63-BE56-F9416DF8BEE0",
+  "openLogOnRun": "start"
 }

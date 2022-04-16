@@ -1,5 +1,5 @@
 {
-    "cloudflare": {
-        "apitoken": "$CF_API"
-    }
+  "cloudflare": {
+    "apitoken": "$CF_API"
+  }
 }

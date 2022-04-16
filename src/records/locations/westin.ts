@@ -1,0 +1,52 @@
+import { Record } from "../../utils/record";
+import { GetHost, GetIP } from "../core";
+
+/**
+ * External (zaharia.io) Westin-Docker Services
+ */
+export const WestinExtServices: Record[] = [
+  { name: "irc", description: "TheLoungs", proxy: true },
+  { name: "network", description: "Network", proxy: true },
+  { name: "phonesvc", description: "3CX (Legacy)", target: GetHost("Barium") },
+];
+
+/**
+ * Site (vlad.gg) Westin-Docker Services
+ */
+export const WestinSiteServices: Record[] = [
+  {
+    name: "@",
+    description: "Site - Frontend @",
+    type: "A",
+    target: GetIP("Cobalt"),
+    proxy: true,
+  },
+  { name: "www", description: "Site - Frontend WWW", proxy: true },
+  { name: "backend", description: "Site - Backend" },
+];
+
+/**
+ * Internal (zhr.one) Westin-Docker Services
+ */
+export const WestinIntServices: Record[] = [
+  /* Infrastructure */
+  {
+    name: "proxmox-dc",
+    description: "Westin Proxmox",
+    target: GetHost("Argon"),
+  },
+  { name: "traefik-dc", description: "Westin Traefik", proxy: true },
+  { name: "portainer-dc", description: "Westin Portainer", proxy: true },
+  { name: "network", description: "ZeroTier Controller", proxy: true },
+
+  /* Internal Services */
+  { name: "asset", description: "Snipe-It" },
+  { name: "dash", description: "Heimdall", proxy: true },
+  { name: "inv", description: "Netbox" },
+  { name: "phone", description: "3CX", target: GetHost("Barium") },
+  { name: "vpn", description: "Wireguard", target: GetHost("Gallium") },
+
+  /* Warmitup Services */
+  { name: "chat", description: "Mattermost" },
+  { name: "mrmr", description: "Mumble" },
+];
