@@ -1,13 +1,13 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
-import { AzureExtServices } from "../records/azure";
-import { WestinExtServices } from "../records/locations/westin";
-import { HomeExtServices } from "../records/locations/townhouse";
-import { CreateOffice365Records } from "../records/mail/office365";
-import { CreateRecords, CreateRecord } from "../utils/record";
+import { CreateRecord } from "../utils/record";
 import { GetIP } from "../records/core";
+import {
+  CreateCloudflareMailRecords,
+  ROUTES_NUM,
+} from "../records/mail/cfmail";
 
-console.log("Zone: zaharia.io - External Services");
+console.log("Zone: zaharia.io - Deprecated");
 
 D(
   "zaharia.io",
@@ -16,26 +16,8 @@ D(
   /* Infrastructure */
   CreateRecord({ name: "@", type: "A", target: GetIP("Cobalt") }),
 
-  /* Home records */
-  ...CreateRecords("Home", HomeExtServices, "Helium"),
-
-  /* Westin records */
-  ...CreateRecords("Westin", WestinExtServices, "Cobalt"),
-
-  /* Azure records */
-  ...CreateRecords("Azure", AzureExtServices),
-
-  /* Office 365 records */
-  ...CreateOffice365Records("zaharia-io", "ms62227587"),
-  MX("*", 0, "zaharia-io.mail.protection.outlook.com."),
-  CNAME(
-    "selector1._domainkey",
-    "selector1-zaharia-io._domainkey.vladzaharia.onmicrosoft.com."
-  ),
-  CNAME(
-    "selector2._domainkey",
-    "selector2-zaharia-io._domainkey.vladzaharia.onmicrosoft.com."
-  ),
+  /* Cloudflare mail records */
+  ...CreateCloudflareMailRecords(ROUTES_NUM, [70, 64, 10]),
 
   /* Verification records */
   TXT(
@@ -58,5 +40,6 @@ D(
     "@",
     "atlassian-domain-verification=aWQoyeXxK5bbFI7GUl4ALmaSziAqbOMMXdNQeMtbaGzE3ALZgXNGtF885NpV6IxA"
   ),
-  TXT("@", "ybqnhr2z5gddd1kxbgdv6873s7ng47v6")
+  TXT("@", "MS=ms62227587"),
+  TXT("@", "krh66c6273yfdhsr7061s77pbtfxm0mm")
 );

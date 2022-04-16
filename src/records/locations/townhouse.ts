@@ -1,12 +1,13 @@
 import { Record } from "../../utils/record";
-import { GetHost } from "../core";
 import { PolarisVideoServices } from "../services/polaris";
 
 /**
- * Internal (zhr.one) Home services
+ * Townhouse services
  */
-export const HomeServices: Record[] = [
+export const TownhouseRecords: Record[] = [
   /* Infrastructure */
+  { name: "router", type: "A", description: "Router", target: "10.10.0.1" },
+  { name: "truenas", type: "A", description: "TrueNAS", target: "10.10.0.10" },
   { name: "ca", description: "zhr.one CA" },
   { name: "id", description: "ID Proxy" },
   { name: "s3", description: "Minio S3" },
@@ -30,10 +31,6 @@ export const HomeServices: Record[] = [
 
   /* TeslaMate */
   { name: "tesla", description: "TeslaMate" },
-  { name: "tesla-gf", description: "TeslaMate - Grafana" },
-
-  /* Parent Redirect */
-  { name: "parents", description: "Parents", target: GetHost("Palladium") },
 ];
 
 export const PolarisHomeServices: Record[] = [...PolarisVideoServices];

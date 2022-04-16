@@ -1,8 +1,9 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
-import { CreateOffice365Records } from "../records/mail/office365";
-import { CreateRecords } from "../utils/record";
-import { GGStreamServices } from "../records/ggstream";
+import {
+  CreateCloudflareMailRecords,
+  ROUTES_NUM,
+} from "../records/mail/cfmail";
 
 console.log("Zone: ggstream.app - GGStream");
 
@@ -12,21 +13,12 @@ D(
   DnsProvider(CloudflareDns),
   NO_PURGE,
   /* Basic records */
-  CreateRecords("ggstream.app", GGStreamServices),
 
   /* Office 365 records */
-  ...CreateOffice365Records("ggstream-app", "ms10047080"),
-  MX("*", 0, "ggstream-app.mail.protection.outlook.com."),
-  CNAME(
-    "selector1._domainkey",
-    "selector1-ggstream-app._domainkey.vladzaharia.onmicrosoft.com."
-  ),
-  CNAME(
-    "selector2._domainkey",
-    "selector2-ggstream-app._domainkey.vladzaharia.onmicrosoft.com."
-  ),
+  ...CreateCloudflareMailRecords(ROUTES_NUM, [6, 8, 65]),
 
   /* Domain verification records */
+  TXT("@", "MS=ms10047080"),
   TXT("@", "z5kq9zxtp10ft5vty3h4rkhv9qfkcbl4"),
   TXT("_github-challenge-ggstream-app", "1847b10155")
 );

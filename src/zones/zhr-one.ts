@@ -1,16 +1,16 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { GetHost, GetCoreRecords } from "../records/core";
-import { AzureIntServices } from "../records/azure";
-import { WestinIntServices } from "../records/locations/westin";
-import {
-  HomeExtServices,
-  HomeIntServices,
-} from "../records/locations/townhouse";
-import { CreateOffice365Records } from "../records/mail/office365";
+import { WestinRecords } from "../records/locations/westin";
+import { TownhouseRecords } from "../records/locations/townhouse";
 import { CreateRecords } from "../utils/record";
+import { BetterUptimeRecords } from "../records/services/betteruptime";
+import {
+  CreateCloudflareMailRecords,
+  ROUTES_NAMED,
+} from "../records/mail/cfmail";
 
-console.log("Zone: zhr.one - Internal Services");
+console.log("Zone: zhr.one - Services");
 
 D(
   "zhr.one",
@@ -20,29 +20,16 @@ D(
   ...CreateRecords("Core", GetCoreRecords()),
 
   /* Home records */
-  ...CreateRecords("Home", HomeIntServices, "Helium"),
-  ...CreateRecords("Home - External", HomeExtServices, "Helium"),
+  ...CreateRecords("Townhouse", TownhouseRecords, "Helium"),
 
   /* Westin records */
-  ...CreateRecords("Westin", WestinIntServices, "Cobalt"),
+  ...CreateRecords("Westin", WestinRecords, "Cobalt"),
 
-  /* Azure records */
-  ...CreateRecords("Azure", AzureIntServices),
+  /* BetterUptime status */
+  ...CreateRecords("status.vlad.gg", BetterUptimeRecords),
 
-  /* Upptime Status Monitor */
-  CNAME("up", "vladzaharia.github.io."),
-
-  /* Office 365 records */
-  ...CreateOffice365Records("zhr-one", "ms62227587"),
-  MX("*", 0, "zhr-one.mail.protection.outlook.com."),
-  CNAME(
-    "selector1._domainkey",
-    "selector1-zhr-one._domainkey.vladzaharia.onmicrosoft.com."
-  ),
-  CNAME(
-    "selector2._domainkey",
-    "selector2-zhr-one._domainkey.vladzaharia.onmicrosoft.com."
-  ),
+  /* Cloudflare mail records */
+  ...CreateCloudflareMailRecords(ROUTES_NAMED, [62, 12, 52]),
 
   /* 3CX SIP records */
   SRV("_sip._tcp", 20, 1, 5060, GetHost("Barium")),
@@ -58,10 +45,7 @@ D(
     "@",
     "keybase-site-verification=z79M8GrtyF-25fIHHrUfBlJmPbmcj5sNdIUOjsoIb00"
   ),
+  TXT("@", "MS=ms62227587"),
   TXT("@", "MS=ms10317245"),
-
-  /* Digicert verification records */
-  TXT("@", "hmxpcz4y05hv0m23zmdmwpknd46dkngh"),
-  TXT("*.local", "z06cmpqcxj900cwnn789jwfz6j3rd8bq"),
-  TXT("*.dc.local", "z06cmpqcxj900cwnn789jwfz6j3rd8bq")
+  TXT("@", "krh66c6273yfdhsr7061s77pbtfxm0mm")
 );

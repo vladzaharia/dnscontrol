@@ -2,12 +2,13 @@ import { CfProxyOn, CfSSLOn } from "../providers/cloudflare";
 import { AdditionalNames, ElementNames } from "./server";
 import { GetHost, GetIP } from "../records/core";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export type DNSControlRecord = (
   name: string,
   target?: string,
   ...modifiers: any[]
 ) => any;
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 export type RecordType = "CNAME" | "A";
 

@@ -1,30 +1,21 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
-import { CreateOffice365Records } from "../records/mail/office365";
-import { CreateRecords } from "../utils/record";
-import { WestinSiteServices } from "../records/locations/westin";
-import { GGStreamSiteExtServices } from "../records/ggstream";
+import {
+  CreateCloudflareMailRecords,
+  ROUTES_NUM,
+} from "../records/mail/cfmail";
 
-console.log("Zone: vladzaharia.com - Old Site");
+console.log("Zone: vladzaharia.com - Deprecated");
 
 D(
   "vladzaharia.com",
   NoRegistrar,
   DnsProvider(CloudflareDns),
   /* Basic records */
-  CreateRecords("vladzaharia.com", WestinSiteServices, "Cobalt"),
-  ...CreateRecords("vladzaharia.com - GGStream", GGStreamSiteExtServices),
+  A("@", "172.66.46.234"),
 
-  /* Office 365 records */
-  ...CreateOffice365Records("vladzaharia-com", "ms36958426"),
-  CNAME(
-    "selector1._domainkey",
-    "selector1-vladzaharia-com._domainkey.vladzaharia.onmicrosoft.com."
-  ),
-  CNAME(
-    "selector2._domainkey",
-    "selector2-vladzaharia-com._domainkey.vladzaharia.onmicrosoft.com."
-  ),
+  /* Cloudflare Mail records */
+  ...CreateCloudflareMailRecords(ROUTES_NUM, [72, 15, 91]),
 
   /* Verification records */
   TXT(
@@ -38,5 +29,7 @@ D(
   TXT(
     "@",
     "keybase-site-verification=jgh6s9z8DqOxzqUWr8b4p65ydtn0D7STlWfoKfetsio"
-  )
+  ),
+  TXT("@", "MS=ms36958426"),
+  TXT("@", "krh66c6273yfdhsr7061s77pbtfxm0mm")
 );
