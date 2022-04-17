@@ -28,6 +28,7 @@ export const TownhouseRecords: Record[] = [
   { name: "books", description: "Calibre" },
   { name: "music", description: "Airsonic" },
   { name: "stash", description: "Stash" },
+  { name: "pod", description: "PodGrab Podcasts" },
 
   /* TeslaMate */
   { name: "tesla", description: "TeslaMate" },
