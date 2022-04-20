@@ -47,5 +47,6 @@ D(
   ),
   TXT("@", "MS=ms62227587"),
   TXT("@", "MS=ms10317245"),
-  TXT("@", "krh66c6273yfdhsr7061s77pbtfxm0mm")
+  TXT("@", "krh66c6273yfdhsr7061s77pbtfxm0mm"),
+  TXT("_doppler_guRuoPJHEswl0", "B1aF7MgOlLnYKwXH4eGgV4vV7eaAL8Q8")
 );
