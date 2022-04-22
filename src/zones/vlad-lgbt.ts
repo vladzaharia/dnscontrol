@@ -16,6 +16,7 @@ D(
   /* Basic records */
   CreateRecord({ name: "@", type: "A", target: GetIP("Helium"), proxy: true }),
   CreateRecord({ name: "www", type: "A", target: GetIP("Helium"), proxy: true }),
+  CF_TEMP_REDIRECT("*vlad.lgbt/*", "https://vlad.gg/$2"),
 
   /* HEY for Domains records */
   ...CreateCloudflareMailRecords(ROUTES_NUM, [97, 95, 68])
