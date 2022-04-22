@@ -4,6 +4,8 @@ import {
   CreateCloudflareMailRecords,
   ROUTES_NUM,
 } from "../records/mail/cfmail";
+import { CreateRecord } from "../utils/record";
+import { GetIP } from "../records/core";
 
 console.log("Zone: vlad.lgbt - vlad.gg Redirect");
 
@@ -12,7 +14,8 @@ D(
   NoRegistrar,
   DnsProvider(CloudflareDns),
   /* Basic records */
-  A("@", "172.66.46.234"),
+  CreateRecord({ name: "@", type: "A", target: GetIP("Helium") }),
+  CreateRecord({ name: "www", type: "A", target: GetIP("Helium") }),
 
   /* HEY for Domains records */
   ...CreateCloudflareMailRecords(ROUTES_NUM, [97, 95, 68])
