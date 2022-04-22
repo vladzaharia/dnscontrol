@@ -58,3 +58,7 @@ declare function SRV(
 
 // Record Modifiers
 declare function TTL(ttl: Ttl): any;
+
+// Cloudflare Modifiers
+declare function CF_REDIRECT(old: string, redirect: string): any;
+declare function CF_TEMP_REDIRECT(old: string, redirect: string): any;

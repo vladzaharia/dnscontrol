@@ -15,8 +15,13 @@ D(
   DnsProvider(CloudflareDns),
   /* Basic records */
   CreateRecord({ name: "@", type: "A", target: GetIP("Helium"), proxy: true }),
-  CreateRecord({ name: "www", type: "A", target: GetIP("Helium"), proxy: true }),
-  
+  CreateRecord({
+    name: "www",
+    type: "A",
+    target: GetIP("Helium"),
+    proxy: true,
+  }),
+
   /* Redirect all to .gg */
   CF_REDIRECT("*vlad.lgbt/*", "https://vlad.gg/$2"),
 
