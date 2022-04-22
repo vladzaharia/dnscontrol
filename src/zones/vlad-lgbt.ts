@@ -14,8 +14,8 @@ D(
   NoRegistrar,
   DnsProvider(CloudflareDns),
   /* Basic records */
-  CreateRecord({ name: "@", type: "A", target: GetIP("Helium") }),
-  CreateRecord({ name: "www", type: "A", target: GetIP("Helium") }),
+  CreateRecord({ name: "@", type: "A", target: GetIP("Helium"), proxy: true }),
+  CreateRecord({ name: "www", type: "A", target: GetIP("Helium"), proxy: true }),
 
   /* HEY for Domains records */
   ...CreateCloudflareMailRecords(ROUTES_NUM, [97, 95, 68])
