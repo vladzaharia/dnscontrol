@@ -2,6 +2,11 @@
  * DNS Provider - Cloudflare
  */
 export const CloudflareDns = NewDnsProvider("cloudflare", "CLOUDFLAREAPI");
+export const CloudflareDnsWithRedirect = NewDnsProvider(
+  "cloudflare",
+  "CLOUDFLAREAPI",
+  { manage_redirects: true }
+);
 
 /**
  * Turn on Cloudflare proxy.

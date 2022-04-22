@@ -1,4 +1,4 @@
-import { CloudflareDns } from "../providers/cloudflare";
+import { CloudflareDnsWithRedirect } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import {
   CreateCloudflareMailRecords,
@@ -12,7 +12,7 @@ console.log("Zone: vlad.lgbt - vlad.gg Redirect");
 D(
   "vlad.lgbt",
   NoRegistrar,
-  DnsProvider(CloudflareDns),
+  DnsProvider(CloudflareDnsWithRedirect),
   /* Basic records */
   CreateRecord({ name: "@", type: "A", target: GetIP("Helium"), proxy: true }),
   CreateRecord({
