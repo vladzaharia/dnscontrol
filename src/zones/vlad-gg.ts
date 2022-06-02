@@ -13,7 +13,7 @@ D(
   DnsProvider(CloudflareDns),
   /* Basic records */
   ...CreateRecords("vlad.gg", NetlifyVladGGRecords),
-  CreateRecord({ name: "bb", target: "vladzaharia.github.io" }),
+  CreateRecord({ name: "bb", target: "vladzaharia.github.io." }),
 
   /* BetterUptime status */
   ...CreateRecords("status.vlad.gg", BetterUptimeRecords),
