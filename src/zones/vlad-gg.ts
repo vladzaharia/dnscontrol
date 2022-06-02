@@ -3,7 +3,7 @@ import { NoRegistrar } from "../providers/noregistrar";
 import { CreateHeyForDomainsRecords } from "../records/mail/hey";
 import { BetterUptimeRecords } from "../records/services/betteruptime";
 import { NetlifyVladGGRecords } from "../records/services/netlify-vladgg";
-import { CreateRecords } from "../utils/record";
+import { CreateRecord, CreateRecords } from "../utils/record";
 
 console.log("Zone: vlad.gg - New Site");
 
