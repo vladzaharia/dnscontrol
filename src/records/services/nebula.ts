@@ -20,7 +20,7 @@ export const NebulaOverlayRecords: Record[] = [
     target: "zhrone-nebula-lh2.westus3.cloudapp.azure.com.",
   },
   {
-    name: "lh1.nebula",
+    name: "lh2.nebula",
     description: "[N] Lighthouse 1 - Townhouse",
     type: "A",
     target: "10.200.10.5",
