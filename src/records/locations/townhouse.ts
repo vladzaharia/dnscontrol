@@ -7,7 +7,7 @@ export const TownhouseRecords: Record[] = [
   /* Infrastructure */
   { name: "router", type: "A", description: "Router", target: "10.10.0.1" },
   { name: "truenas", type: "A", description: "TrueNAS", target: "10.10.0.10" },
-  { name: "ca", description: "zhr.one CA" },
+  { name: "vault", description: "zhr.one Vault" },
   { name: "id", description: "ID Proxy" },
   { name: "s3", description: "Minio S3" },
   { name: "console.s3", description: "Minio S3" },
