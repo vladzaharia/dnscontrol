@@ -9,6 +9,7 @@ export const TownhouseRecords: Record[] = [
   { name: "truenas", type: "A", description: "TrueNAS", target: "10.10.0.10" },
   { name: "vault", description: "Hashicorp Vault" },
   { name: "teleport", description: "Gravitational Teleport" },
+  { name: "*.teleport", description: "Gravitational Teleport App Proxy" },
   { name: "prom", description: "Prometheus" },
   { name: "loki", description: "Loki" },
   { name: "s3", description: "Minio S3" },
