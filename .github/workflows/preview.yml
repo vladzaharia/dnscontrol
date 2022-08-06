@@ -6,7 +6,7 @@ on:
 
 jobs:
   prepare:
-    uses: ./.github/workflows/common/prepare.yml
+    uses: ./.github/workflows/prepare.yml
     secrets: inherit
   preview:
     needs: prepare
