@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: out
-          path: ./*
+          path: out/*
   token:
     name: Get token from Vault
     runs-on: ubuntu-latest
