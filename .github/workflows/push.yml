@@ -27,7 +27,7 @@ jobs:
           roleId: ${{ secrets.VAULT_ROLE_ID }}
           secretId: ${{ secrets.VAULT_SECRET_ID }}
           secrets: |
-              projects/data/dnscontrol CF_API | CF_API
+            projects/data/dnscontrol CF_API | CF_API
       - name: Generate and push records
         run: npm run push-ci
         env:

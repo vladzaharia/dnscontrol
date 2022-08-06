@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: "14"
-          cache: 'npm'
+          cache: "npm"
       - name: Download dependencies
         run: npm ci
       - name: Download compiled JS

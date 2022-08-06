@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: "14"
-          cache: 'npm'
+          cache: npm
       - name: Download dependencies
         run: npm ci
       - name: Build JS files
@@ -49,4 +49,23 @@ jobs:
           roleId: ${{ secrets.VAULT_ROLE_ID }}
           secretId: ${{ secrets.VAULT_SECRET_ID }}
           secrets: |
-              projects/data/dnscontrol CF_API | CF_API
+            projects/data/dnscontrol CF_API | CF_API
+  lib:
+    name: Get latest DNSControl binaries
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the latest binaries
+        run: |
+          LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/StackExchange/dnscontrol/releases/latest)
+          LATEST_VERSION=$(echo $LATEST_RELEASE | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
+          ARTIFACT_BASE_URL="https://github.com/account/project/releases/download/$LATEST_VERSION"
+          curl -o ./lib/dnscontrol-Darwin $ARTIFACT_BASE_URL/dnscontrol-Darwin
+          curl -o ./lib/dnscontrol-Linux $ARTIFACT_BASE_URL/dnscontrol-Linux
+          curl -o ./lib/dnscontrol.exe $ARTIFACT_BASE_URL/dnscontrol-.exe
+          echo $LATEST_VERSION > ./lib/VERSION
+        shell: bash
+      - name: Upload compiled JS
+        uses: actions/upload-artifact@v3
+        with:
+          name: lib
+          path: lib/*
