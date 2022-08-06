@@ -19,4 +19,4 @@ jobs:
       - name: Generate and preview records
         run: npm run preview-ci
         env:
-          CF_API: ${{ jobs.prepare.outputs.CF_API }}
+          CF_API: ${{ needs.prepare.outputs.CF_API }}
