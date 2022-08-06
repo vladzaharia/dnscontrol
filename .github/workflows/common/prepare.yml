@@ -1,0 +1,51 @@
+name: Build and Prepare for Preview/Push
+
+on:
+  workflow_call:
+    secrets:
+      VAULT_ROLE_ID:
+        required: true
+      VAULT_SECRET_ID:
+        required: true
+
+    # Map the workflow outputs to job outputs
+    outputs:
+      CF_API:
+        description: "Cloudflare API key"
+        value: ${{ jobs.token.outputs.CF_API }}
+
+jobs:
+  build:
+    name: Build DNS records
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js v14
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: "14"
+      - name: Download dependencies
+        run: npm ci
+      - name: Build JS files
+        run: npm run build
+      - name: Upload compiled JS
+        uses: actions/upload-artifact@v3
+        with:
+          name: out
+          path: out/*
+  token:
+    name: Get token from Vault
+    runs-on: ubuntu-latest
+    outputs:
+      CF_API: ${{ steps.secrets.outputs.CF_API }}
+    steps:
+      - name: Import secrets from Vault
+        id: secrets
+        uses: hashicorp/vault-action@v2.4.0
+        with:
+          url: https://vault.zhr.one
+          method: approle
+          roleId: ${{ secrets.VAULT_ROLE_ID }}
+          secretId: ${{ secrets.VAULT_SECRET_ID }}
+          secrets: |
+              projects/data/dnscontrol CF_API | CF_API

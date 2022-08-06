@@ -4,9 +4,6 @@ on:
   push:
     branches: [master]
 
-env:
-  CF_API: ${{ secrets.CF_API }}
-
 jobs:
   push:
     runs-on: ubuntu-18.04

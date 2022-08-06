@@ -5,29 +5,18 @@ on:
     branches: [master]
 
 jobs:
+  prepare:
+    uses: ./.github/workflows/common/prepare.yml
+    secrets: inherit
   preview:
-    runs-on: ubuntu-18.04
+    needs: prepare
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js v14
-        uses: actions/setup-node@v2-beta
+      - name: Download compiled JS
+        uses: actions/download-artifact@v3
         with:
-          node-version: "14"
-      - name: Download dependencies
-        run: npm ci
-      - name: Build JS files
-        run: npm run build
-      - name: Import secrets from Vault
-        id: secrets
-        uses: hashicorp/vault-action@v2.4.0
-        with:
-          url: https://vault.zhr.one
-          method: approle
-          roleId: ${{ secrets.VAULT_ROLE_ID }}
-          secretId: ${{ secrets.VAULT_SECRET_ID }}
-          secrets: |
-              projects/data/dnscontrol CF_API | CF_API
+          name: out
       - name: Generate and preview records
         run: npm run preview-ci
         env:
-          CF_API: ${{ steps.secrets.outputs.CF_API }}
+          CF_API: ${{ jobs.prepare.outputs.CF_API }}
