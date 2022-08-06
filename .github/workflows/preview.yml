@@ -12,19 +12,20 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js v1S4
-        uses: actions/setup-node@v2-beta
+      - name: Download DNSControl binaries
+        uses: actions/download-artifact@v3
         with:
-          node-version: "14"
-          cache: "npm"
-      - name: Download dependencies
-        run: npm ci
+          name: lib
+          path: lib
       - name: Download compiled JS
         uses: actions/download-artifact@v3
         with:
           name: out
+          path: out
       - name: Generate and preview records
-        run: npm run preview-ci
+        run: |
+          cd out
+          ../lib/dnscontrol-Linux preview
+        shell: bash
         env:
           CF_API: ${{ needs.prepare.outputs.CF_API }}
