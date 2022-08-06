@@ -4,13 +4,22 @@ on:
   pull_request:
     branches: [master]
 
-env:
-  CF_API: ${{ secrets.CF_API }}
+# env:
+#   CF_API: ${{ secrets.CF_API }}
 
 jobs:
   preview:
     runs-on: ubuntu-18.04
     steps:
+      - name: Import secrets from Vault
+        id: secrets
+        uses: hashicorp/vault-action@v2.4.0
+        with:
+          url: https://vault.zhr.one
+          roleId: ${{ secrets.VAULT_ROLE_ID }}
+          secretId: ${{ secrets.VAULT_SECRET_ID }}
+          secrets: |
+              projects/dnscontrol CF_API | CF_API
       - uses: actions/checkout@v2
       - name: Use Node.js v14
         uses: actions/setup-node@v2-beta
@@ -22,3 +31,5 @@ jobs:
         run: npm run build
       - name: Generate and preview records
         run: npm run preview-ci
+        env:
+          CF_API: ${{ steps.secrets.outputs.CF_API }}
