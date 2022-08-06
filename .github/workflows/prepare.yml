@@ -24,6 +24,7 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: "14"
+          cache: 'npm'
       - name: Download dependencies
         run: npm ci
       - name: Build JS files
@@ -32,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: out
-          path: out/*
+          path: ./*
   token:
     name: Get token from Vault
     runs-on: ubuntu-latest

@@ -13,6 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Use Node.js v1S4
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: "14"
+          cache: 'npm'
+      - name: Download dependencies
+        run: npm ci
       - name: Download compiled JS
         uses: actions/download-artifact@v3
         with:
