@@ -37,14 +37,14 @@ const Servers: ServerMap = {
     description: "Home IP",
     prefix: "he",
     location: "sea",
-    ip: "97.113.213.203",
+    ip: "75.172.20.32",
   },
   Thorium: {
     name: "Thorium",
     description: "Townhouse IP",
     prefix: "th",
     location: "sea",
-    ip: "174.127.231.21",
+    ip: "75.172.20.32",
     excludeRecord: true,
   },
   Palladium: {
