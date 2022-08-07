@@ -64,6 +64,7 @@ jobs:
           curl -o dnscontrol-Darwin $ARTIFACT_BASE_URL/dnscontrol-Darwin
           curl -o dnscontrol-Linux $ARTIFACT_BASE_URL/dnscontrol-Linux
           curl -o dnscontrol.exe $ARTIFACT_BASE_URL/dnscontrol.exe
+          chmod +x *
           echo $LATEST_VERSION > ./VERSION
         shell: bash
       - name: Upload DNSControl binaries

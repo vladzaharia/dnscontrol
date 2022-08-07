@@ -26,6 +26,7 @@ jobs:
       - name: Generate and preview records
         run: |
           cd out
+          chmod +x ../lib/dnscontrol-Linux
           ../lib/dnscontrol-Linux preview
         shell: bash
         env:
