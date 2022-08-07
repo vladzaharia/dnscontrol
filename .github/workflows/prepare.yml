@@ -33,7 +33,7 @@ jobs:
             projects/data/dnscontrol CF_API | CF_API
       - name: Assign to variable
         id: secret
-        run: echo '::set-output name=cfapi::${{ jobs.token.outputs.CF_API }}'
+        run: echo '::set-output name=cfapi::${{ steps.vault.outputs.CF_API }}'
   lib:
     name: Download DNSControl binaries
     runs-on: ubuntu-latest
