@@ -19,10 +19,10 @@ jobs:
     name: Retrieve Cloudflare token
     runs-on: ubuntu-latest
     outputs:
-      CF_API: ${{ steps.secrets.outputs.CF_API }}
+      CF_API: ${{ steps.vault.outputs.CF_API }}
     steps:
       - name: Retrieve token from Vault
-        id: secrets
+        id: vault
         uses: hashicorp/vault-action@v2.4.0
         with:
           url: https://vault.zhr.one
