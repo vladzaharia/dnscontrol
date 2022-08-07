@@ -8,7 +8,7 @@ jobs:
   prepare:
     uses: ./.github/workflows/prepare.yml
   push:
-    name: Preview DNS changes
+    name: Push DNS changes
     needs: prepare
     runs-on: ubuntu-latest
     steps:
