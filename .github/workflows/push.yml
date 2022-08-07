@@ -5,21 +5,25 @@ on:
     branches: [master]
 
 jobs:
+  prepare:
+    uses: ./.github/workflows/prepare.yml
   push:
-    runs-on: ubuntu-18.04
-    environment: production
+    name: Preview DNS changes
+    needs: prepare
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js v14
-        uses: actions/setup-node@v2-beta
+      - name: Download DNSControl binaries
+        uses: actions/download-artifact@v3
         with:
-          node-version: "14"
-      - name: Download dependencies
-        run: npm ci
-      - name: Build JS files
-        run: npm run build
-      - name: Import secrets from Vault
-        id: secrets
+          name: lib
+          path: lib
+      - name: Download compiled JS
+        uses: actions/download-artifact@v3
+        with:
+          name: out
+          path: out
+      - name: Retrieve token from Vault
+        id: vault
         uses: hashicorp/vault-action@v2.4.0
         with:
           url: https://vault.zhr.one
@@ -28,7 +32,13 @@ jobs:
           secretId: ${{ secrets.VAULT_SECRET_ID }}
           secrets: |
             projects/data/dnscontrol CF_API | CF_API
+      - name: Make binaries executable
+        run: chmod +x dnscontrol*
+        working-directory: lib
+        shell: bash
       - name: Generate and push records
-        run: npm run push-ci
+        run: ../lib/dnscontrol-Linux push
+        working-directory: out
+        shell: bash
         env:
-          CF_API: ${{ steps.secrets.outputs.CF_API }}
+          CF_API: ${{ steps.vault.outputs.CF_API }}
