@@ -2,38 +2,8 @@ name: Build and Prepare for Preview/Push
 
 on:
   workflow_call:
-    secrets:
-      VAULT_ROLE_ID:
-        required: true
-      VAULT_SECRET_ID:
-        required: true
-
-    # Map the workflow outputs to job outputs
-    outputs:
-      CF_API:
-        description: "Cloudflare API key"
-        value: ${{ jobs.secret.outputs.cfapi }}
 
 jobs:
-  token:
-    name: Retrieve Cloudflare token
-    runs-on: ubuntu-latest
-    outputs:
-      CF_API: ${{ steps.vault.outputs.CF_API }}
-    steps:
-      - name: Retrieve token from Vault
-        id: vault
-        uses: hashicorp/vault-action@v2.4.0
-        with:
-          url: https://vault.zhr.one
-          method: approle
-          roleId: ${{ secrets.VAULT_ROLE_ID }}
-          secretId: ${{ secrets.VAULT_SECRET_ID }}
-          secrets: |
-            projects/data/dnscontrol CF_API | CF_API
-      - name: Assign to variable
-        id: secret
-        run: echo '::set-output name=cfapi::${{ steps.vault.outputs.CF_API }}'
   lib:
     name: Download DNSControl binaries
     runs-on: ubuntu-latest

@@ -7,7 +7,6 @@ on:
 jobs:
   prepare:
     uses: ./.github/workflows/prepare.yml
-    secrets: inherit
   preview:
     name: Preview DNS changes
     needs: prepare
@@ -23,6 +22,16 @@ jobs:
         with:
           name: out
           path: out
+      - name: Retrieve token from Vault
+        id: vault
+        uses: hashicorp/vault-action@v2.4.0
+        with:
+          url: https://vault.zhr.one
+          method: approle
+          roleId: ${{ secrets.VAULT_ROLE_ID }}
+          secretId: ${{ secrets.VAULT_SECRET_ID }}
+          secrets: |
+            projects/data/dnscontrol CF_API | CF_API
       - name: Make binaries executable
         run: chmod +x dnscontrol*
         working-directory: lib
@@ -32,4 +41,4 @@ jobs:
         working-directory: out
         shell: bash
         env:
-          CF_API: ${{ needs.prepare.outputs.CF_API }}
+          CF_API: ${{ steps.vault.outputs.CF_API }}
