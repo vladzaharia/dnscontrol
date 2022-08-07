@@ -16,14 +16,14 @@ on:
 
 jobs:
   build:
-    name: Build DNS records
+    name: Compile TypeScript
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js v14
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v3
         with:
-          node-version: "14"
+          node-version: 14
           cache: npm
       - name: Download dependencies
         run: npm ci
@@ -35,7 +35,7 @@ jobs:
           name: out
           path: out/*
   token:
-    name: Get token from Vault
+    name: Vault token retrieval
     runs-on: ubuntu-latest
     outputs:
       CF_API: ${{ steps.secrets.outputs.CF_API }}
@@ -51,7 +51,7 @@ jobs:
           secrets: |
             projects/data/dnscontrol CF_API | CF_API
   lib:
-    name: Get latest DNSControl binaries
+    name: Download DNSControl binaries
     runs-on: ubuntu-latest
     steps:
       - name: Download the latest binaries
@@ -66,7 +66,7 @@ jobs:
           curl -o dnscontrol.exe $ARTIFACT_BASE_URL/dnscontrol.exe
           echo $LATEST_VERSION > ./VERSION
         shell: bash
-      - name: Upload compiled JS
+      - name: Upload DNSControl binaries
         uses: actions/upload-artifact@v3
         with:
           name: lib

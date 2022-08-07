@@ -9,6 +9,7 @@ jobs:
     uses: ./.github/workflows/prepare.yml
     secrets: inherit
   preview:
+    name: Preview DNS changes
     needs: prepare
     runs-on: ubuntu-latest
     steps:
