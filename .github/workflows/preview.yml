@@ -23,11 +23,13 @@ jobs:
         with:
           name: out
           path: out
-      - name: Generate and preview records
-        run: |
-          chmod +x ../lib/dnscontrol*
-          ../lib/dnscontrol-Linux preview
+      - name: Make binaries executable
+        run: chmod +x *
+        working-directory: lib
         shell: bash
+      - name: Generate and preview records
+        run: ../lib/dnscontrol-Linux preview
         working-directory: out
+        shell: bash
         env:
           CF_API: ${{ needs.prepare.outputs.CF_API }}
