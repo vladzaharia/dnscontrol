@@ -54,17 +54,10 @@ jobs:
     name: Download DNSControl binaries
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Download latest binaries
-        run: |
-          mkdir lib
-          cd lib
-          LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/StackExchange/dnscontrol/releases/latest)
-          LATEST_VERSION=$(echo $LATEST_RELEASE | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
-          ARTIFACT_BASE_URL="https://github.com/StackExchange/dnscontrol/releases/download/$LATEST_VERSION"
-          wget -O dnscontrol-Darwin $ARTIFACT_BASE_URL/dnscontrol-Darwin
-          wget -O dnscontrol-Linux $ARTIFACT_BASE_URL/dnscontrol-Linux
-          wget -O dnscontrol.exe $ARTIFACT_BASE_URL/dnscontrol.exe
-          echo $LATEST_VERSION > ./VERSION
+        run: download.sh
+        working-directory: lib
         shell: bash
       - name: Upload DNSControl binaries
         uses: actions/upload-artifact@v3
