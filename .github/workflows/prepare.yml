@@ -15,25 +15,6 @@ on:
         value: ${{ jobs.token.outputs.CF_API }}
 
 jobs:
-  build:
-    name: Compile TypeScript
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js v14
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14
-          cache: npm
-      - name: Download dependencies
-        run: npm ci
-      - name: Build JS files
-        run: npm run build
-      - name: Upload compiled JS
-        uses: actions/upload-artifact@v3
-        with:
-          name: out
-          path: out/*
   token:
     name: Retrieve Cloudflare token
     runs-on: ubuntu-latest
@@ -56,7 +37,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Download latest binaries
-        run: download.sh
+        run: ./download.sh
         working-directory: lib
         shell: bash
       - name: Upload DNSControl binaries
@@ -64,3 +45,22 @@ jobs:
         with:
           name: lib
           path: lib/*
+  compile:
+    name: Compile TypeScript
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js v14
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+          cache: npm
+      - name: Download dependencies
+        run: npm ci
+      - name: Build JS files
+        run: npm run build
+      - name: Upload compiled JS
+        uses: actions/upload-artifact@v3
+        with:
+          name: out
+          path: out/*
