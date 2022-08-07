@@ -25,6 +25,7 @@ jobs:
           path: out
       - name: Generate and preview records
         run: |
+          chmod +x ../lib/dnscontrol*
           ../lib/dnscontrol-Linux preview
         shell: bash
         working-directory: out
