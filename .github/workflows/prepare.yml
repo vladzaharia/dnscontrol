@@ -35,12 +35,12 @@ jobs:
           name: out
           path: out/*
   token:
-    name: Vault token retrieval
+    name: Retrieve Cloudflare token
     runs-on: ubuntu-latest
     outputs:
       CF_API: ${{ steps.secrets.outputs.CF_API }}
     steps:
-      - name: Import secrets from Vault
+      - name: Retrieve token from Vault
         id: secrets
         uses: hashicorp/vault-action@v2.4.0
         with:
@@ -54,7 +54,7 @@ jobs:
     name: Download DNSControl binaries
     runs-on: ubuntu-latest
     steps:
-      - name: Download the latest binaries
+      - name: Download latest binaries
         run: |
           mkdir lib
           cd lib
@@ -64,7 +64,6 @@ jobs:
           curl -o dnscontrol-Darwin $ARTIFACT_BASE_URL/dnscontrol-Darwin
           curl -o dnscontrol-Linux $ARTIFACT_BASE_URL/dnscontrol-Linux
           curl -o dnscontrol.exe $ARTIFACT_BASE_URL/dnscontrol.exe
-          chmod +x *
           echo $LATEST_VERSION > ./VERSION
         shell: bash
       - name: Upload DNSControl binaries
