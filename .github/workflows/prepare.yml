@@ -61,9 +61,9 @@ jobs:
           LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/StackExchange/dnscontrol/releases/latest)
           LATEST_VERSION=$(echo $LATEST_RELEASE | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
           ARTIFACT_BASE_URL="https://github.com/StackExchange/dnscontrol/releases/download/$LATEST_VERSION"
-          curl -o dnscontrol-Darwin $ARTIFACT_BASE_URL/dnscontrol-Darwin
-          curl -o dnscontrol-Linux $ARTIFACT_BASE_URL/dnscontrol-Linux
-          curl -o dnscontrol.exe $ARTIFACT_BASE_URL/dnscontrol.exe
+          wget -O dnscontrol-Darwin $ARTIFACT_BASE_URL/dnscontrol-Darwin
+          wget -O dnscontrol-Linux $ARTIFACT_BASE_URL/dnscontrol-Linux
+          wget -O dnscontrol.exe $ARTIFACT_BASE_URL/dnscontrol.exe
           echo $LATEST_VERSION > ./VERSION
         shell: bash
       - name: Upload DNSControl binaries
