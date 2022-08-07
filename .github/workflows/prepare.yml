@@ -62,8 +62,8 @@ jobs:
           curl -o dnscontrol-Darwin $ARTIFACT_BASE_URL/dnscontrol-Darwin
           curl -o dnscontrol-Linux $ARTIFACT_BASE_URL/dnscontrol-Linux
           curl -o dnscontrol.exe $ARTIFACT_BASE_URL/dnscontrol.exe
-          echo $LATEST_VERSION > ./lib/VERSION
-        working-directory: ./lib
+          echo $LATEST_VERSION > ./VERSION
+        working-directory: lib
         shell: bash
       - name: Upload compiled JS
         uses: actions/upload-artifact@v3
