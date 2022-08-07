@@ -12,7 +12,7 @@ on:
     outputs:
       CF_API:
         description: "Cloudflare API key"
-        value: ${{ jobs.token.outputs.CF_API }}
+        value: ${{ jobs.secret.outputs.cfapi }}
 
 jobs:
   token:
@@ -31,6 +31,9 @@ jobs:
           secretId: ${{ secrets.VAULT_SECRET_ID }}
           secrets: |
             projects/data/dnscontrol CF_API | CF_API
+      - name: Assign to variable
+        id: secret
+        run: echo '::set-output name=cfapi::${{ jobs.token.outputs.CF_API }}'
   lib:
     name: Download DNSControl binaries
     runs-on: ubuntu-latest
