@@ -56,6 +56,8 @@ jobs:
     steps:
       - name: Download the latest binaries
         run: |
+          mkdir lib
+          cd lib
           LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/StackExchange/dnscontrol/releases/latest)
           LATEST_VERSION=$(echo $LATEST_RELEASE | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
           ARTIFACT_BASE_URL="https://github.com/StackExchange/dnscontrol/releases/download/$LATEST_VERSION"
@@ -63,7 +65,6 @@ jobs:
           curl -o dnscontrol-Linux $ARTIFACT_BASE_URL/dnscontrol-Linux
           curl -o dnscontrol.exe $ARTIFACT_BASE_URL/dnscontrol.exe
           echo $LATEST_VERSION > ./VERSION
-        working-directory: lib
         shell: bash
       - name: Upload compiled JS
         uses: actions/upload-artifact@v3
