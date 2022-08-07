@@ -24,7 +24,7 @@ jobs:
           name: out
           path: out
       - name: Make binaries executable
-        run: chmod +x *
+        run: chmod +x dnscontrol*
         working-directory: lib
         shell: bash
       - name: Generate and preview records
