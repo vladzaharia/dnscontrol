@@ -21,6 +21,7 @@ export const TownhouseRecords: Record[] = [
   { name: "ml", description: "Machine Learning", proxy: true },
   { name: "go", description: "Shlink API" },
   { name: "shlink", description: "Shlink UI" },
+  { name: "outline", description: "Outline" },
 
   /* Smart Home */
   { name: "hubitat", description: "Hubitat" },
