@@ -18,6 +18,7 @@ export const TownhouseRecords: Record[] = [
 
   /* Personal Services */
   { name: "cloud", description: "Nextcloud" },
+  { name: "docs", description: "Collabora" },
   { name: "ml", description: "Machine Learning", proxy: true },
   { name: "go", description: "Shlink API" },
   { name: "shlink", description: "Shlink UI" },
