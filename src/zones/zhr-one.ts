@@ -9,7 +9,7 @@ import {
   CreateCloudflareMailRecords,
   ROUTES_NAMED,
 } from "../records/mail/cfmail";
-import { NebulaOverlayRecords } from "../records/services/nebula";
+import { TailscaleRecords } from "../records/services/tailscale";
 
 console.log("Zone: zhr.one - Services");
 
@@ -26,11 +26,11 @@ D(
   /* Westin records */
   ...CreateRecords("Westin", WestinRecords, "Cobalt"),
 
+  /* Tailscale records */
+  ...CreateRecords("Tailscale", TailscaleRecords, "Helium"),
+
   /* BetterUptime status */
   ...CreateRecords("status.zhr.one", BetterUptimeRecords),
-
-  /* Nebula overlay */
-  ...CreateRecords("nebula.zhr.one", NebulaOverlayRecords),
 
   /* Cloudflare mail records */
   ...CreateCloudflareMailRecords(ROUTES_NAMED, [62, 12, 52]),

@@ -14,15 +14,16 @@ export const TownhouseRecords: Record[] = [
   { name: "s3", description: "Minio S3" },
   { name: "console.s3", description: "Minio S3" },
   { name: "ipfs", description: "IPFS" },
-  { name: "urbit", description: "Urbit" },
 
   /* Personal Services */
+  { name: "asset", description: "Snipe-It" },
   { name: "cloud", description: "Nextcloud" },
   { name: "docs", description: "Collabora" },
+  { name: "hb", description: "HOOBS" },
+  { name: "kiwix", type: "A", description: "Kiwix", target: "10.11.2.123" },
   { name: "ml", description: "Machine Learning", proxy: true },
-  { name: "go", description: "Shlink API" },
-  { name: "shlink", description: "Shlink UI" },
   { name: "outline", description: "Outline" },
+  { name: "urbit", description: "Urbit" },
 
   /* Smart Home */
   { name: "hubitat", description: "Hubitat" },
