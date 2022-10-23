@@ -1,7 +1,12 @@
 import { Record } from "../../utils/record";
 
 export const TailscaleRecords: Record[] = [
-  { name: "core.ts", description: "Core Services VM", target: "100.73.253.83" },
+  {
+    name: "core.ts",
+    description: "Core Services VM",
+    target: "100.73.253.83",
+    type: "A",
+  },
   {
     name: "core.ts",
     description: "Core Services VM IPv6",
@@ -9,7 +14,12 @@ export const TailscaleRecords: Record[] = [
     type: "AAAA",
   },
 
-  { name: "hoobs.ts", description: "HOOBS VM", target: "100.81.227.88" },
+  {
+    name: "hoobs.ts",
+    description: "HOOBS VM",
+    target: "100.81.227.88",
+    type: "A",
+  },
   {
     name: "hoobs.ts",
     description: "HOOBS VM IPv6",
@@ -17,7 +27,12 @@ export const TailscaleRecords: Record[] = [
     type: "AAAA",
   },
 
-  { name: "truenas.ts", description: "TrueNAS", target: "100.96.145.44" },
+  {
+    name: "truenas.ts",
+    description: "TrueNAS",
+    target: "100.96.145.44",
+    type: "A",
+  },
   {
     name: "truenas.ts",
     description: "TrueNAS IPv6",
@@ -25,7 +40,7 @@ export const TailscaleRecords: Record[] = [
     type: "AAAA",
   },
 
-  { name: "xui.ts", description: "XUI VM", target: "100.84.40.115" },
+  { name: "xui.ts", description: "XUI VM", target: "100.84.40.115", type: "A" },
   {
     name: "xui.ts",
     description: "XUI VM IPv6",
