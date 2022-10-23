@@ -10,7 +10,7 @@ export type DNSControlRecord = (
 ) => any;
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
-export type RecordType = "CNAME" | "A";
+export type RecordType = "CNAME" | "A" | "AAAA";
 
 export interface Record {
   /**
@@ -64,6 +64,10 @@ export function CreateRecord(
 
   if (record.type === "A") {
     type = A;
+  }
+
+  if (record.type === "AAAA") {
+    type = AAAA;
   }
 
   // Replace Local with IP
