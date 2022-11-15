@@ -12,7 +12,7 @@ export const TownhouseRecords: Record[] = [
   { name: "prom", description: "Prometheus" },
   { name: "loki", description: "Loki" },
   { name: "s3", description: "Minio S3" },
-  { name: "console.s3", description: "Minio S3" },
+  { name: "s3c", description: "Minio S3" },
   { name: "ipfs", description: "IPFS" },
 
   /* Personal Services */
