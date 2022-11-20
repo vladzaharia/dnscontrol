@@ -2,7 +2,7 @@ import { Record } from "../../utils/record";
 
 export const PolarisVideoServices: Record[] = [
   /* Infrastructure */
-  { name: "auth", description: "AUthentik - Polaris" },
+  { name: "auth", description: "Authentik - Polaris" },
   
   /* Public */
   { name: "media", description: "Plex Media Server" },
