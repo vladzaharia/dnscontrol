@@ -16,6 +16,7 @@ export const TownhouseRecords: Record[] = [
   { name: "ipfs", description: "IPFS" },
   { name: "auth", description: "Authentik" },
   { name: "hs", description: "Headscale", target: "zhrone-hs.westus2.cloudapp.azure.com." },
+  { name: "hs-web", description: "Headscale-UI" },
 
   /* Personal Services */
   { name: "asset", description: "Snipe-It" },
