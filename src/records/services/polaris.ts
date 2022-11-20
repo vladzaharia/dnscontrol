@@ -7,4 +7,5 @@ export const PolarisVideoServices: Record[] = [
   { name: "player", description: "IPTV Player" },
   { name: "request", description: "Overseerr Requests" },
   { name: "xui", description: "IPTV Service (Backup)" },
+  { name: "auth", description: "AUthentik - Polaris" },
 ];
