@@ -27,7 +27,6 @@ export const TownhouseRecords: Record[] = [
   { name: "ml", description: "Machine Learning", proxy: true },
   { name: "outline", description: "Outline" },
   { name: "urbit", description: "Urbit" },
-  { name: "pw", description: "Bitwarden" },
 
   /* Smart Home */
   { name: "hubitat", description: "Hubitat" },
