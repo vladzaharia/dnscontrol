@@ -7,18 +7,15 @@ export const TownhouseRecords: Record[] = [
   /* Infrastructure */
   { name: "router", type: "A", description: "Router", target: "10.10.0.1" },
   { name: "truenas", type: "A", description: "TrueNAS", target: "10.10.0.10" },
-  { name: "vault", description: "Hashicorp Vault" },
+  { name: "auth", description: "Authentik" },
+  { name: "guac", description: "Guacamole" },
   { name: "homevpn", description: "Subspace VPN" },
-  { name: "prom", description: "Prometheus" },
-  { name: "loki", description: "Loki" },
+  { name: "hs", description: "Headscale", target: "zhrone-hs.westus2.cloudapp.azure.com." },
   { name: "s3", description: "Minio S3" },
   { name: "s3c", description: "Minio S3" },
-  { name: "ipfs", description: "IPFS" },
-  { name: "auth", description: "Authentik" },
-  { name: "hs", description: "Headscale", target: "zhrone-hs.westus2.cloudapp.azure.com." },
-  { name: "guac", description: "Guacamole" },
 
   /* Personal Services */
+  { name: "artifacts", description: "Snipe-It" },
   { name: "asset", description: "Snipe-It" },
   { name: "cloud", description: "Nextcloud" },
   { name: "docs", description: "Collabora" },
