@@ -23,6 +23,7 @@ export const TownhouseRecords: Record[] = [
   { name: "cloud", description: "Nextcloud" },
   { name: "docs", description: "Collabora" },
   { name: "hb", description: "HOOBS" },
+  { name: "kasm", description: "KASM" },
   { name: "kiwix", type: "A", description: "Kiwix", target: "10.11.2.123" },
   { name: "ml", description: "Machine Learning", proxy: true },
   { name: "outline", description: "Outline" },
