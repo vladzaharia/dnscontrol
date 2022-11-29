@@ -5,8 +5,8 @@ import { Record } from "../../utils/record";
  */
 export const TownhouseRecords: Record[] = [
   /* Infrastructure */
-  { name: "router", type: "A", description: "Router", target: "10.10.0.1" },
-  { name: "truenas", type: "A", description: "TrueNAS", target: "10.10.0.10" },
+  { name: "router", description: "Router", target: "10.10.0.1", type: "A" },
+  { name: "truenas", description: "TrueNAS", target: "10.10.0.10", type: "A" },
   { name: "auth", description: "Authentik" },
   { name: "guac", description: "Guacamole" },
   { name: "homevpn", description: "Subspace VPN" },
@@ -15,13 +15,14 @@ export const TownhouseRecords: Record[] = [
   { name: "s3c", description: "Minio S3" },
 
   /* Personal Services */
-  { name: "artifacts", description: "Snipe-It" },
+  { name: "artifacts", description: "Nexus-OSS" },
   { name: "asset", description: "Snipe-It" },
   { name: "cloud", description: "Nextcloud" },
+  { name: "docker", description: "Docker Registry", target: "10.10.2.10", type: "A" },
   { name: "docs", description: "Collabora" },
   { name: "hb", description: "HOOBS" },
   { name: "kasm", description: "KASM" },
-  { name: "kiwix", type: "A", description: "Kiwix", target: "10.11.2.123" },
+  { name: "kiwix", description: "Kiwix", target: "10.11.2.123", type: "A" },
   { name: "ml", description: "Machine Learning", proxy: true },
   { name: "outline", description: "Outline" },
   { name: "urbit", description: "Urbit" },
