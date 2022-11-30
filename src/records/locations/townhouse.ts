@@ -13,12 +13,13 @@ export const TownhouseRecords: Record[] = [
   { name: "hs", description: "Headscale", target: "zhrone-hs.westus2.cloudapp.azure.com." },
   { name: "s3", description: "Minio S3" },
   { name: "s3c", description: "Minio S3" },
+  { name: "artifacts", description: "Nexus-OSS" },
+  { name: "docker", description: "Docker Registry" },
+  { name: "npm", description: "NPM Registry" },
 
   /* Personal Services */
-  { name: "artifacts", description: "Nexus-OSS" },
   { name: "asset", description: "Snipe-It" },
   { name: "cloud", description: "Nextcloud" },
-  { name: "docker", description: "Docker Registry", target: "10.10.2.10", type: "A" },
   { name: "docs", description: "Collabora" },
   { name: "hb", description: "HOOBS" },
   { name: "kasm", description: "KASM" },
