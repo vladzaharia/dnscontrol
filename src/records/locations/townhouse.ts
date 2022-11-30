@@ -18,7 +18,7 @@ export const TownhouseRecords: Record[] = [
   { name: "artifacts", description: "Nexus-OSS" },
   { name: "asset", description: "Snipe-It" },
   { name: "cloud", description: "Nextcloud" },
-  { name: "docker", description: "Docker Registry", target: "10.10.2.10", type: "A" },
+  { name: "docker", description: "Docker Registry", target: "10.11.2.150", type: "A" },
   { name: "docs", description: "Collabora" },
   { name: "hb", description: "HOOBS" },
   { name: "kasm", description: "KASM" },
