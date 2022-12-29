@@ -23,6 +23,7 @@ declare function CAA(
 declare function CNAME(name: string, target: string, ...modifiers: any[]): any;
 declare function DefaultTTL(ttl: Ttl): any;
 declare function DnsProvider(name: string, nsCount?: number): any;
+declare function IGNORE_NAME(pattern: string, recordTypes?: string): any;
 declare function MX(
   name: string,
   priority: number,

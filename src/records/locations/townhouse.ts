@@ -10,7 +10,11 @@ export const TownhouseRecords: Record[] = [
   { name: "auth", description: "Authentik" },
   { name: "guac", description: "Guacamole" },
   { name: "homevpn", description: "Subspace VPN" },
-  { name: "hs", description: "Headscale", target: "zhrone-hs.westus2.cloudapp.azure.com." },
+  {
+    name: "hs",
+    description: "Headscale",
+    target: "zhrone-hs.westus2.cloudapp.azure.com.",
+  },
   { name: "s3", description: "Minio S3" },
   { name: "s3c", description: "Minio S3" },
   { name: "artifacts", description: "Nexus-OSS" },

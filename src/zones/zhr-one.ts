@@ -1,6 +1,6 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
-import { GetHost, GetCoreRecords } from "../records/core";
+import { GetHost, GetCoreRecords, GetPrefix } from "../records/core";
 import { WestinRecords } from "../records/locations/westin";
 import { TownhouseRecords } from "../records/locations/townhouse";
 import { CreateRecords } from "../utils/record";
@@ -19,6 +19,9 @@ D(
   DnsProvider(CloudflareDns),
   /* Core records */
   ...CreateRecords("Core", GetCoreRecords()),
+
+  // DDNS-managed
+  IGNORE_NAME(GetPrefix("Helium")),
 
   /* Home records */
   ...CreateRecords("Townhouse", TownhouseRecords, "Helium"),
