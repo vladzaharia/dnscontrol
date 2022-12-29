@@ -38,6 +38,7 @@ const Servers: ServerMap = {
     prefix: "he",
     location: "sea",
     ip: "75.172.84.24",
+    excludeRecord: true,
   },
   Thorium: {
     name: "Thorium",
@@ -92,7 +93,7 @@ const Servers: ServerMap = {
   },
 };
 
-function GetPrefix(name: string): string {
+export function GetPrefix(name: string): string {
   const server = Servers[name];
 
   if (!server) {
