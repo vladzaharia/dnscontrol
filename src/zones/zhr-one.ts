@@ -36,7 +36,7 @@ D(
   ...CreateRecords("status.zhr.one", BetterUptimeRecords),
   
   /* Uptime-Kuma */
-  CNAME("uptime", "zhrone-uptime-azecfmdff5dyamac.z01.azurefd.net."),
+  CNAME("uptime", "zhrone-uptime.westus2.cloudapp.azure.com."),
   TXT("_dnsauth.uptime", "cnw3xhsqqqlzr50jf9x6crxdk86b2p3t"),
 
   /* Cloudflare mail records */
