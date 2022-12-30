@@ -26,5 +26,7 @@ export const PolarisVideoServices: Record[] = [
   { name: "bazarr", description: "Bazarr - Subtitle Downloader" },
 
   { name: "tautulli", description: "Tautulli Stats", target: "10.12.2.40", type: "A" },
+  { name: "tdarr", description: "Tdarr transcoder", target: "10.12.2.60", type: "A" },
+  
   { name: "ersatz", description: "ErsatzTV Channels" },
 ];
