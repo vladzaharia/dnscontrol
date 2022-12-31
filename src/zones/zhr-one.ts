@@ -46,6 +46,9 @@ D(
   SRV("_sip._tcp", 20, 1, 5060, GetHost("Barium")),
   SRV("_sip._udp", 20, 1, 5060, GetHost("Barium")),
   SRV("_sip._tls", 20, 1, 5061, GetHost("Barium")),
+  
+  /* KMS */
+  SRV("_vlmcs._tcp", 0, 0, 1688, "10.10.0.10"),
 
   /* Domain verification records */
   TXT(
