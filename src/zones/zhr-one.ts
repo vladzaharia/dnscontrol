@@ -48,7 +48,7 @@ D(
   SRV("_sip._tls", 20, 1, 5061, GetHost("Barium")),
   
   /* KMS */
-  SRV("_vlmcs._tcp", 0, 0, 1688, "10.10.0.10"),
+  SRV("_vlmcs._tcp", 0, 0, 1688, "truenas.zhr.one."),
 
   /* Domain verification records */
   TXT(
