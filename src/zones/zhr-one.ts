@@ -5,16 +5,14 @@ import { WestinRecords } from "../records/locations/westin";
 import { TownhouseRecords } from "../records/locations/townhouse";
 import { CreateRecords } from "../utils/record";
 import { BetterUptimeRecords } from "../records/services/betteruptime";
-import {
-  CreateCloudflareMailRecords,
-  ROUTES_NAMED,
-} from "../records/mail/cfmail";
 import { TailscaleRecords } from "../records/services/tailscale";
+import { CreateFastmailRecords } from "../records/mail/fastmail";
 
-console.log("Zone: zhr.one - Services");
+const BASE_DOMAIN = "zhr.one";
+console.log(`Zone: ${BASE_DOMAIN} - Services`);
 
 D(
-  "zhr.one",
+  BASE_DOMAIN,
   NoRegistrar,
   DnsProvider(CloudflareDns),
   /* Core records */
@@ -34,19 +32,19 @@ D(
 
   /* BetterUptime status */
   ...CreateRecords("status.zhr.one", BetterUptimeRecords),
-  
+
   /* Uptime-Kuma */
   CNAME("uptime", "zhrone-uptime.westus2.cloudapp.azure.com."),
   TXT("_dnsauth.uptime", "cnw3xhsqqqlzr50jf9x6crxdk86b2p3t"),
 
-  /* Cloudflare mail records */
-  ...CreateCloudflareMailRecords(ROUTES_NAMED, [62, 12, 52]),
+  /* Mail records */
+  ...CreateFastmailRecords(BASE_DOMAIN),
 
   /* 3CX SIP records */
   SRV("_sip._tcp", 20, 1, 5060, GetHost("Barium")),
   SRV("_sip._udp", 20, 1, 5060, GetHost("Barium")),
   SRV("_sip._tls", 20, 1, 5061, GetHost("Barium")),
-  
+
   /* KMS */
   SRV("_vlmcs._tcp", 0, 0, 1688, "truenas.zhr.one."),
 

@@ -1,25 +1,26 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
-import { CreateHeyForDomainsRecords } from "../records/mail/hey";
+import { CreateFastmailRecords } from "../records/mail/fastmail";
 import { BetterUptimeRecords } from "../records/services/betteruptime";
 import { NetlifyVladGGRecords } from "../records/services/netlify-vladgg";
 import { CreateRecord, CreateRecords } from "../utils/record";
 
-console.log("Zone: vlad.gg - New Site");
+const BASE_DOMAIN = "vlad.gg";
+console.log(`Zone: ${BASE_DOMAIN} - New Site`);
 
 D(
-  "vlad.gg",
+  BASE_DOMAIN,
   NoRegistrar,
   DnsProvider(CloudflareDns),
   /* Basic records */
-  ...CreateRecords("vlad.gg", NetlifyVladGGRecords),
+  ...CreateRecords(BASE_DOMAIN, NetlifyVladGGRecords),
   CreateRecord({ name: "bb", target: "bb-vlad-gg.netlify.app." }),
 
   /* BetterUptime status */
   ...CreateRecords("status.vlad.gg", BetterUptimeRecords),
 
-  /* HEY for Domains records */
-  ...CreateHeyForDomainsRecords(),
+  /* Mail records */
+  ...CreateFastmailRecords(BASE_DOMAIN),
 
   /* Domain verification records */
   TXT("@", "krh66c6273yfdhsr7061s77pbtfxm0mm"),

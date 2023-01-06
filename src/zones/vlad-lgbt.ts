@@ -1,16 +1,14 @@
 import { CloudflareDnsWithRedirect } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
-import {
-  CreateCloudflareMailRecords,
-  ROUTES_NUM,
-} from "../records/mail/cfmail";
 import { CreateRecord } from "../utils/record";
 import { GetIP } from "../records/core";
+import { CreateFastmailRecords } from "../records/mail/fastmail";
 
-console.log("Zone: vlad.lgbt - vlad.gg Redirect");
+const BASE_DOMAIN = "vlad.lgbt";
+console.log(`Zone: ${BASE_DOMAIN} - vlad.gg Redirect`);
 
 D(
-  "vlad.lgbt",
+  BASE_DOMAIN,
   NoRegistrar,
   DnsProvider(CloudflareDnsWithRedirect),
   /* Basic records */
@@ -25,8 +23,8 @@ D(
   /* Redirect all to .gg */
   CF_REDIRECT("*vlad.lgbt/*", "https://vlad.gg/$2"),
 
-  /* HEY for Domains records */
-  ...CreateCloudflareMailRecords(ROUTES_NUM, [97, 95, 68])
+  /* Mail records */
+  ...CreateFastmailRecords(BASE_DOMAIN)
 
   /* Domain verification records */
 );
