@@ -1,7 +1,6 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { GetHost, GetCoreRecords, GetPrefix } from "../records/core";
-import { WestinRecords } from "../records/locations/westin";
 import { TownhouseRecords } from "../records/locations/townhouse";
 import { CreateRecords } from "../utils/record";
 import { BetterUptimeRecords } from "../records/services/betteruptime";
@@ -23,9 +22,6 @@ D(
 
   /* Home records */
   ...CreateRecords("Townhouse", TownhouseRecords, "Helium"),
-
-  /* Westin records */
-  ...CreateRecords("Westin", WestinRecords, "Cobalt"),
 
   /* Tailscale records */
   ...CreateRecords("Tailscale", TailscaleRecords, "Helium"),
