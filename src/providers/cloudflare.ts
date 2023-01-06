@@ -1,7 +1,7 @@
 /**
  * DNS Provider - Cloudflare
  */
-export const CloudflareDns = NewDnsProvider("cloudflare", "CLOUDFLAREAPI");
+export const CloudflareDns = NewDnsProvider("cloudflare");
 export const CloudflareDnsWithRedirect = NewDnsProvider(
   "cloudflare",
   "CLOUDFLAREAPI",

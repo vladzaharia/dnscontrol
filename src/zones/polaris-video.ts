@@ -1,27 +1,25 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
-import {
-  CreateCloudflareMailRecords,
-  ROUTES_NAMED,
-} from "../records/mail/cfmail";
+import { CreateFastmailRecords } from "../records/mail/fastmail";
 import { BetterUptimeRecords } from "../records/services/betteruptime";
 import { PolarisVideoServices } from "../records/services/polaris";
 import { CreateRecords } from "../utils/record";
 
-console.log("Zone: vlad.lgbt - vlad.gg Redirect");
+const BASE_DOMAIN = "polaris.video";
+console.log(`Zone: ${BASE_DOMAIN}`);
 
 D(
-  "polaris.video",
+  BASE_DOMAIN,
   NoRegistrar,
   DnsProvider(CloudflareDns),
   /* Service records */
   ...CreateRecords("Polaris Video", PolarisVideoServices, "Helium"),
 
-  /* HEY for Domains records */
-  ...CreateCloudflareMailRecords(ROUTES_NAMED, [73, 86, 28]),
-
   /* BetterUptime status */
-  ...CreateRecords("status.polaris.video", BetterUptimeRecords)
+  ...CreateRecords("status.polaris.video", BetterUptimeRecords),
+
+  /* Mail records */
+  ...CreateFastmailRecords(BASE_DOMAIN)
 
   /* Domain verification records */
 );

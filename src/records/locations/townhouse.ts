@@ -7,7 +7,12 @@ export const TownhouseRecords: Record[] = [
   /* Infrastructure */
   { name: "router", description: "Router", target: "10.10.0.1", type: "A" },
   { name: "truenas", description: "TrueNAS", target: "10.10.0.10", type: "A" },
-  { name: "adguard", description: "Adguard Home", target: "10.10.2.20", type: "A"  },
+  {
+    name: "adguard",
+    description: "Adguard Home",
+    target: "10.10.2.20",
+    type: "A",
+  },
   { name: "auth", description: "Authentik" },
   { name: "guac", description: "Guacamole" },
   { name: "homevpn", description: "Subspace VPN" },
