@@ -36,11 +36,6 @@ D(
   /* Mail records */
   ...CreateFastmailRecords(BASE_DOMAIN),
 
-  /* 3CX SIP records */
-  SRV("_sip._tcp", 20, 1, 5060, GetHost("Barium")),
-  SRV("_sip._udp", 20, 1, 5060, GetHost("Barium")),
-  SRV("_sip._tls", 20, 1, 5061, GetHost("Barium")),
-
   /* KMS */
   SRV("_vlmcs._tcp", 0, 0, 1688, "truenas.zhr.one."),
 
