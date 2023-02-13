@@ -1,6 +1,6 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
-import { GetHost, GetCoreRecords, GetPrefix } from "../records/core";
+import { GetCoreRecords, GetPrefix } from "../records/core";
 import { TownhouseRecords } from "../records/locations/townhouse";
 import { CreateRecords } from "../utils/record";
 import { BetterUptimeRecords } from "../records/services/betteruptime";
