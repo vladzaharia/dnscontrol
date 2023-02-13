@@ -6,7 +6,11 @@ type Ttl = string | number;
 // Top Level Functions
 declare function REV(address: string): string;
 declare function NewRegistrar(name: string, type?: string, meta?: any): string;
-declare function NewDnsProvider(name: string, type?: string, meta?: any): string;
+declare function NewDnsProvider(
+  name: string,
+  type?: string,
+  meta?: any
+): string;
 declare function DEFAULTS(...modifiers: any[]): void;
 declare function D(name: string, registrar: string, ...meta: any[]): void;
 
