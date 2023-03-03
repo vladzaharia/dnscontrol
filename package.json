@@ -4,6 +4,7 @@
   "description": "Reproducible DNS record entries for zhr.one properties",
   "private": true,
   "scripts": {
+    "postinstall": "./lib/download.sh",
     "build": "npm run lint && webpack",
     "preview-ci": "run-script-os",
     "preview-ci:darwin": "cd out && ../lib/dnscontrol-Darwin preview",
