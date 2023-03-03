@@ -4,4 +4,4 @@
 
 tasks:
   - init: npm install && npm run build
-    command: infisical run -- npm run preview
+    command: infisical run -- npm run preview-ci
