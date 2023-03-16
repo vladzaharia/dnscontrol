@@ -24,8 +24,7 @@ D(
   ...CreateFastmailRecords(`ds.${BASE_DOMAIN}`, "ds"),
 
   /* Domain verification records */
-  TXT("@", "krh66c6273yfdhsr7061s77pbtfxm0mm"),
-  TXT("@", "ybqnhr2z5gddd1kxbgdv6873s7ng47v6"),
+  TXT("@", "s1l5y5j5hx2jmm2dxcz2b6jdk7grhjzn"),
   TXT("@", "verification:RZjHjtRtEzMtsNp12KuUs5GY"),
   TXT(
     "@",

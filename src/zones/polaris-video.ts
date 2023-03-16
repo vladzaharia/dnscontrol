@@ -19,7 +19,8 @@ D(
   ...CreateRecords("status.polaris.video", BetterUptimeRecords),
 
   /* Mail records */
-  ...CreateFastmailRecords(BASE_DOMAIN)
+  ...CreateFastmailRecords(BASE_DOMAIN),
 
   /* Domain verification records */
+  TXT("@", "s1l5y5j5hx2jmm2dxcz2b6jdk7grhjzn"),
 );
