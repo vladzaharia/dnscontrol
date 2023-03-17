@@ -8,7 +8,7 @@ export const TownhouseRecords: Record[] = [
   { name: "router", description: "Router", target: "10.10.0.1", type: "A" },
   { name: "truenas", description: "TrueNAS", target: "10.10.0.10", type: "A" },
   { name: "auth", description: "Authentik" },
-  { name: "hashicorp", description: "Hashicorp" },
+  { name: "vault", description: "Hashicorp Vault" },
   { name: "env", description: "Infisical" },
 
   /* Personal Services */
