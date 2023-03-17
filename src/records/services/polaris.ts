@@ -21,16 +21,12 @@ export const PolarisVideoServices: Record[] = [
   {
     name: "radarr",
     description: "Radarr - Movie Indexer",
-    target: "10.12.2.12",
-    type: "A",
   },
   { name: "lidarr", description: "Lidarr - Music Indexer" },
   { name: "readarr", description: "Readerr - Book Indexer" },
   {
     name: "prowlarr",
     description: "Prowlarr - Meta Indexer",
-    target: "10.12.2.10",
-    type: "A",
   },
 
   {
@@ -48,8 +44,6 @@ export const PolarisVideoServices: Record[] = [
   {
     name: "tautulli",
     description: "Tautulli Stats",
-    target: "10.12.2.40",
-    type: "A",
   },
   {
     name: "tdarr",
