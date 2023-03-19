@@ -26,9 +26,17 @@ jobs:
         run: chmod +x dnscontrol*
         working-directory: lib
         shell: bash
+      - name: Pull CF secrets from Vault
+        uses: hashicorp/vault-action@v2
+        with:
+          url: https://vault.zhr.one
+          role: dns
+          path: github
+          method: jwt
+          jwtGithubAudience: sigstore
+          secrets: |
+            /ci-cd/dns CF_API
       - name: Generate and push records
         run: ../lib/dnscontrol-Linux push
         working-directory: out
         shell: bash
-        env:
-          CF_API: ${{ secrets.CF_API }}
