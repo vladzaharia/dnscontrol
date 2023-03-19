@@ -11,6 +11,9 @@ jobs:
     name: Push DNS changes
     needs: prepare
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Download DNSControl binaries
         uses: actions/download-artifact@v3
