@@ -38,7 +38,7 @@ jobs:
           method: jwt
           jwtGithubAudience: sigstore
           secrets: |
-            /ci-cd/dns CF_API
+            /ci-cd/dns/cloudflare/preview CF_API
       - name: Generate and preview records
         run: ../lib/dnscontrol-Linux preview
         working-directory: out
