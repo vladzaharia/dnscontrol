@@ -14,7 +14,7 @@ export const TownhouseRecords: Record[] = [
 
   /* Personal Services */
   { name: "cloud", description: "Nextcloud" },
-  { name: "collab", description: "Collabora" },
+  { name: "office", description: "OnlyOffice" },
   { name: "docs", description: "Paperless-ng" },
   { name: "wiki", description: "Bookstack" },
   { name: "kasm", description: "Kasm" },
