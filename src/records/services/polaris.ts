@@ -19,15 +19,11 @@ export const PolarisVideoServices: Record[] = [
   {
     name: "prowlarr",
     description: "Prowlarr - Meta Indexer",
-    target: "10.12.2.10",
-    type: "A"
   },
 
   {
     name: "sabnzbd",
     description: "SabNZBd - NZB Downloader",
-    target: "10.12.2.20",
-    type: "A",
   },
   {
     name: "tdarr",
