@@ -13,6 +13,7 @@ export const TownhouseRecords: Record[] = [
   { name: "env", description: "Infisical" },
 
   /* Personal Services */
+  { name: "dash", description: "Organizr" },
   { name: "cloud", description: "Nextcloud" },
   { name: "office", description: "OnlyOffice" },
   { name: "docs", description: "Paperless-ng" },
