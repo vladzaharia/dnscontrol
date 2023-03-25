@@ -1,11 +1,14 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { GetCoreRecords, GetPrefix } from "../records/core";
-import { TownhouseRecords } from "../records/locations/townhouse";
 import { CreateRecords } from "../utils/record";
 import { BetterUptimeRecords } from "../records/services/betteruptime";
 import { TailscaleRecords } from "../records/services/tailscale";
 import { CreateFastmailRecords } from "../records/mail/fastmail";
+import { InfrastructureRecords } from "../records/townhouse/infrastructure";
+import { ProductivityServiceRecords } from "../records/townhouse/productivity";
+import { MediaServiceRecords } from "../records/townhouse/media-services";
+import { SmartHomeRecords } from "../records/townhouse/smart-home";
 
 const BASE_DOMAIN = "zhr.one";
 console.log(`Zone: ${BASE_DOMAIN} - Services`);
@@ -20,8 +23,11 @@ D(
   // DDNS-managed
   IGNORE_NAME(GetPrefix("Helium")),
 
-  /* Home records */
-  ...CreateRecords("Townhouse", TownhouseRecords, "Helium"),
+  /* Townhouse records */
+  ...CreateRecords("Infrastructure", InfrastructureRecords, "Helium"),
+  ...CreateRecords("Media Services", MediaServiceRecords, "Helium"),
+  ...CreateRecords("Productivity", ProductivityServiceRecords, "Helium"),
+  ...CreateRecords("Smart Home", SmartHomeRecords, "Helium"),
 
   /* Tailscale records */
   ...CreateRecords("Tailscale", TailscaleRecords, "Helium"),
