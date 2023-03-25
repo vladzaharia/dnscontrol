@@ -20,10 +20,13 @@ export const PolarisVideoServices: Record[] = [
     name: "prowlarr",
     description: "Prowlarr - Meta Indexer",
   },
-
   {
     name: "sabnzbd",
     description: "SabNZBd - NZB Downloader",
+  },
+  {
+    name: "qbittorrent",
+    description: "qBittorrent - Torrent Downloader",
   },
   {
     name: "tdarr",
