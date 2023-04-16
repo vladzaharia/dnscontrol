@@ -23,6 +23,9 @@ D(
   ...CreateFastmailRecords(BASE_DOMAIN),
   ...CreateFastmailRecords(`ds.${BASE_DOMAIN}`, "ds"),
 
+  /* Dropshare records */
+  CreateRecord({ name: "share", target: "zhrshare.azureedge.net." }),
+
   /* Domain verification records */
   TXT("@", "b3c14s9b4ym8wnfrz74db3g0q0425sry"),
   TXT("@", "verification:RZjHjtRtEzMtsNp12KuUs5GY"),
