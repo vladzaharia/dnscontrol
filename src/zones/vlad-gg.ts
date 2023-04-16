@@ -25,7 +25,7 @@ D(
 
   /* Dropshare records */
   CreateRecord({ name: "share", target: "zhrshare.azureedge.net." }),
-  CreateRecord({ name: "_d695efe7525e58d170aa45500d0acbcd.stash", target: "_3aa8ad69eb143685fbe7943912bf4796.cvxnfrzvtq.acm-validations.aws." }),
+  CreateRecord({ name: "_b2939c0fadc2984e462e24c1f5ba199f.drop", target: "_41d2694c3cef6997de96302706a73a96.cvxnfrzvtq.acm-validations.aws." }),
   CAA("@", "issue", "amazon.com"),
 
   /* Domain verification records */
