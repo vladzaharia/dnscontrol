@@ -25,6 +25,7 @@ D(
 
   /* Dropshare records */
   CreateRecord({ name: "share", target: "zhrshare.azureedge.net." }),
+  CreateRecord({ name: "_d695efe7525e58d170aa45500d0acbcd.stash", target: "_3aa8ad69eb143685fbe7943912bf4796.cvxnfrzvtq.acm-validations.aws." }),
 
   /* Domain verification records */
   TXT("@", "b3c14s9b4ym8wnfrz74db3g0q0425sry"),
