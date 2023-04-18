@@ -19,6 +19,7 @@ D(
   DnsProvider(CloudflareDns),
   /* Core records */
   ...CreateRecords("Core", GetCoreRecords()),
+  CNAME("@", "zhrone.pages.dev."),
 
   // DDNS-managed
   IGNORE_NAME(GetPrefix("Helium")),
