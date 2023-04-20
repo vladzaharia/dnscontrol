@@ -24,10 +24,10 @@ D(
   ...CreateFastmailRecords(`ds.${BASE_DOMAIN}`, "ds"),
 
   /* Dropshare records */
-  //CreateRecord({ name: "_b2939c0fadc2984e462e24c1f5ba199f.drop", target: "_41d2694c3cef6997de96302706a73a96.cvxnfrzvtq.acm-validations.aws." }),
-  //CreateRecord({ name: "drop", target: "du8l8g206yjol.cloudfront.net." }),
-  //CAA("@", "issue", "amazon.com"),
-  IGNORE_NAME("drop"),
+  CreateRecord({ name: "_b2939c0fadc2984e462e24c1f5ba199f.drop", target: "_41d2694c3cef6997de96302706a73a96.cvxnfrzvtq.acm-validations.aws." }),
+  CreateRecord({ name: "drop-alt", target: "du8l8g206yjol.cloudfront.net." }),
+  CAA("@", "issue", "amazon.com"),
+  IGNORE_NAME("drop", "CNAME"),
 
   /* Domain verification records */
   TXT("@", "b3c14s9b4ym8wnfrz74db3g0q0425sry"),
