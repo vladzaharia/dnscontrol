@@ -24,10 +24,11 @@ D(
   ...CreateFastmailRecords(`ds.${BASE_DOMAIN}`, "ds"),
 
   /* Dropshare records */
-  CreateRecord({ name: "share", target: "zhrshare.azureedge.net." }),
+  CreateRecord({ name: "_44e75dbdd76f1e03953cbf0fa3905c46.drop-alt", target: "_9c248e5cbb6d5514c37a895f0efdc7e8.fgsdscwdjl.acm-validations.aws." }),
   CreateRecord({ name: "_b2939c0fadc2984e462e24c1f5ba199f.drop", target: "_41d2694c3cef6997de96302706a73a96.cvxnfrzvtq.acm-validations.aws." }),
-  CreateRecord({ name: "drop", target: "du8l8g206yjol.cloudfront.net." }),
+  CreateRecord({ name: "drop-alt", target: "du8l8g206yjol.cloudfront.net." }),
   CAA("@", "issue", "amazon.com"),
+  IGNORE_NAME("drop", "CNAME"),
 
   /* Domain verification records */
   TXT("@", "b3c14s9b4ym8wnfrz74db3g0q0425sry"),
