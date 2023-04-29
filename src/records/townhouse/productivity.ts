@@ -10,5 +10,6 @@ export const ProductivityServiceRecords: Record[] = [
   { name: "docs", description: "Paperless-ng" },
   { name: "wiki", description: "Bookstack" },
   { name: "kasm", description: "Kasm" },
+  { name: "home", description: "Homepage" },
   { name: "kiwix", description: "Kiwix", target: "10.11.2.123", type: "A" },
 ];
