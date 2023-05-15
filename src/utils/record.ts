@@ -1,6 +1,6 @@
 import { CfProxyOn, CfSSLOn } from "../providers/cloudflare";
 import { AdditionalNames, ElementNames } from "./server";
-import { GetHost, GetIP } from "../records/core";
+import { GetHost } from "../records/core";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export type DNSControlRecord = (
@@ -55,10 +55,6 @@ export function CreateRecord(
   const finalName = record.name + suffix;
   let finalTarget = record.target || GetHost(targetName);
 
-  console.log(
-    `  ${record.description || "Service"}: ${finalName} -> ${finalTarget}`
-  );
-
   // Determine record type
   let type: DNSControlRecord = CNAME;
 
@@ -75,6 +71,10 @@ export function CreateRecord(
     finalTarget = "10.10.1.20";
     type = A;
   }
+
+  console.log(
+    `  ${record.description || "Service"}: ${finalName} -> ${finalTarget}`
+  );
 
   // Add proxy/ssl tags
   if (record.proxy) {
