@@ -9,6 +9,7 @@ import { InfrastructureRecords } from "../records/townhouse/infrastructure";
 import { ProductivityServiceRecords } from "../records/townhouse/productivity";
 import { MediaServiceRecords } from "../records/townhouse/media-services";
 import { SmartHomeRecords } from "../records/townhouse/smart-home";
+import { InternalRecords } from "../records/townhouse/internal";
 
 const BASE_DOMAIN = "zhr.one";
 console.log(`Zone: ${BASE_DOMAIN} - Services`);
@@ -25,13 +26,14 @@ D(
   IGNORE_NAME(GetPrefix("Helium")),
 
   /* Townhouse records */
-  ...CreateRecords("Infrastructure", InfrastructureRecords, "Helium"),
-  ...CreateRecords("Media Services", MediaServiceRecords, "Helium"),
-  ...CreateRecords("Productivity", ProductivityServiceRecords, "Helium"),
-  ...CreateRecords("Smart Home", SmartHomeRecords, "Helium"),
+  ...CreateRecords("Infrastructure", InfrastructureRecords),
+  ...CreateRecords("Media Services", MediaServiceRecords),
+  ...CreateRecords("Productivity", ProductivityServiceRecords),
+  ...CreateRecords("Smart Home", SmartHomeRecords),
+  ...CreateRecords("Internal", InternalRecords, "LocalTraefik", ".int"),
 
   /* Tailscale records */
-  ...CreateRecords("Tailscale", TailscaleRecords, "Helium"),
+  ...CreateRecords("Tailscale", TailscaleRecords),
 
   /* BetterUptime status */
   ...CreateRecords("status.zhr.one", BetterUptimeRecords),

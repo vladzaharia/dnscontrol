@@ -49,7 +49,7 @@ export interface Record {
 
 export function CreateRecord(
   record: Record,
-  targetName?: ElementNames | AdditionalNames,
+  targetName: ElementNames | AdditionalNames = "Helium",
   suffix = ""
 ): DNSControlRecord {
   const finalName = record.name + suffix;
@@ -71,8 +71,8 @@ export function CreateRecord(
   }
 
   // Replace Local with IP
-  if (targetName == "LocalTraefik" && !record.target) {
-    finalTarget = GetIP(targetName);
+  if (targetName == "LocalTraefik") {
+    finalTarget = "10.10.1.20";
     type = A;
   }
 
