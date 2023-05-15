@@ -2,7 +2,7 @@ name: DNSControl Push
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   prepare:
