@@ -19,6 +19,13 @@ const Servers: ServerMap = {
     location: "van",
     ip: "64.46.8.37",
   },
+  LocalTraefik: {
+    name: "LocalTraefik",
+    description: "Internal Traefik services",
+    prefix: "xx-lt",
+    location: "sea",
+    ip: "10.10.1.20",
+  },
 };
 
 export function GetPrefix(name: string): string {

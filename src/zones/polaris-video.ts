@@ -13,7 +13,7 @@ D(
   NoRegistrar,
   DnsProvider(CloudflareDns),
   /* Service records */
-  ...CreateRecords("Polaris Video", PolarisVideoServices, "Helium"),
+  ...CreateRecords("Polaris Video", PolarisVideoServices),
 
   /* BetterUptime status */
   ...CreateRecords("status.polaris.video", BetterUptimeRecords),

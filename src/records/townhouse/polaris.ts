@@ -5,11 +5,12 @@ export const PolarisVideoServices: Record[] = [
   { name: "auth", description: "Authentik - Polaris" },
 
   /* Public */
-  { name: "media", description: "Plex Media Server" },
-  { name: "request", description: "Overseerr Requests" },
-  { name: "iptv", description: "IPTV Service (Primary)" },
-  { name: "xui", description: "IPTV Service (Backup)" },
-  { name: "player", description: "IPTV Player" },
+  { name: "media", description: "Plex media server" },
+  { name: "request", description: "Overseerr request service" },
+  { name: "xteve", description: "xTeVe IPTV service" },
+  { name: "ersatz", description: "Custom IPTV channel service" },
+  { name: "logos", description: "IPTV channel logos" },
+  { name: "guide", description: "Guide2go hosted guide and images" },
 
   /* Private */
   { name: "sonarr", description: "Sonarr - TV Indexer" },
@@ -24,16 +25,5 @@ export const PolarisVideoServices: Record[] = [
     name: "sabnzbd",
     description: "SabNZBd - NZB Downloader",
   },
-  {
-    name: "qbittorrent",
-    description: "qBittorrent - Torrent Downloader",
-  },
-  {
-    name: "tdarr",
-    description: "Tdarr transcoder",
-    target: "10.12.2.60",
-    type: "A",
-  },
   { name: "tautulli", description: "Tautulli Stats" },
-  { name: "ersatz", description: "ErsatzTV Channels" },
 ];
