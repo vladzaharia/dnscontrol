@@ -40,6 +40,6 @@ jobs:
           secrets: |
             /ci-cd/dns/cloudflare/push CF_API
       - name: Generate and push records
-        run: ../lib/dnscontrol-Linux push
+        run: ../lib/dnscontrol-Linux --diff2 push
         working-directory: out
         shell: bash

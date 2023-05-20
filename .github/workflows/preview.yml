@@ -40,6 +40,6 @@ jobs:
           secrets: |
             /ci-cd/dns/cloudflare/preview CF_API
       - name: Generate and preview records
-        run: ../lib/dnscontrol-Linux preview
+        run: ../lib/dnscontrol-Linux --diff2 preview
         working-directory: out
         shell: bash
