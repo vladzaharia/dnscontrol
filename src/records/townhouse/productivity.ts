@@ -12,4 +12,7 @@ export const ProductivityServiceRecords: Record[] = [
   { name: "kasm", description: "Kasm" },
   { name: "services", description: "Homepage" },
   { name: "kiwix", description: "Kiwix", target: "10.11.2.123", type: "A" },
+  { name: "space", description: "Space" },
+  { name: "packages", description: "Space Packages" },
+  { name: "vcs", description: "Space VCS" },
 ];
