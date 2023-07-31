@@ -35,6 +35,7 @@ D(
   CreateRecord({ name: "drop-alt", target: "du8l8g206yjol.cloudfront.net." }),
   CAA("@", "issue", "amazon.com"),
   IGNORE_NAME("drop", "CNAME"),
+  IGNORE_NAME("pkmn", "CNAME"),
 
   /* Domain verification records */
   TXT("@", "b3c14s9b4ym8wnfrz74db3g0q0425sry"),
