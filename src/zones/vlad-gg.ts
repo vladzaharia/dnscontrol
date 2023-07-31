@@ -36,6 +36,10 @@ D(
   CAA("@", "issue", "amazon.com"),
   IGNORE_NAME("drop", "CNAME"),
   IGNORE_NAME("pkmn", "CNAME"),
+  IGNORE_NAME("assassin"),
+  IGNORE_NAME("*.assassin"),
+  IGNORE_NAME("track"),
+  IGNORE_NAME("*.track"),
 
   /* Domain verification records */
   TXT("@", "b3c14s9b4ym8wnfrz74db3g0q0425sry"),
