@@ -6,6 +6,7 @@ export const PolarisVideoServices: Record[] = [
 
   /* Public */
   { name: "media", description: "Plex media server" },
+  { name: "jellyfin", description: "Jellyfin media server" },
   { name: "request", description: "Overseerr request service" },
   { name: "xteve", description: "xTeVe IPTV service" },
   { name: "ersatz", description: "Custom IPTV channel service" },
