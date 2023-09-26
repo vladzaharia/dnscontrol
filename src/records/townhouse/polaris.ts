@@ -8,6 +8,8 @@ export const PolarisVideoServices: Record[] = [
   { name: "media", description: "Plex media server" },
   { name: "jellyfin", description: "Jellyfin media server" },
   { name: "request", description: "Overseerr request service" },
+  { name: "invite", description: "Wizarr invite management" },
+
   { name: "xteve", description: "xTeVe IPTV service" },
   { name: "ersatz", description: "Custom IPTV channel service" },
   { name: "logos", description: "IPTV channel logos" },
