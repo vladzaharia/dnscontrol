@@ -5,7 +5,8 @@ export const PolarisVideoServices: Record[] = [
   { name: "auth", description: "Authentik - Polaris" },
 
   /* Public */
-  { name: "media", description: "Plex media server" },
+  { name: "media", description: "Reiverr AIO server" },
+  { name: "plex", description: "Plex media server" },
   { name: "jellyfin", description: "Jellyfin media server" },
   { name: "request", description: "Overseerr request service" },
   { name: "invite", description: "Wizarr invite management" },
