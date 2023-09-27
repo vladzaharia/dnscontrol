@@ -1,22 +1,23 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { GetCoreRecords, GetPrefix } from "../records/core";
-import { CreateRecords } from "../utils/record";
-import { BetterUptimeRecords } from "../records/services/betteruptime";
 import { CreateFastmailRecords } from "../records/mail/fastmail";
+import { BetterUptimeRecords } from "../records/services/betteruptime";
 import { InfrastructureRecords } from "../records/townhouse/infrastructure";
-import { ProductivityServiceRecords } from "../records/townhouse/productivity";
-import { MediaServiceRecords } from "../records/townhouse/media-services";
-import { SmartHomeRecords } from "../records/townhouse/smart-home";
 import { InternalRecords } from "../records/townhouse/internal";
+import { MediaServiceRecords } from "../records/townhouse/media-services";
+import { ProductivityServiceRecords } from "../records/townhouse/productivity";
+import { SmartHomeRecords } from "../records/townhouse/smart-home";
+import { CreateRecords } from "../utils/record";
 
-const BASE_DOMAIN = "zhr.one";
-console.log(`Zone: ${BASE_DOMAIN} - Services`);
+const BASE_DOMAIN = "polaris.rest";
+console.log(`Zone: ${BASE_DOMAIN}`);
 
 D(
   BASE_DOMAIN,
   NoRegistrar,
   DnsProvider(CloudflareDns),
+  
   /* Core records */
   ...CreateRecords("Core", GetCoreRecords()),
   IGNORE_NAME("@", "A,CNAME"),
@@ -31,30 +32,15 @@ D(
   ...CreateRecords("Smart Home", SmartHomeRecords),
   ...CreateRecords("Internal", InternalRecords, "LocalTraefik", ".int"),
 
-  /* BetterUptime status */
-  ...CreateRecords("status.zhr.one", BetterUptimeRecords),
+  /* KMS */
+  SRV("_vlmcs._tcp", 0, 0, 1688, "truenas.polaris.rest."),
 
-  /* Uptime-Kuma */
-  CNAME("uptime", "zhrone-uptime.westus2.cloudapp.azure.com."),
-  TXT("_dnsauth.uptime", "cnw3xhsqqqlzr50jf9x6crxdk86b2p3t"),
+  /* BetterUptime status */
+  ...CreateRecords("status.polaris.rest", BetterUptimeRecords),
 
   /* Mail records */
   ...CreateFastmailRecords(BASE_DOMAIN),
 
-  /* KMS */
-  SRV("_vlmcs._tcp", 0, 0, 1688, "truenas.zhr.one."),
-
   /* Domain verification records */
-  TXT(
-    "@",
-    "atlassian-domain-verification=aWQoyeXxK5bbFI7GUl4ALmaSziAqbOMMXdNQeMtbaGzE3ALZgXNGtF885NpV6IxA"
-  ),
-  TXT(
-    "@",
-    "keybase-site-verification=z79M8GrtyF-25fIHHrUfBlJmPbmcj5sNdIUOjsoIb00"
-  ),
-  TXT("@", "MS=ms62227587"),
-  TXT("@", "MS=ms10317245"),
-  TXT("@", "b3c14s9b4ym8wnfrz74db3g0q0425sry"),
-  TXT("_doppler_guRuoPJHEswl0", "B1aF7MgOlLnYKwXH4eGgV4vV7eaAL8Q8")
+  
 );
