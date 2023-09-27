@@ -3,7 +3,6 @@ import { NoRegistrar } from "../providers/noregistrar";
 import { GetCoreRecords, GetPrefix } from "../records/core";
 import { CreateRecords } from "../utils/record";
 import { BetterUptimeRecords } from "../records/services/betteruptime";
-import { TailscaleRecords } from "../records/services/tailscale";
 import { CreateFastmailRecords } from "../records/mail/fastmail";
 import { InfrastructureRecords } from "../records/townhouse/infrastructure";
 import { ProductivityServiceRecords } from "../records/townhouse/productivity";
@@ -31,9 +30,6 @@ D(
   ...CreateRecords("Productivity", ProductivityServiceRecords),
   ...CreateRecords("Smart Home", SmartHomeRecords),
   ...CreateRecords("Internal", InternalRecords, "LocalTraefik", ".int"),
-
-  /* Tailscale records */
-  ...CreateRecords("Tailscale", TailscaleRecords),
 
   /* BetterUptime status */
   ...CreateRecords("status.zhr.one", BetterUptimeRecords),
