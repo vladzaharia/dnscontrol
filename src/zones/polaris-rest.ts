@@ -17,13 +17,14 @@ D(
   BASE_DOMAIN,
   NoRegistrar,
   DnsProvider(CloudflareDns),
-  
+
   /* Core records */
   ...CreateRecords("Core", GetCoreRecords()),
   IGNORE_NAME("@", "A,CNAME"),
 
   // DDNS-managed
   IGNORE_NAME(GetPrefix("Helium")),
+  IGNORE_NAME("assets"),
 
   /* Townhouse records */
   ...CreateRecords("Infrastructure", InfrastructureRecords),
@@ -39,8 +40,7 @@ D(
   ...CreateRecords("status.polaris.rest", BetterUptimeRecords),
 
   /* Mail records */
-  ...CreateFastmailRecords(BASE_DOMAIN),
+  ...CreateFastmailRecords(BASE_DOMAIN)
 
   /* Domain verification records */
-  
 );
