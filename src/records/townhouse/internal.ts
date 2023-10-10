@@ -8,4 +8,5 @@ export const InternalRecords: Record[] = [
   { name: "netbootxyz", description: "NetbootXYZ" },
   { name: "portainer", description: "Portainer" },
   { name: "portainer-edge", description: "Portainer Edge" },
+  { name: "pgadmin", description: "PGAdmin" },
 ];
