@@ -24,7 +24,8 @@ D(
   CF_REDIRECT("*vlad.lgbt/*", "https://vlad.gg/$2"),
 
   /* Mail records */
-  ...CreateFastmailRecords(BASE_DOMAIN)
+  ...CreateFastmailRecords(BASE_DOMAIN),
 
   /* Domain verification records */
+  TXT("_atproto", "did=did:plc:eykvgeqaqtyspquyx5wozboq"),
 );
