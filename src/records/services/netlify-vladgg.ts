@@ -9,6 +9,7 @@ export const NetlifyVladGGRecords: Record[] = [
     type: "A",
     description: "vlad.gg",
     target: "75.2.60.5",
+    proxy: true,
   },
   {
     name: "www",
