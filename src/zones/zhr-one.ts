@@ -19,7 +19,7 @@ D(
   DnsProvider(CloudflareDns),
   /* Core records */
   ...CreateRecords("Core", GetCoreRecords()),
-  IGNORE_NAME("@", "A,CNAME"),
+  IGNORE_NAME("@", "A,CNAME,AAAA"),
 
   // DDNS-managed
   IGNORE_NAME(GetPrefix("Helium")),

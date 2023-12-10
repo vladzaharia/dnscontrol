@@ -1,7 +1,5 @@
 import { CloudflareDnsWithRedirect } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
-import { CreateRecord } from "../utils/record";
-import { GetIP } from "../records/core";
 import { CreateFastmailRecords } from "../records/mail/fastmail";
 
 const BASE_DOMAIN = "vlad.lgbt";
@@ -12,13 +10,10 @@ D(
   NoRegistrar,
   DnsProvider(CloudflareDnsWithRedirect),
   /* Basic records */
-  CreateRecord({ name: "@", type: "A", target: GetIP("Helium"), proxy: true }),
-  CreateRecord({
-    name: "www",
-    type: "A",
-    target: GetIP("Helium"),
-    proxy: true,
-  }),
+
+  // CF-managed
+  IGNORE_NAME("@", "A,CNAME,AAAA"),
+  IGNORE_NAME("www", "A,CNAME,AAAA"),
 
   /* Redirect all to .gg */
   CF_REDIRECT("*vlad.lgbt/*", "https://vlad.gg/$2"),
@@ -27,5 +22,5 @@ D(
   ...CreateFastmailRecords(BASE_DOMAIN),
 
   /* Domain verification records */
-  TXT("_atproto", "did=did:plc:eykvgeqaqtyspquyx5wozboq"),
+  TXT("_atproto", "did=did:plc:eykvgeqaqtyspquyx5wozboq")
 );
