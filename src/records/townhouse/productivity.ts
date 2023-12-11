@@ -11,5 +11,7 @@ export const ProductivityServiceRecords: Record[] = [
   { name: "kasm", description: "Kasm" },
   { name: "code", description: "VS Code" },
   { name: "services", description: "Homepage" },
+  { name: "games", description: "Pterodactyl" },
+  { name: "games-node", description: "Pterodactyl Wings" },
   { name: "kiwix", description: "Kiwix", target: "10.11.2.123", type: "A" },
 ];
