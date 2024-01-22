@@ -4,6 +4,7 @@ import { Record } from "../../utils/record";
  * Productivity services
  */
 export const ProductivityServiceRecords: Record[] = [
+  { name: "atuin", description: "Atuin Shell History" },
   { name: "cloud", description: "Nextcloud" },
   { name: "office", description: "OnlyOffice" },
   { name: "docs", description: "Paperless-ng" },
