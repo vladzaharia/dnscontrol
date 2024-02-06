@@ -16,5 +16,6 @@ export const ProductivityServiceRecords: Record[] = [
   { name: "games", description: "Pterodactyl" },
   { name: "games-node", description: "Pterodactyl Wings" },
   { name: "mc", description: "Minecraft Bluemap" },
+  { name: "mqtt", description: "Mosquitto mqtt" },
   { name: "kiwix", description: "Kiwix", target: "10.11.2.123", type: "A" },
 ];
