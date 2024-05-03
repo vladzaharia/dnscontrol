@@ -18,5 +18,6 @@ export const ProductivityServiceRecords: Record[] = [
   { name: "mc", description: "Minecraft Bluemap" },
   { name: "mqtt", description: "Mosquitto mqtt" },
   { name: "fz", description: "FireZone" },
+  { name: "nix", description: "Nix cache" },
   { name: "kiwix", description: "Kiwix", target: "10.11.2.123", type: "A" },
 ];
