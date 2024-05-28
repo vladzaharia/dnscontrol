@@ -11,4 +11,5 @@ export const InfrastructureRecords: Record[] = [
   { name: "traefik", description: "Traefik" },
   { name: "auth", description: "Authentik" },
   { name: "vault", description: "Hashicorp Vault" },
+  { name: "notify", description: "Apprise" },
 ];

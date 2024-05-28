@@ -30,5 +30,5 @@ export const PolarisVideoServices: Record[] = [
     description: "SabNZBd - NZB Downloader",
   },
   { name: "tautulli", description: "Tautulli Stats" },
-  { name: "tdarr", description: "Tdarr Transcoder" },
+  { name: "flow", description: "Fileflow Transcoder" },
 ];
