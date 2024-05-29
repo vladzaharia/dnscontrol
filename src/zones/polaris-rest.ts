@@ -8,7 +8,7 @@ import { InternalRecords } from "../records/townhouse/internal";
 import { MediaServiceRecords } from "../records/townhouse/media-services";
 import { ProductivityServiceRecords } from "../records/townhouse/productivity";
 import { SmartHomeRecords } from "../records/townhouse/smart-home";
-import { CreateRecords } from "../utils/record";
+import { CreateRecord, CreateRecords } from "../utils/record";
 
 const BASE_DOMAIN = "polaris.rest";
 console.log(`Zone: ${BASE_DOMAIN}`);
@@ -28,6 +28,9 @@ D(
   // CF-managed
   IGNORE_NAME("@", "A,CNAME,AAAA"),
   IGNORE_NAME("webfinger", "CNAME"),
+  IGNORE_NAME("status", "A,CNAME,AAAA"),
+  CreateRecord({ name: "uptime", target: "66.241.124.200", type: "A" }),
+  CreateRecord({ name: "uptime", target: "2a09:8280:1::37:5a51:0", type: "AAAA" }),
 
   /* Townhouse records */
   ...CreateRecords("Infrastructure", InfrastructureRecords),
