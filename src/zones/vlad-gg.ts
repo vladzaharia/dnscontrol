@@ -1,7 +1,7 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { CreateFastmailRecords } from "../records/mail/fastmail";
-import { BetterUptimeRecords } from "../records/services/betteruptime";
+// import { BetterUptimeRecords } from "../records/services/betteruptime";
 import { NetlifyVladGGRecords } from "../records/services/netlify-vladgg";
 import { CreateRecord, CreateRecords } from "../utils/record";
 
@@ -17,7 +17,7 @@ D(
   CreateRecord({ name: "bb", target: "bb-vlad-gg.netlify.app." }),
 
   /* BetterUptime status */
-  ...CreateRecords("status.vlad.gg", BetterUptimeRecords),
+  // ...CreateRecords("status.vlad.gg", BetterUptimeRecords),
 
   /* Mail records */
   ...CreateFastmailRecords(BASE_DOMAIN),

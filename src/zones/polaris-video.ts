@@ -1,7 +1,7 @@
 import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { CreateFastmailRecords } from "../records/mail/fastmail";
-import { BetterUptimeRecords } from "../records/services/betteruptime";
+// import { BetterUptimeRecords } from "../records/services/betteruptime";
 import { PolarisVideoServices } from "../records/townhouse/polaris";
 import { CreateRecords } from "../utils/record";
 
@@ -16,7 +16,7 @@ D(
   ...CreateRecords("Polaris Video", PolarisVideoServices),
 
   /* BetterUptime status */
-  ...CreateRecords("status.polaris.video", BetterUptimeRecords),
+  // ...CreateRecords("status.polaris.video", BetterUptimeRecords),
 
   /* Mail records */
   ...CreateFastmailRecords(BASE_DOMAIN),

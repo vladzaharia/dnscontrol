@@ -2,7 +2,7 @@ import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { GetCoreRecords, GetPrefix } from "../records/core";
 import { CreateFastmailRecords } from "../records/mail/fastmail";
-import { BetterUptimeRecords } from "../records/services/betteruptime";
+// import { BetterUptimeRecords } from "../records/services/betteruptime";
 import { InfrastructureRecords } from "../records/townhouse/infrastructure";
 import { InternalRecords } from "../records/townhouse/internal";
 import { MediaServiceRecords } from "../records/townhouse/media-services";
@@ -40,7 +40,7 @@ D(
   SRV("_vlmcs._tcp", 0, 0, 1688, "truenas.polaris.rest."),
 
   /* BetterUptime status */
-  ...CreateRecords("status.polaris.rest", BetterUptimeRecords),
+  // ...CreateRecords("status.polaris.rest", BetterUptimeRecords),
 
   /* Mail records */
   ...CreateFastmailRecords(BASE_DOMAIN),
