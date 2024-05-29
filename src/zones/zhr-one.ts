@@ -24,6 +24,9 @@ D(
   // DDNS-managed
   IGNORE_NAME(GetPrefix("Helium")),
 
+  // CF-managed
+  IGNORE_NAME("status", "A,CNAME,AAAA"),
+
   /* Townhouse records */
   ...CreateRecords("Infrastructure", InfrastructureRecords),
   ...CreateRecords("Media Services", MediaServiceRecords),

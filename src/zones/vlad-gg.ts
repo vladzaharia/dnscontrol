@@ -16,6 +16,9 @@ D(
   ...CreateRecords(BASE_DOMAIN, NetlifyVladGGRecords),
   CreateRecord({ name: "bb", target: "bb-vlad-gg.netlify.app." }),
 
+  // CF-managed
+  IGNORE_NAME("status", "A,CNAME,AAAA"),
+
   /* BetterUptime status */
   // ...CreateRecords("status.vlad.gg", BetterUptimeRecords),
 

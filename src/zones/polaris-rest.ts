@@ -28,6 +28,8 @@ D(
   // CF-managed
   IGNORE_NAME("@", "A,CNAME,AAAA"),
   IGNORE_NAME("webfinger", "CNAME"),
+  IGNORE_NAME("status", "A,CNAME,AAAA"),
+  IGNORE_NAME("uk", "A,CNAME,AAAA"),
 
   /* Townhouse records */
   ...CreateRecords("Infrastructure", InfrastructureRecords),
