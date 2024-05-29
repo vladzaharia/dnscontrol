@@ -2,7 +2,7 @@ import { CloudflareDns } from "../providers/cloudflare";
 import { NoRegistrar } from "../providers/noregistrar";
 import { GetCoreRecords, GetPrefix } from "../records/core";
 import { CreateRecords } from "../utils/record";
-import { BetterUptimeRecords } from "../records/services/betteruptime";
+// import { BetterUptimeRecords } from "../records/services/betteruptime";
 import { CreateFastmailRecords } from "../records/mail/fastmail";
 import { InfrastructureRecords } from "../records/townhouse/infrastructure";
 import { ProductivityServiceRecords } from "../records/townhouse/productivity";
@@ -32,11 +32,7 @@ D(
   ...CreateRecords("Internal", InternalRecords, "LocalTraefik", ".int"),
 
   /* BetterUptime status */
-  ...CreateRecords("status.zhr.one", BetterUptimeRecords),
-
-  /* Uptime-Kuma */
-  CNAME("uptime", "zhrone-uptime.westus2.cloudapp.azure.com."),
-  TXT("_dnsauth.uptime", "cnw3xhsqqqlzr50jf9x6crxdk86b2p3t"),
+  // ...CreateRecords("status.zhr.one", BetterUptimeRecords),
 
   /* Mail records */
   ...CreateFastmailRecords(BASE_DOMAIN),
