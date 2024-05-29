@@ -29,7 +29,7 @@ D(
   IGNORE_NAME("@", "A,CNAME,AAAA"),
   IGNORE_NAME("webfinger", "CNAME"),
   IGNORE_NAME("status", "A,CNAME,AAAA"),
-  CreateRecord({ name: "uptime", target: "polaris-uptime.fly.dev", type: "CNAME" }),
+  CreateRecord({ name: "uptime", target: "polaris-uptime.fly.dev.", type: "CNAME" }),
 
   /* Townhouse records */
   ...CreateRecords("Infrastructure", InfrastructureRecords),
