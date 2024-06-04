@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "DavidAnson.vscode-markdownlint",
+    "BeardedBear.beardedicons",
+    "BeardedBear.beardedtheme",
+    "eamodio.gitlens",
+    "GitHub.vscode-pull-request-github",
+    "stkb.rewrap"
+  ]
+}
