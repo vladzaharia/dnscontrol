@@ -1,0 +1,63 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		"ghcr.io/devcontainers-contrib/features/prettier:1": {},
+		"ghcr.io/wxw-matt/devcontainer-features/apt:0": {
+			"packages": "sudo"
+		},
+		"ghcr.io/wxw-matt/devcontainer-features/command_runner:0": {
+			"command1": "curl -fsSL https://starship.rs/install.sh | sh -s -- -y"
+		},
+		"ghcr.io/eliises/devcontainer-features/bash-profile:1": {
+			"command": "eval \"$(starship init bash)\""
+		}
+	},
+
+	"containerEnv": {
+		"CLOUDFLARE_API_TOKEN": "${localEnv:CLOUDFLARE_API_TOKEN}",
+		"FONTAWESOME_API_TOKEN": "${localEnv:FONTAWESOME_API_TOKEN}"
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [4200, 8787],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "sudo chown -R vlad node_modules && npm install",
+	"postStartCommand": "npm run build",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"DavidAnson.vscode-markdownlint",
+				"BeardedBear.beardedicons",
+				"BeardedBear.beardedtheme",
+				"eamodio.gitlens",
+				"GitHub.vscode-pull-request-github",
+				"stkb.rewrap"
+			],
+			"settings": {
+				"editor.tabSize": 2,
+				"workbench.colorTheme": "Bearded Theme Surprising Blueberry",
+				"workbench.preferredDarkColorTheme": "Bearded Theme Surprising Blueberry",
+				"workbench.preferredLightColorTheme": "Quiet Light",
+				"workbench.iconTheme": "bearded-icons",
+			
+				"editor.fontFamily": "'MonoLisa Nerd Font', MonoLisa, Menlo, Monaco, 'Courier New', monospace",
+			
+				"git.enableSmartCommit": true,
+				"git.autofetch": true,
+				"git.confirmSync": false,
+				"workbench.activityBar.location":"top"
+			}
+		}
+	},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "vlad"
+}
