@@ -14,7 +14,7 @@ D(
   DnsProvider(CloudflareDns),
   /* Service records */
   ...CreateRecords("Polaris Video", PolarisVideoServices),
-  
+
   // CF-managed
   IGNORE_NAME("status", "A,CNAME,AAAA"),
 
