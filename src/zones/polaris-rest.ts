@@ -52,5 +52,6 @@ D(
   ...CreateFastmailRecords(BASE_DOMAIN),
 
   /* Domain verification records */
-  TXT("@", "TAILSCALE-KobgpNhPbtAVhro8SUdO")
+  TXT("@", "TAILSCALE-KobgpNhPbtAVhro8SUdO"),
+  TXT("@", "MS=ms74686894")
 );
