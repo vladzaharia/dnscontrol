@@ -13,4 +13,5 @@ export const InfrastructureRecords: Record[] = [
   { name: "cas", description: "Casdoor" },
   { name: "vault", description: "Hashicorp Vault" },
   { name: "notify", description: "Apprise" },
+  { name: "sec", description: "Wazuh", target: "10.11.10.250", type: "A" },
 ];
