@@ -19,5 +19,6 @@ export const ProductivityServiceRecords: Record[] = [
   { name: "mqtt", description: "Mosquitto mqtt" },
   { name: "fz", description: "FireZone" },
   { name: "nix", description: "Nix cache" },
+  { name: "hoard", description: "Hoarder" },
   { name: "kiwix", description: "Kiwix", target: "10.11.2.123", type: "A" },
 ];
