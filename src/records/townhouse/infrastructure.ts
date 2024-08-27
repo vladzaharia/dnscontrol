@@ -10,6 +10,7 @@ export const InfrastructureRecords: Record[] = [
   { name: "adguard", description: "Adguard", target: "10.10.2.5", type: "A" },
   { name: "traefik", description: "Traefik" },
   { name: "auth", description: "Authentik" },
+  { name: "ztd", description: "Zitadel" },
   { name: "cas", description: "Casdoor" },
   { name: "vault", description: "Hashicorp Vault" },
   { name: "notify", description: "Apprise" },
