@@ -16,6 +16,10 @@ D(
   ...CreateRecords(BASE_DOMAIN, NetlifyVladGGRecords),
   CreateRecord({ name: "bb", target: "bb-vlad-gg.netlify.app." }),
 
+  /* API */
+  CreateRecord({ name: "api", target: "5.78.82.150", type: "A" }),
+  CreateRecord({ name: "api", target: "2a01:4ff:1f0:ca90::1", type: "AAAA" }),
+
   // CF-managed
   IGNORE_NAME("status", "A,CNAME,AAAA"),
 
