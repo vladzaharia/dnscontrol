@@ -16,9 +16,9 @@ export const PolarisVideoServices: Record[] = [
   { name: "logos", description: "IPTV channel logos" },
   { name: "guide", description: "Guide2go hosted guide and images" },
 
-  { name: "infiniplex", description: "Plex Stream server" },
-  { name: "stream", description: "Riven request/management" },
-  { name: "dav", description: "Zurg WebDAV" },
+  { name: "stream", description: "Stremio" },
+  { name: "riven", description: "Riven RD management" },
+  { name: "proxy", description: "Stremio proxy" },
 
   /* Private */
   { name: "sonarr", description: "Sonarr - TV Indexer" },
