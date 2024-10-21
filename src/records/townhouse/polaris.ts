@@ -17,7 +17,7 @@ export const PolarisVideoServices: Record[] = [
   { name: "guide", description: "Guide2go hosted guide and images" },
 
   { name: "stream", description: "Stremio" },
-  { name: "riven", description: "Riven RD management" },
+  { name: "proxy.stream", description: "Stremio proxy" },
   { name: "proxy", description: "Stremio proxy" },
 
   /* Private */
