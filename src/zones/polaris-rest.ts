@@ -29,6 +29,7 @@ D(
   IGNORE_NAME("@", "A,CNAME,AAAA"),
   IGNORE_NAME("webfinger", "CNAME"),
   IGNORE_NAME("status", "A,CNAME,AAAA"),
+  IGNORE_NAME("s3.chat", "A,CNAME,AAAA"),
   CreateRecord({
     name: "uptime",
     target: "polaris-uptime.fly.dev.",
