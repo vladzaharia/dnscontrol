@@ -55,5 +55,6 @@ D(
 
   /* Domain verification records */
   TXT("@", "TAILSCALE-KobgpNhPbtAVhro8SUdO"),
-  TXT("@", "MS=ms74686894")
+  TXT("@", "MS=ms74686894"),
+  TXT("@", "openai-domain-verification=dv-SMfh9R6xAxKUcf05bu9fzt50")
 );
