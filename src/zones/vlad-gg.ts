@@ -58,6 +58,6 @@ D(
     "@",
     "google-site-verification=KcgCGo0bX44Bv2_u1ylo0QBQJ9yF9SimfZxp7t-RNlk"
   ),
-  TXT("@","openai-domain-verification=dv-ikB1TRom4sz5ThgP5JoeU0q1"),
+  TXT("@","openai-domain-verification=dv-yx38yZ1KFGSTvjqQ52TSN9EA"),
   TXT("_doppler_JU1pcFaV58gCB", "PdrzTCEi4G1eMwAB9XnzUp0X6uaMK6zT")
 );
