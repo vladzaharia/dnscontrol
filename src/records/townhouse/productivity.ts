@@ -21,5 +21,6 @@ export const ProductivityServiceRecords: Record[] = [
   { name: "nix", description: "Nix cache" },
   { name: "hoard", description: "Hoarder" },
   { name: "chat", description: "Lobe Chat" },
+  { name: "chatbot", description: "Chatbot UI", target: "cname.vercel-dns.com.", type: "CNAME" },
   { name: "kiwix", description: "Kiwix", target: "10.11.2.123", type: "A" },
 ];
