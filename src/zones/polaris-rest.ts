@@ -28,6 +28,7 @@ D(
   // CF-managed
   IGNORE_NAME("@", "A,CNAME,AAAA"),
   IGNORE_NAME("webfinger", "CNAME"),
+  IGNORE_NAME("homedb", "CNAME"),
   IGNORE_NAME("status", "A,CNAME,AAAA"),
   IGNORE_NAME("s3.chat", "A,CNAME,AAAA"),
   IGNORE_NAME("dndbeyond.chat", "A,CNAME,AAAA"),
