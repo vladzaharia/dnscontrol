@@ -9,6 +9,8 @@ export const InfrastructureRecords: Record[] = [
   { name: "truenas", description: "TrueNAS", target: "10.10.0.10", type: "A" },
   { name: "adguard", description: "Adguard", target: "10.10.2.5", type: "A" },
   { name: "traefik", description: "Traefik" },
+  { name: "logs", description: "Seq" },
+  { name: "ingest.logs", description: "Seq Ingest" },
   { name: "auth", description: "Authentik" },
   { name: "ztd", description: "Zitadel" },
   { name: "cas", description: "Casdoor" },
